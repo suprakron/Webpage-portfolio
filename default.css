@@ -308,7 +308,14 @@ h6 { font-size: 16px;}
 }
 
 #social_img{
-	width: 100%;
+	display: block;
+	margin:0 auto;
+
+	height: 200px;
+	width: 200px;
+	object-fit: cover;
+	border:2px solid var(--borderColor);
+	 
 }
 
 
