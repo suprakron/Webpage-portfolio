@@ -1,15 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<title>Suprakron</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Suprakron Maprachum</title>
 	<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap"
 		rel="stylesheet">
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="default.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 	<link id="theme-style" rel="stylesheet" type="text/css" href="">
+	<style>
+		body {
+			font-family: 'Roboto Mono', monospace;
+			background-color: #f0f0f0;
+			color: #333;
+			margin: 0;
+			padding: 0;
+		}
+
+		main-container {
+			padding: 40px;
+			max-width: 1200px;
+			margin: auto;
+		}
+
+		.s1 {
+			background-color: #ffffff;
+			padding: 40px 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+		}
+
+		.greeting-wrapper {
+			text-align: center;
+			margin-bottom: 30px;
+		}
+
+		.greeting-wrapper h1 {
+			font-family: 'Russo One', sans-serif;
+			font-size: 2.5em;
+			color: #333;
+			margin: 0;
+		}
+
+		.intro-wrapper {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 20px;
+		}
+
+		.left-column,
+		.right-column {
+			flex: 1;
+			min-width: 300px;
+			max-width: 500px;
+		}
+
+		#profile_pic {
+			width: 100%;
+			height: auto;
+			border-radius: 10px;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+			margin-bottom: 20px;
+		}
+
+		h5 {
+			font-size: 1.2em;
+			color: #666;
+			margin: 0 0 10px 0;
+		}
+
+		#theme-options-wrapper {
+			display: flex;
+			justify-content: center;
+			gap: 10px;
+		}
+
+		.theme-dot {
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			cursor: pointer;
+			transition: transform 0.3s ease;
+		}
+
+		.theme-dot:hover {
+			transform: scale(1.1);
+		}
+
+		#preview-shadow {
+			background-color: #f9f9f9;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+			text-align: center;
+		}
+
+		#preview h3 {
+			font-size: 1.8em;
+			color: #333;
+			margin-bottom: 10px;
+		}
+
+		#preview p {
+			font-size: 1.1em;
+			color: #666;
+		}
+
+		.corner {
+			width: 20px;
+			height: 20px;
+			background-color: #007bff;
+			position: absolute;
+		}
+
+		#corner-tl {
+			top: -10px;
+			left: -10px;
+		}
+
+		#corner-tr {
+			top: -10px;
+			right: -10px;
+		}
+
+		#corner-br {
+			bottom: -10px;
+			right: -10px;
+		}
+
+		#corner-bl {
+			bottom: -10px;
+			left: -10px;
+		}
+	</style>
 </head>
 
 <body>
@@ -19,40 +147,23 @@
 				<h1>Hi, I'm Suprakron Maprachum</h1>
 			</div>
 			<div class="intro-wrapper">
-				<div class="nav-wrapper">
-					<a href="index.html">
-						<div class="dots-wrapper">
-							<div id="dot-1" class="browser-dot"></div>
-							<div id="dot-2" class="browser-dot"></div>
-							<div id="dot-3" class="browser-dot"></div>
-						</div>
-					</a>
-					<ul id="navigation">
-						<li><a href="index.html#contact">Contact</a></li>
-					</ul>
-				</div>
-
 				<div class="left-column">
-					<img id="profile_pic" src="images/Suprakron-1.jpg">
-					<h5 style="text-align: center;line-height: 0;">Personalize Theme</h5>
+					<img id="profile_pic" src="images/Suprakron-1.jpg" alt="Suprakron Maprachum">
+					<h5 class="theme-title">Personalize Theme</h5>
 					<div id="theme-options-wrapper">
-						<div data-mode="light" id="light-mode" class="theme-dot"></div>
-						<div data-mode="blue" id="blue-mode" class="theme-dot"></div>
-						<div data-mode="green" id="green-mode" class="theme-dot"></div>
-						<div data-mode="purple" id="purple-mode" class="theme-dot"></div>
+						<div data-mode="light" id="light-mode" class="theme-dot" style="background-color: #fff;" title="Light Mode"></div>
+						<div data-mode="blue" id="blue-mode" class="theme-dot" style="background-color: #007bff;" title="Blue Mode"></div>
+						<div data-mode="green" id="green-mode" class="theme-dot" style="background-color: #28a745;" title="Green Mode"></div>
+						<div data-mode="purple" id="purple-mode" class="theme-dot" style="background-color: #6f42c1;" title="Purple Mode"></div>
 					</div>
-
-
 				</div>
-
 				<div class="right-column">
-
 					<div id="preview-shadow">
 						<div id="preview">
 							<div id="corner-tl" class="corner"></div>
 							<div id="corner-tr" class="corner"></div>
-							<h3>personal motto</h3>
-							<p>i will be a good developer and be able to</p>
+							<h3 class="preview-title">Personal Motto</h3>
+							<p class="preview-text">I will be a good developer and be able to</p>
 							<div id="corner-br" class="corner"></div>
 							<div id="corner-bl" class="corner"></div>
 						</div>
@@ -62,125 +173,84 @@
 		</div>
 	</section>
 
-
-
 	<section class="s2">
 		<div class="main-container">
 			<div class="about-wrapper">
 				<div class="about-me">
-					<h4>More about me</h4>
+					<h4>More About Me</h4>
 					<p>I build new projects just to tickle my brain and love teaching others how they're made.</p>
 					<hr>
-					<h4>my programming skills</h4>
+					<h4>My Programming Skills</h4>
 					<p>Fullstack developer with primary focus on Django <a target="_blank" href="cv-resume.pdf">Download
 							Resume</a></p>
-
 					<div id="skills">
 						<ul>
-							<li><i class="bi bi-python"></i> Python</li>
-							<li><i class="bi bi-django"></i> Django</li>
-							<li><i class="bi bi-js"></i> JavaScript</li>
-							<li><i class="bi bi-github"></i> GitHub</li>
-				 
+							<li><i class="fas fa-code"></i> Python</li>
+							<li><i class="fas fa-code-branch"></i> Django</li>
+							<li><i class="fas fa-js"></i> JavaScript</li>
+							<li><i class="fab fa-github"></i> GitHub</li>
 						</ul>
 						<ul>
-							<li><i class="bi bi-php"></i> PHP</li>
-							<li><i class="bi bi-wordpress"></i> WordPress</li>
-							<li><i class="bi bi-figma"></i> Figma</li>
-							<li><i class="bi bi-mysql"></i> MySQL</li>
+							<li><i class="fab fa-php"></i> PHP</li>
+							<li><i class="fab fa-wordpress"></i> WordPress</li>
+							<li><i class="fab fa-figma"></i> Figma</li>
+							<li><i class="fas fa-database"></i> MySQL</li>
 						</ul>
 					</div>
 				</div>
- 
 				<div class="social-links">
-					<img id="social_img" src="images/p1.jpg" width="500" height="600">
-					<h3>My contact</h3>
-					<a target="_blank" href="https://www.facebook.com/suprakron.maprachum.3/">Facebook:Tiw Suprakron</a>
-					<br>
-
-					<a target="_blank" href="https://line.me/ti/p/aLAq0lGUf8">Line:Suprakron.map</a>
-					<br>
-					<a target="_blank"
-						href="https://www.instagram.com/suprakronmap/?igshid=OTJhZDVkZWE%3D">IG:Suprakronmap</a>
-					<br>
-					<a target="_blank" href="https://github.com/suprakron">github:Suprakron</a>
+					<img id="social_img" src="images/p1.jpg" alt="Suprakron Maprachum" width="500" height="600">
+					<h3>My Contact</h3>
+					<a target="_blank" href="https://www.facebook.com/suprakron.maprachum.3/"><i
+							class="fab fa-facebook"></i> Facebook: Tiw Suprakron</a>
+					<a target="_blank" href="https://line.me/ti/p/aLAq0lGUf8"><i class="fab fa-line"></i> Line:
+						Suprakron.map</a>
+					<a target="_blank" href="https://www.instagram.com/suprakronmap/?igshid=OTJhZDVkZWE%3D"><i
+							class="fab fa-instagram"></i> Instagram: Suprakron.map</a>
 				</div>
-
-
-
-
-
 			</div>
-
 		</div>
 	</section>
 
 	<section class="s1">
 		<div class="main-container">
-			<h3 style="text-align: center;">Some of my past projects</h3>
 			<div class="post-wrapper">
-				<div>
-					<div class="post">
-						<img class="thumbnail" src="images/coding.png">
-						<div class="post-preview">
-							<h6 class="post-title">Quiz systems for formative assessment</h6>
-							<p class="post-intro">My projects that I have worked on </p>
-							<a href="post.html">Read More</a>
-						</div>
+				<div class="post">
+					<img class="thumbnail" src="./images/app-quiz/m14.png" alt="My Work">
+					<div class="post-preview">
+						<h6 class="post-title">My Work</h6>
+						<p class="post-intro">My best project</p>
+						<a href="post.html">Read More</a>
 					</div>
 				</div>
-				<div>
-					<div class="post">
-						<img class="thumbnail" src="images/certificate/c1.jpg">
-						<div class="post-preview">
-							<h6 class="post-title">Certificate</h6>
-							<p class="post-intro"> My honorary certificate that I have ever received
-							</p>
-							<a href="post-2.html">Read More</a>
-						</div>
+				<div class="post">
+					<img class="thumbnail" src="./images/p1.jpg" alt="Test form">
+					<div class="post-preview">
+						<h6 class="post-title">Test Form</h6>
+						<p class="post-intro">Tests that I have ever worked with</p>
+						<a href="./post-2.html">Read More</a>
 					</div>
 				</div>
-				<div>
-					<div class="post">
-						<img class="thumbnail" src="images/activity/t1.jpg">
-						<div class="post-preview">
-							<h6 class="post-title">Activity</h6>
-							<p class="post-intro"> My activities in the past
-							</p>
-							<a href="post-3.html">Read More</a>
-						</div>
+				<div class="post">
+					<img class="thumbnail" src="./images/certificate/c6.jpg" alt="My teaching">
+					<div class="post-preview">
+						<h6 class="post-title">My Teaching</h6>
+						<p class="post-intro">Teaching is the best thing I love to do</p>
+						<a href="./post-3.html">Read More</a>
 					</div>
 				</div>
-
-				<div>
-					<div class="post">
-						<img class="thumbnail" src="images/congratulations/c1.JPG">
-						<div class="post-preview">
-							<h6 class="post-title">Congratulations</h6>
-							<p class="post-intro"> Graduation at school age </p>
-						
-							<a href="post-4.html">Read More</a>
-						</div>
-					</div>
-				</div>
-
-				<div>
-					<div class="post">
-						<img class="thumbnail" src="images/ordain/02.jpg">
-						<div class="post-preview">
-							<h6 class="post-title">Ordination Ceremony</h6>
-							<p class="post-intro"> My ordination in the life of a man </p>
-							<a href="post-5.html">Read More</a>
-						</div>
-					</div>
-				</div>
-
-
-
 			</div>
 		</div>
 	</section>
-	<script type="text/javascript" src="script.js"></script>
+
+	<script>
+		const themeDots = document.querySelectorAll('.theme-dot');
+		themeDots.forEach(dot => {
+			dot.addEventListener('click', () => {
+				document.getElementById('theme-style').setAttribute('href', `${dot.getAttribute('data-mode')}.css`);
+			});
+		});
+	</script>
 </body>
 
 </html>
