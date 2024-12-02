@@ -5,252 +5,182 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Suprakron Maprachum</title>
-	<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap"
+	<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Poppins:wght@300;400;600&display=swap"
 		rel="stylesheet">
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="default.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-	<link id="theme-style" rel="stylesheet" type="text/css" href="">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 	<style>
 		body {
-			font-family: 'Roboto Mono', monospace;
-			background-color: #f0f0f0;
+			font-family: 'Poppins', sans-serif;
+			background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
 			color: #333;
 			margin: 0;
 			padding: 0;
 		}
 
-		main-container {
-			padding: 40px;
+		.main-container {
+			padding: 60px 20px;
 			max-width: 1200px;
 			margin: auto;
 		}
 
-		.s1 {
-			background-color: #ffffff;
-			padding: 40px 20px;
-			border-radius: 10px;
-			box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-		}
-
-		.greeting-wrapper {
+		.card-custom {
+			background: #fff;
+			padding: 40px;
+			border-radius: 15px;
+			box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 			text-align: center;
-			margin-bottom: 30px;
 		}
 
 		.greeting-wrapper h1 {
 			font-family: 'Russo One', sans-serif;
-			font-size: 2.5em;
-			color: #333;
-			margin: 0;
+			font-size: 3rem;
+			color: #444;
+			margin-bottom: 20px;
 		}
 
 		.intro-wrapper {
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: space-between;
-			gap: 20px;
+			gap: 30px;
+			justify-content: center;
 		}
 
 		.left-column,
 		.right-column {
 			flex: 1;
-			min-width: 300px;
+			min-width: 280px;
 			max-width: 500px;
 		}
 
-		#profile_pic {
-			width: 100%;
-			height: auto;
-			border-radius: 10px;
-			box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-			margin-bottom: 20px;
+		.profile-pic {
+			max-height: 400px;
+		 
+			object-fit: cover;
+	 
+			border-radius: 15px;
+		 
+			box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+	 
 		}
+
 
 		h5 {
-			font-size: 1.2em;
-			color: #666;
-			margin: 0 0 10px 0;
+			font-size: 1.5em;
+			color: #555;
+			margin: 20px 0 10px;
 		}
 
-		#theme-options-wrapper {
+		.theme-selector {
 			display: flex;
 			justify-content: center;
-			gap: 10px;
+			gap: 15px;
+			margin-top: 30px;
 		}
 
 		.theme-dot {
-			width: 30px;
-			height: 30px;
+			width: 40px;
+			height: 40px;
 			border-radius: 50%;
 			cursor: pointer;
-			transition: transform 0.3s ease;
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
 		}
 
 		.theme-dot:hover {
-			transform: scale(1.1);
+			transform: scale(1.2);
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 		}
 
-		#preview-shadow {
-			background-color: #f9f9f9;
-			padding: 20px;
-			border-radius: 10px;
-			box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+		.footer {
+			margin-top: 50px;
 			text-align: center;
-		}
-
-		#preview h3 {
-			font-size: 1.8em;
-			color: #333;
-			margin-bottom: 10px;
-		}
-
-		#preview p {
-			font-size: 1.1em;
-			color: #666;
-		}
-
-		.corner {
-			width: 20px;
-			height: 20px;
-			background-color: #007bff;
-			position: absolute;
-		}
-
-		#corner-tl {
-			top: -10px;
-			left: -10px;
-		}
-
-		#corner-tr {
-			top: -10px;
-			right: -10px;
-		}
-
-		#corner-br {
-			bottom: -10px;
-			right: -10px;
-		}
-
-		#corner-bl {
-			bottom: -10px;
-			left: -10px;
+			color: #fff;
+			font-size: 1rem;
 		}
 	</style>
 </head>
 
 <body>
-	<section class="s1">
-		<div class="main-container">
+	<div class="main-container">
+		<div class="card-custom">
 			<div class="greeting-wrapper">
-				<h1>Hi, I'm Suprakron Maprachum</h1>
+				<h1>Welcome to My Portfolio</h1>
+				<p>Hi, I’m Suprakron Maprachum. Passionate about creating stunning designs and impactful projects.</p>
 			</div>
 			<div class="intro-wrapper">
 				<div class="left-column">
-					<img id="profile_pic" src="images/Suprakron-1.jpg" alt="Suprakron Maprachum">
-					<h5 class="theme-title">Personalize Theme</h5>
-					<div id="theme-options-wrapper">
-						<div data-mode="light" id="light-mode" class="theme-dot" style="background-color: #fff;" title="Light Mode"></div>
-						<div data-mode="blue" id="blue-mode" class="theme-dot" style="background-color: #007bff;" title="Blue Mode"></div>
-						<div data-mode="green" id="green-mode" class="theme-dot" style="background-color: #28a745;" title="Green Mode"></div>
-						<div data-mode="purple" id="purple-mode" class="theme-dot" style="background-color: #6f42c1;" title="Purple Mode"></div>
-					</div>
-				</div>
-				<div class="right-column">
-					<div id="preview-shadow">
-						<div id="preview">
-							<div id="corner-tl" class="corner"></div>
-							<div id="corner-tr" class="corner"></div>
-							<h3 class="preview-title">Personal Motto</h3>
-							<p class="preview-text">I will be a good developer and be able to</p>
-							<div id="corner-br" class="corner"></div>
-							<div id="corner-bl" class="corner"></div>
+					<div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+				
+						<div class="carousel-indicators">
+							<button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="0" class="active"
+								aria-current="true" aria-label="Slide 1"></button>
+							<button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="1"
+								aria-label="Slide 2"></button>
+							<button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="2"
+								aria-label="Slide 3"></button>
+							<button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="3"
+								aria-label="Slide 4"></button>
 						</div>
+
+				
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="./images/congratulations/con01.JPG" class="d-block w-100 profile-pic"
+									alt="Image 1">
+							</div>
+							<div class="carousel-item">
+								<img src="./images/congratulations/con02.JPG" class="d-block w-100 profile-pic"
+									alt="Image 2">
+							</div>
+							<div class="carousel-item">
+								<img src="./images/congratulations/con03.JPG" class="d-block w-100 profile-pic"
+									alt="Image 3">
+							</div>
+							<div class="carousel-item">
+								<img src="./images/congratulations/con04.JPG" class="d-block w-100 profile-pic"
+									alt="Image 4">
+							</div>
+						</div>
+
+				
+						<button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel"
+							data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#imageCarousel"
+							data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</button>
 					</div>
+				</div>
+
+				<div class="right-column">
+					<h5>About Me</h5>
+					<p>I am a web developer and designer with a knack for building engaging and modern websites. Let’s
+						collaborate to create something amazing!</p>
+					<h5>Skills</h5>
+					<p>HTML, CSS, JavaScript, React, Flutter, UI/UX Design</p>
 				</div>
 			</div>
-		</div>
-	</section>
+			<div class="theme-selector">
 
-	<section class="s2">
-		<div class="main-container">
-			<div class="about-wrapper">
-				<div class="about-me">
-					<h4>More About Me</h4>
-					<p>I build new projects just to tickle my brain and love teaching others how they're made.</p>
-					<hr>
-					<h4>My Programming Skills</h4>
-					<p>Fullstack developer with primary focus on Django <a target="_blank" href="cv-resume.pdf">Download
-							Resume</a></p>
-					<div id="skills">
-						<ul>
-							<li><i class="fas fa-code"></i> Python</li>
-							<li><i class="fas fa-code-branch"></i> Django</li>
-							<li><i class="fas fa-js"></i> JavaScript</li>
-							<li><i class="fab fa-github"></i> GitHub</li>
-						</ul>
-						<ul>
-							<li><i class="fab fa-php"></i> PHP</li>
-							<li><i class="fab fa-wordpress"></i> WordPress</li>
-							<li><i class="fab fa-figma"></i> Figma</li>
-							<li><i class="fas fa-database"></i> MySQL</li>
-						</ul>
-					</div>
-				</div>
-				<div class="social-links">
-					<img id="social_img" src="images/p1.jpg" alt="Suprakron Maprachum" width="500" height="600">
-					<h3>My Contact</h3>
-					<a target="_blank" href="https://www.facebook.com/suprakron.maprachum.3/"><i
-							class="fab fa-facebook"></i> Facebook: Tiw Suprakron</a>
-					<a target="_blank" href="https://line.me/ti/p/aLAq0lGUf8"><i class="fab fa-line"></i> Line:
-						Suprakron.map</a>
-					<a target="_blank" href="https://www.instagram.com/suprakronmap/?igshid=OTJhZDVkZWE%3D"><i
-							class="fab fa-instagram"></i> Instagram: Suprakron.map</a>
-				</div>
+		 
+			
+				<div class="theme-dot" style="background: #f9c74f;" id="light-mode"  ></div>
+				<div class="theme-dot" style="background: #90be6d;" id="blue-mode"></div>
+				<div class="theme-dot" style="background: #577590;"></div>
+				<div class="theme-dot" style="background: #f94144;"></div>
 			</div>
 		</div>
-	</section>
-
-	<section class="s1">
-		<div class="main-container">
-			<div class="post-wrapper">
-				<div class="post">
-					<img class="thumbnail" src="./images/app-quiz/m14.png" alt="My Work">
-					<div class="post-preview">
-						<h6 class="post-title">My Work</h6>
-						<p class="post-intro">My best project</p>
-						<a href="post.html">Read More</a>
-					</div>
-				</div>
-				<div class="post">
-					<img class="thumbnail" src="./images/p1.jpg" alt="Test form">
-					<div class="post-preview">
-						<h6 class="post-title">Test Form</h6>
-						<p class="post-intro">Tests that I have ever worked with</p>
-						<a href="./post-2.html">Read More</a>
-					</div>
-				</div>
-				<div class="post">
-					<img class="thumbnail" src="./images/certificate/c6.jpg" alt="My teaching">
-					<div class="post-preview">
-						<h6 class="post-title">My Teaching</h6>
-						<p class="post-intro">Teaching is the best thing I love to do</p>
-						<a href="./post-3.html">Read More</a>
-					</div>
-				</div>
-			</div>
+		<div class="footer">
+			<p>&copy; 2024 Suprakron Maprachum | All Rights Reserved</p>
 		</div>
-	</section>
-
-	<script>
-		const themeDots = document.querySelectorAll('.theme-dot');
-		themeDots.forEach(dot => {
-			dot.addEventListener('click', () => {
-				document.getElementById('theme-style').setAttribute('href', `${dot.getAttribute('data-mode')}.css`);
-			});
-		});
-	</script>
+	</div>
 </body>
 
 </html>
