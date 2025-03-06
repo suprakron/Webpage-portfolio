@@ -10,6 +10,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
+<!-- Link to Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+
+
 
     <style>
         body {
@@ -27,6 +35,7 @@
             margin: auto;
         }
 
+
         .main-container .detail-profile-content {
             background-color: #90be6d;
             display: flex;
@@ -35,61 +44,68 @@
             align-items: flex-start;
             flex-wrap: wrap;
             width: 100%;
-            padding: 20px;
+            padding: 30px;
+            /* เพิ่ม padding */
             box-sizing: border-box;
-            gap: 20px;
-            margin: 10px;
+            gap: 30px;
+            /* เพิ่มระยะห่าง */
+            margin: 20px auto;
+            /* จัดให้อยู่ตรงกลาง */
+            max-width: 1200px;
+            /* จำกัดขนาดให้สมดุล */
         }
 
         .main-container .detail-profile-content-left,
         .main-container .detail-profile-content-right {
             flex: 1;
-            min-width: 280px;
- 
+            min-width: 300px;
             max-width: 48%;
- 
-            padding: 20px;
+            padding: 25px;
+            /* ขยาย padding */
             color: white;
             font-size: 1.2em;
             font-weight: bold;
             box-sizing: border-box;
-      
         }
 
+        /* --------- ส่วน Expertise --------- */
         .main-container .detail-profile-content-left {
             background-color: #f94144;
             border-radius: 15px;
-            /* มุมมน */
         }
 
         .main-container .detail-profile-content-left .expertise-section {
             text-align: center;
-            padding: 50px 20px;
+            padding: 40px 20px;
             background-color: #f9f9f9;
             border-radius: 20px;
         }
 
         .main-container .detail-profile-content-left .expertise-section h2 {
             font-size: 2em;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             color: #333;
             font-weight: bold;
         }
 
         .main-container .detail-profile-content-left .expertise-cards {
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 20px;
         }
 
         .main-container .detail-profile-content-left .expertise-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 320px;
             background: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 25px;
+            /* ขยาย padding */
+            border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            width: 30%;
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .main-container .detail-profile-content-left .expertise-card i {
@@ -110,36 +126,194 @@
         }
 
         .main-container .detail-profile-content-left .expertise-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
+        /* --------- ส่วน Contact --------- */
         .detail-profile-content-right {
             background-color: #1e3a8a;
             color: white;
             text-align: center;
-            padding: 30px;
-            border-radius: 10px;
+            padding: 35px;
+            border-radius: 12px;
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            max-width: 480px;
+            margin: auto;
         }
 
         .detail-profile-content-right h3 {
             font-size: 1.8em;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-weight: bold;
         }
 
         .detail-profile-content-right p {
             font-size: 1.1em;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
+        /* ส่วน Contact List */
         .contact-list {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .contact-item i {
+            font-size: 1.5em;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+        }
+
+        .detail-detail-portfolio {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 คอลัมน์ */
+            gap: 20px;
+            padding: 20px;
+            background: #f4f4f4;
+            border-radius: 15px;
+        }
+
+        /* โปรเจกต์ที่เคยทำ */
+        .detail-detail-portfolio-one {
+            background: linear-gradient(135deg, #2b5876, #4e4376);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .detail-detail-portfolio-one h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .project-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .project-list li {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+
+        .project-list li:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .project-list h3 {
+            font-size: 1.4em;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .project-list p {
+            font-size: 1em;
+            color: #ddd;
+        }
+
+
+        /* Certificates */
+        .detail-detail-portfolio-two {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .certificate-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .certificate-gallery img {
+            width: 30%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .certificate-gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        /* รูปภาพส่วนตัว */
+        .detail-detail-portfolio-three {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .certificate-gallery {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            z-index: 2;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 16px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        .prev {
+            left: 10px;
+            transform: translateY(-50%);
+        }
+
+        .next {
+            right: 10px;
+            transform: translateY(-50%);
+        }
+
+        button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
 
         .contact-item {
             display: flex;
@@ -306,13 +480,6 @@
                     <p>HTML, CSS, JavaScript, React, Flutter, UI/UX Design</p>
                 </div>
             </div>
-
-            <!-- 
-            <div class="links">
-                <a href="post-2.html" class="link-button">ไปที่โพสต์ 2</a>
-                <a href="cv-resume.pdf" download class="download-button">ดาวน์โหลด CV</a>
-            </div> -->
-
             <div class="theme-selector">
                 <div class="theme-dot" style="background: #f9c74f;" onclick="changeTheme('light')"></div>
                 <div class="theme-dot" style="background: #90be6d;" onclick="changeTheme('blue')"></div>
@@ -362,22 +529,81 @@
                 </div>
             </div>
         </div>
+        <div class="detail-detail-portfolio">
+            <div class="detail-detail-portfolio-one">
+                <h2>Projects I Have Done</h2>
+                <ul class="project-list">
+                    <li>
+                        <h3>Web-based Chemistry Game</h3>
+                        <p>พัฒนาเกมเชิงโต้ตอบเกี่ยวกับสโตอิเมตรี เพื่อใช้เป็นสื่อการเรียนรู้</p>
+                    </li>
+                    <li>
+                        <h3>AI-Powered Intelligent Tutoring System</h3>
+                        <p>ระบบสอนพิเศษอัจฉริยะที่ใช้ AI ในการวิเคราะห์ระดับความรู้ของนักเรียน</p>
+                    </li>
+                    <li>
+                        <h3>Quiz Platform with Leaderboard</h3>
+                        <p>เว็บแอปพลิเคชันสำหรับทำแบบทดสอบ พร้อมระบบบันทึกคะแนนและกระดานคะแนน</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="detail-detail-portfolio-two">
+                <h2>My Certificates</h2>
+                <div class="certificate-gallery">
+                    <div id="certificateCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <!-- Indicators -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#certificateCarousel" data-bs-slide-to="0" class="active"
+                                aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#certificateCarousel" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#certificateCarousel" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        
+                        <!-- Carousel Items -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="./images/certificate/matlab/c1.png" class="d-block w-100" alt="Certificate 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./images/certificate/matlab/c2.png" class="d-block w-100" alt="Certificate 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./images/certificate/matlab/c3.png" class="d-block w-100" alt="Certificate 3">
+                            </div>
+                        </div>
+                    
+                        <!-- Prev and Next Controls -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#certificateCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#certificateCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="detail-detail-portfolio-three">
+                <h2>My Personal Gallery</h2>
+                <div class="personal-gallery">
+                    <img src="me1.jpg" alt="My Photo 1">
+                    <img src="me2.jpg" alt="My Photo 2">
+                    <img src="me3.jpg" alt="My Photo 3">
+                </div>
+            </div>
 
-
-
-
-
-
-
-
-
-
-
+        </div>
         <div class="footer">
             <p>&copy; 2024 Suprakron Maprachum | All Rights Reserved</p>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Link to Bootstrap JS (รวม Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function changeTheme(theme) {
             const body = document.body;
@@ -397,6 +623,18 @@
                 changeTheme(savedTheme);
             }
         });
+        let currentSlideIndex = 0;
+
+        function moveSlide(step) {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const totalSlides = slides.length;
+            slides[currentSlideIndex].style.display = 'none';
+            currentSlideIndex = (currentSlideIndex + step + totalSlides) % totalSlides;
+            slides[currentSlideIndex].style.display = 'block';
+        }
+
+        document.querySelectorAll('.carousel-slide')[0].style.display = 'block';
+
     </script>
 </body>
 
