@@ -204,52 +204,83 @@
 
         /* โปรเจกต์ที่เคยทำ */
         .detail-detail-portfolio-one {
-            background: linear-gradient(135deg, #2b5876, #4e4376);
+            position: relative;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            /* background: linear-gradient(135deg, #2b5876, #4e4376);
             color: white;
             padding: 30px;
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin: auto;
+            position: relative; */
         }
 
-        .detail-detail-portfolio-one h2 {
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-
-        .project-list {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-        }
-
-        .project-list li {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
+        /* สไตล์ปุ่ม */
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.4);
+            color: white;
+            border: none;
+            font-size: 30px;
+            padding: 8px 14px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
             transition: background 0.3s ease;
         }
 
+        .nav-left {
+            left: 0;
+        }
+
+        .nav-right {
+            right: 0;
+        }
+
+        .nav-btn:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        /* สไตล์ของ Slider */
+        .slider {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .project-list {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .project-list li {
+            width: 100%;
+            margin-right: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
         .project-list li:hover {
-            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px);
         }
 
-        .project-list h3 {
-            font-size: 1.4em;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .project-list p {
-            font-size: 1em;
-            color: #ddd;
-        }
-
+      
 
         /* Certificates */
         .detail-detail-portfolio-two {
+            position: relative;
             background: white;
             padding: 30px;
             border-radius: 10px;
@@ -257,43 +288,49 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
         }
 
-        .go-to-next {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #007BFF;
+
+        /* ซ่อนปุ่มตอนปกติ */
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.4);
             color: white;
-            text-align: center;
-            border-radius: 5px;
-            font-size: 16px;
+            border: none;
+            font-size: 30px;
+            padding: 8px 14px;
+            border-radius: 50%;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            z-index: 10;
+            transition: background 0.3s ease;
+            opacity: 0;
+            /* ซ่อนปุ่ม */
+            pointer-events: none;
+            /* ป้องกันคลิกไม่ได้ตอนซ่อน */
         }
 
-        .go-to-next:hover {
-            background-color: #0056b3;
+        /* เมื่อ hover ที่ .detail-detail-portfolio-two หรือ .slider: ปุ่มจะปรากฏ */
+        .detail-detail-portfolio-two:hover .nav-btn,
+        .slider:hover .nav-btn {
+            opacity: 1;
+            pointer-events: auto;
+            /* เปิดให้คลิกได้เมื่อแสดง */
         }
 
-
-        .go-to-next span {
-            display: block;
-            font-weight: bold;
+        /* เมื่อ hover ที่ปุ่ม */
+        .nav-btn:hover {
+            background: rgba(0, 0, 0, 0.7);
         }
 
-        .certificate-gallery {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
+        /* กำหนดตำแหน่งของปุ่มซ้ายและขวา */
+        .nav-left {
+            left: 0;
         }
 
-        .certificate-gallery img {
-            width: 30%;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
+        .nav-right {
+            right: 0;
         }
 
-        .certificate-gallery img:hover {
-            transform: scale(1.1);
-        }
 
 
         /* Basic Styling */
@@ -393,11 +430,65 @@
 
         /* รูปภาพส่วนตัว */
         .detail-detail-portfolio-three {
+            position: relative;
             background: white;
             padding: 30px;
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .slider {
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slides img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* ปุ่มเลื่อนซ้าย/ขวา */
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.4);
+            color: white;
+            border: none;
+            font-size: 30px;
+            padding: 8px 14px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            opacity: 0;
+            transition: background 0.3s ease;
+            pointer-events: none;
+        }
+
+        .detail-detail-portfolio-three:hover .nav-btn,
+        .slider:hover .nav-btn {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .nav-btn:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .nav-left {
+            left: 0;
+        }
+
+        .nav-right {
+            right: 0;
         }
 
         .certificate-gallery {
@@ -666,22 +757,50 @@
             <div class="detail-detail-portfolio">
                 <div class="detail-detail-portfolio-one">
                     <h2>Projects I Have Done</h2>
-                    <ul class="project-list">
-                        <li>
-                            <h3>Web-based Chemistry Game</h3>
-                            <p>พัฒนาเกมเชิงโต้ตอบเกี่ยวกับสโตอิเมตรี เพื่อใช้เป็นสื่อการเรียนรู้</p>
-                        </li>
-                        <li>
-                            <h3>AI-Powered Intelligent Tutoring System</h3>
-                            <p>ระบบสอนพิเศษอัจฉริยะที่ใช้ AI ในการวิเคราะห์ระดับความรู้ของนักเรียน</p>
-                        </li>
-                        <li>
-                            <h3>Quiz Platform with Leaderboard</h3>
-                            <p>เว็บแอปพลิเคชันสำหรับทำแบบทดสอบ พร้อมระบบบันทึกคะแนนและกระดานคะแนน</p>
-                        </li>
-                    </ul>
+                    <!-- ปุ่มซ้าย -->
+                    <button class="nav-btn nav-left" onclick="prevSlide()">❮</button>
+
+                    <div class="slider">
+                        <ul class="project-list" id="project-list">
+                            <li>
+                                <h3>Web-based Chemistry Game</h3>
+                                <p>พัฒนาเกมเชิงโต้ตอบเกี่ยวกับสโตอิเมตรี เพื่อใช้เป็นสื่อการเรียนรู้</p>
+                            </li>
+                            <li>
+                                <h3>AI-Powered Intelligent Tutoring System</h3>
+                                <p>ระบบสอนพิเศษอัจฉริยะที่ใช้ AI ในการวิเคราะห์ระดับความรู้ของนักเรียน</p>
+                            </li>
+                            <li>
+                                <h3>Quiz Platform with Leaderboard</h3>
+                                <p>เว็บแอปพลิเคชันสำหรับทำแบบทดสอบ พร้อมระบบบันทึกคะแนนและกระดานคะแนน</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- ปุ่มขวา -->
+                    <button class="nav-btn nav-right" onclick="nextSlide()">❯</button>
                 </div>
+
+
                 <div class="detail-detail-portfolio-two">
+                    <h2>My Certificates</h2>
+                    <!-- ปุ่มซ้าย -->
+                    <button class="nav-btn nav-left" onclick="prevSlide()">❮</button>
+
+                    <div class="slider">
+                        <div class="slides" id="slide-container">
+                            <img src="./images/certificate/c1.jpg" alt="Certificate 1">
+                            <img src="./images/certificate/c2.jpg" alt="Certificate 2">
+                            <img src="./images/certificate/c3.jpg" alt="Certificate 3">
+                        </div>
+                    </div>
+
+                    <!-- ปุ่มขวา -->
+                    <button class="nav-btn nav-right" onclick="nextSlide()">❯</button>
+                </div>
+
+
+                <!-- <div class="detail-detail-portfolio-two">
                     <h2>My Certificates</h2>
                     <div class="certificate-gallery">
                         <div class="cer-general">
@@ -701,23 +820,24 @@
                     <div class="go-to-next">
                         <span>Go to Next Page</span>
                     </div>
-                </div>
+                </div> -->
 
 
                 <div class="detail-detail-portfolio-three">
                     <h2>My Personal Gallery</h2>
-                    <div class="gallery">
-                        <div class="congrate">
-                            <img src="./images/congratulations/c1.JPG" alt="Congratulation Image 1">
-                            <img src="./images/congratulations/c6.JPG" alt="Congratulation Image 2">
-                            <img src="./images/congratulations/c8.JPG" alt="Congratulation Image 3">
-                        </div>
-                        <div class="ordian">
-                            <img src="./images/profile/p1.jpg" alt="Profile Image 1">
-                            <img src="./images/profile/p2.jpg" alt="Profile Image 2">
-                            <img src="./images/profile/p3.jpg" alt="Profile Image 3">
+                    <!-- ปุ่มซ้าย -->
+                    <button class="nav-btn nav-left" onclick="prevSlide()">❮</button>
+
+                    <div class="slider">
+                        <div class="slides" id="slide-container">
+                            <img src="./images/congratulations/c1.JPG" alt="Slide 1">
+                            <img src="./images/congratulations/c6.JPG" alt="Slide 2">
+                            <img src="./images/congratulations/c8.JPG" alt="Slide 3">
                         </div>
                     </div>
+
+                    <!-- ปุ่มขวา -->
+                    <button class="nav-btn nav-right" onclick="nextSlide()">❯</button>
                 </div>
 
 
@@ -729,6 +849,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Link to Bootstrap JS (รวม Popper) -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="/js/slider-bar.js"></script>
         <script>
             function changeTheme(theme) {
                 const body = document.body;
