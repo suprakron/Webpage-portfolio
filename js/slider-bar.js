@@ -49,3 +49,15 @@ function updateSliderPosition() {
     const slideWidth = projectList.children[0].offsetWidth;
     projectList.style.transform = `translateX(-${currentIndex * (slideWidth + 20)}px)`;
 }
+
+
+
+function prevSlide() {
+    const slider = document.querySelector('.slider');
+    slider.scrollBy({ left: -320, behavior: 'smooth' });
+}
+
+function nextSlide() {
+    const slider = document.querySelector('.slider');
+    slider.scrollBy({ left: 320, behavior: 'smooth' });
+}

@@ -1,21 +1,13 @@
-:root{
+/* :root{
 	--mainColor:#eaeaea;
 	--secondaryColor:#fff;
-
 	--borderColor:#c1c1c1;
-
 	--mainText:black;
 	--secondaryText:#4b5156;
-
 	--themeDotBorder:#24292e;
-
 	--previewBg:rgb(251, 249, 243, 0.8);
 	--previewShadow:#f0ead6;
-
-
 	--buttonColor:black;
-
-
 }
 
 
@@ -88,25 +80,22 @@ h6 { font-size: 16px;}
 }
 
 .intro-wrapper{
-	background-color: var(--secondaryColor);
+ background-color: var(--secondaryColor); 
 	border:1px solid var(--borderColor);
 	border-radius:5px 5px 0 0;
-
-
 	-webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
 	-moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
 	box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
-
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-areas: 
 		'nav-wrapper nav-wrapper'
 		'left-column right-column'
 	;
-}
+} */
 
 
-.nav-wrapper{
+/* .nav-wrapper{
 	border-radius:5px 5px 0 0;
 	grid-area:nav-wrapper;
 	border-bottom: 1px solid var(--borderColor);
@@ -172,7 +161,6 @@ h6 { font-size: 16px;}
 #profile_pic{
 	display: block;
 	margin:0 auto;
-
 	height: 200px;
 	width: 200px;
 	object-fit: cover;
@@ -190,17 +178,14 @@ h6 { font-size: 16px;}
 	width: 30px;
 	background-color: black;
 	border-radius: 50%;
-
 	margin: 5px;
 	border:2px solid var(--themeDotBorder);
-
 	-webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
 	-moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
 	box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
-
 	cursor: pointer;
-}
-
+} */
+/* 
 
 .theme-dot:hover{
 	border-width: 5px;
@@ -399,10 +384,10 @@ h6 { font-size: 16px;}
 	background-color: var(--buttonColor);
 	border:none;
 }
-
+ */
 
  
-
+/* 
 @media screen and (max-width: 1200px){
 	.main-container{
 		width: 95%;
@@ -437,7 +422,7 @@ h6 { font-size: 16px;}
 		width: 280px;
 	}
 
-}
+} */
 
 
 
