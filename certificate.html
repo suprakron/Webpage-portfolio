@@ -1,172 +1,202 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>My Certificates</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    <style>
-      body {
-        background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-        font-family: 'Arial', sans-serif;
-        color: #333;
-      }
-      .certificate-container {
-        max-width: 1100px;
-        margin: 40px auto;
-        padding: 30px;
-        background-color: #fff;
-        border-radius: 15px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        text-align: center;
-      }
-      .certificate-title {
-        font-size: 36px;
-        font-weight: bold;
-        color: #e74c3c;
-        margin-bottom: 20px;
-      }
-      .certificate-gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 20px;
-        padding: 20px 0;
-      }
-      .certificate-item {
-        background-color: #fff;
-        padding: 15px;
-        border-radius: 15px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        text-align: center;
-      }
-      .certificate-image {
-        width: 100%;
-        height: auto;
-        border-radius: 15px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-      .certificate-image:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      }
-      .certificate-description {
-        font-size: 16px;
-        color: #7f8c8d;
-        margin-top: 10px;
-        font-style: italic;
-      }
-      .footer {
-        margin-top: 40px;
-        text-align: center;
-        font-size: 14px;
-        color: #95a5a6;
-      }
+<head>
+  <title>My Certificates</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-      /* ปุ่มกลับหน้าแรกแบบลอย */
-      .back-to-home {
-        position: fixed;
-        bottom: 30px;
-        left: 30px; 
-        background-color: #e74c3c;
-        color: white;
-        padding: 12px 20px;
-        border-radius: 50px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        text-decoration: none;
-        font-weight: bold;
-        transition: all 0.3s ease;
-        z-index: 999;
-      }
-      .back-to-home:hover {
-        background-color: #c0392b;
-        transform: scale(1.05);
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="certificate-container">
-        <div class="text-left mb-3">
-            <a href="index.html" class="btn btn-danger shadow" style="border-radius: 30px; font-weight: bold;">
-              ⬅️  
-            </a>
-          </div>
-        <h1 class="certificate-title">My Certificates</h1>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-        
-        
-        <div class="certificate-gallery">
-          <!-- ตัวอย่างรูปภาพใบรับรอง -->
-          <div class="certificate-item" data-toggle="modal" data-target="#imageModal"
+  <style>
+    body {
+      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+      font-family: 'Arial', sans-serif;
+      color: #333;
+    }
+
+    .certificate-container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .certificate-title {
+      font-size: 36px;
+      font-weight: bold;
+      color: #e74c3c;
+      margin-bottom: 20px;
+    }
+
+    .certificate-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px 0;
+    }
+
+    .certificate-item {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .certificate-image {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .certificate-image:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .certificate-description {
+      font-size: 16px;
+      color: #7f8c8d;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 14px;
+      color: #95a5a6;
+    }
+
+    /* ปุ่มกลับหน้าแรกแบบลอย */
+    .back-to-home {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      background-color: #e74c3c;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 50px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+
+    .back-to-home:hover {
+      background-color: #c0392b;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="certificate-container">
+      <div class="text-left mb-3">
+        <a href="index.html" class="btn btn-danger shadow" style="border-radius: 30px; font-weight: bold;">
+          ⬅️
+        </a>
+      </div>
+      <h1 class="certificate-title">My Certificates</h1>
+
+
+
+      <div class="certificate-gallery">
+        <!-- ตัวอย่างรูปภาพใบรับรอง -->
+        <div class="certificate-item" data-toggle="modal" data-target="#imageModal"
           data-image="./images/certificate/c1.jpg" data-caption="รูปที่ 2">
-            <img src="./images/certificate/c1.jpg" alt="Certificate 1" class="certificate-image">
-            <p class="certificate-description">Certificate of Achievement 1</p>
-          </div>
-          <div class="certificate-item" data-toggle="modal" data-target="#imageModal"
-          data-image="./images/certificate/c1.jpg" data-caption="รูปที่ 2">
-            <img src="./images/certificate/c1.jpg" alt="Certificate 2" class="certificate-image">
-            <p class="certificate-description">Certificate of Achievement 2</p>
-          </div>
-          <div class="certificate-item" data-toggle="modal" data-target="#imageModal"
+          <img src="./images/certificate/c1.jpg" alt="Certificate 1" class="certificate-image">
+          <p class="certificate-description">Certificate of Achievement 1</p>
+        </div>
+        <div class="certificate-item" data-toggle="modal" data-target="#imageModal"
           data-image="./images/certificate/c2.jpg" data-caption="รูปที่ 2">
-            <img src="./images/certificate/c2.jpg" alt="Certificate 3" class="certificate-image">
-            <p class="certificate-description">Certificate of Achievement 3</p>
-          </div>
-          <div class="certificate-item" data-toggle="modal" data-target="#imageModal"
-          data-image="./images/certificate/c1.jpg" data-caption="รูปที่ 2">
-            <img src="./images/certificate/c1.jpg" alt="Certificate 4" class="certificate-image">
-            <p class="certificate-description">Certificate of Achievement 4</p>
-          </div>
-          <!-- เพิ่มรูปภาพตามที่คุณต้องการ -->
+          <img src="./images/certificate/c2.jpg" alt="Certificate 2" class="certificate-image">
+          <p class="certificate-description">Certificate of Achievement 2</p>
         </div>
-
-        <p class="certificate-description">These are my certificates from various courses and achievements. I'm proud of each one!</p>
+        <div class="certificate-item" data-toggle="modal" data-target="#imageModal"
+          data-image="./images/certificate/c3.jpg" data-caption="รูปที่ 2">
+          <img src="./images/certificate/c3.jpg" alt="Certificate 3" class="certificate-image">
+          <p class="certificate-description">Certificate of Achievement 3</p>
+        </div>
+        <div class="certificate-item" data-toggle="modal" data-target="#imageModal"
+          data-image="./images/certificate/c4.jpg" data-caption="รูปที่ 2">
+          <img src="./images/certificate/c4.jpg" alt="Certificate 4" class="certificate-image">
+          <p class="certificate-description">Certificate of Achievement 4</p>
+        </div>
+        <div class="certificate-item" data-toggle="modal" data-target="#imageModal"
+          data-image="./images/certificate/matlab/certificate_01.jpg" data-caption="รูปที่ 2">
+          <img src="./images/certificate/matlab/certificate_01.jpg" alt="Certificate 4" class="certificate-image">
+          <p class="certificate-description">Certificate of Achievement 4</p>
+        </div>
+        <div class="certificate-item" data-toggle="modal" data-target="#imageModal"
+          data-image="./images/certificate/matlab/certificate_02.png" data-caption="รูปที่ 2">
+          <img src="./images/certificate/matlab/certificate_02.png" alt="Certificate 4" class="certificate-image">
+          <p class="certificate-description">Certificate of Achievement 4</p>
+        </div>
+        <div class="certificate-item" data-toggle="modal" data-target="#imageModal"
+          data-image="./images/certificate/matlab/certificate_03.png" data-caption="รูปที่ 2">
+          <img src="./images/certificate/matlab/certificate_03.png" alt="Certificate 4" class="certificate-image">
+          <p class="certificate-description">Certificate of Achievement 4</p>
+        </div>
+        <!-- เพิ่มรูปภาพตามที่คุณต้องการ -->
       </div>
 
-      <div class="footer">
-        <p>&copy; 2025 My Certificates. All Rights Reserved.</p>
+      <p class="certificate-description">These are my certificates from various courses and achievements. I'm proud of
+        each one!</p>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2025 My Certificates. All Rights Reserved.</p>
+    </div>
+  </div>
+
+
+
+  <!-- 🔳 Bootstrap Modal -->
+  <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content bg-white rounded">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="imageModalLabel"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="ปิด">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center">
+          <img id="modalImage" src="" alt="รูปใหญ่" class="img-fluid rounded shadow">
+        </div>
       </div>
     </div>
- 
+  </div>
 
 
-    <!-- 🔳 Bootstrap Modal -->
-    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content bg-white rounded">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title" id="imageModalLabel"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="ปิด">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body text-center">
-                    <img id="modalImage" src="" alt="รูปใหญ่" class="img-fluid rounded shadow">
-                </div>
-            </div>
-        </div>
-    </div>
+  <!-- JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <script>
+    $('#imageModal').on('show.bs.modal', function (event) {
+      const trigger = $(event.relatedTarget);
+      const image = trigger.data('image');
+      const caption = trigger.data('caption');
 
-
-    <!-- JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
-    <script>
-        $('#imageModal').on('show.bs.modal', function (event) {
-            const trigger = $(event.relatedTarget);
-            const image = trigger.data('image');
-            const caption = trigger.data('caption');
-
-            const modal = $(this);
-            modal.find('#modalImage').attr('src', image);
-            modal.find('#imageModalLabel').text(caption);
-        });
-    </script>
+      const modal = $(this);
+      modal.find('#modalImage').attr('src', image);
+      modal.find('#imageModalLabel').text(caption);
+    });
+  </script>
 </body>
+
 </html>
