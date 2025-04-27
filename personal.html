@@ -11,6 +11,42 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <style>
+        .arrow-back {
+            display: flex;
+            gap: 8px;
+            margin: 10px;
+        }
+
+        .arrow-back a,
+        .arrow-back button {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 0;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* สีของแต่ละปุ่ม */
+        .btn-red {
+            background-color: #FF5F57;
+        }
+
+        .btn-yellow {
+            background-color: #FFBD2E;
+        }
+
+        .btn-green {
+            background-color: #28C840;
+        }
+
         body {
             background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
             font-family: 'Arial', sans-serif;
@@ -43,10 +79,15 @@
 
         .gallery-item {
             background-color: #fff;
-            padding: 15px;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            padding: 10px;
         }
 
         .gallery-item:hover {
@@ -56,14 +97,20 @@
 
         .gallery-image {
             width: 100%;
-            height: auto;
+            height: 200px;
+            /* ✅ ความสูงกำหนดตายตัวเท่ากันทุกภาพ */
+            object-fit: contain;
+            object-position: center;
             border-radius: 10px;
+            background-color: #f4f4f4;
+            /* ✅ ใส่พื้นหลัง เผื่อรูปไม่เต็ม */
         }
 
         .image-caption {
             margin-top: 10px;
             font-style: italic;
             color: #7f8c8d;
+            text-align: center;
         }
 
         .back-button {
@@ -87,11 +134,14 @@
 
 <body>
 
-    <div class="back-button">
-        <a href="index.html" class="btn btn-danger shadow">⬅️  </a>
-    </div>
+
 
     <div class="gallery-container">
+        <div class="arrow-back">
+            <a href="index.html" class="btn-red">←</a>
+            <button onclick="minimizeWindow()" class="btn-yellow">–</button>
+            <button onclick="maximizeWindow()" class="btn-green"></button>
+        </div>
         <h1 class="gallery-title">My Personal Gallery</h1>
 
         <!-- ใต้ .gallery-grid -->
@@ -132,11 +182,11 @@
                 <img src="./images/congratulations/con06.JPG" class="gallery-image" alt="รูปที่ 2">
                 <p class="image-caption">รูปที่ 7</p>
             </div>
-            <div class="gallery-item" data-toggle="modal" data-target="#imageModal"
-            data-image="./images/profile/p3.jpg" data-caption="รูปที่ 2">
-            <img src="./images/profile/p3.jpg" class="gallery-image" alt="รูปที่ 2">
-            <p class="image-caption">รูปที่ 8</p>
-        </div>
+            <div class="gallery-item" data-toggle="modal" data-target="#imageModal" data-image="./images/profile/p3.jpg"
+                data-caption="รูปที่ 2">
+                <img src="./images/profile/p3.jpg" class="gallery-image" alt="รูปที่ 2">
+                <p class="image-caption">รูปที่ 8</p>
+            </div>
         </div>
     </div>
 
@@ -166,6 +216,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <script>
+
+        function minimizeWindow() {
+            document.body.style.transform = "scale(0.5)";
+            document.body.style.transformOrigin = "top left";
+        }
+
+        function maximizeWindow() {
+            document.body.style.transform = "scale(1)";
+            document.body.style.transformOrigin = "top left";
+        }
         $('#imageModal').on('show.bs.modal', function (event) {
             const trigger = $(event.relatedTarget);
             const image = trigger.data('image');

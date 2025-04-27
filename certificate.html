@@ -11,6 +11,42 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <style>
+    .arrow-back {
+      display: flex;
+      gap: 8px;
+      margin: 10px;
+    }
+
+    .arrow-back a,
+    .arrow-back button {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: white;
+      font-size: 12px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      padding: 0;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* สีของแต่ละปุ่ม */
+    .btn-red {
+      background-color: #FF5F57;
+    }
+
+    .btn-yellow {
+      background-color: #FFBD2E;
+    }
+
+    .btn-green {
+      background-color: #28C840;
+    }
+
     body {
       background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
       font-family: 'Arial', sans-serif;
@@ -102,10 +138,10 @@
 <body>
   <div class="container">
     <div class="certificate-container">
-      <div class="text-left mb-3">
-        <a href="index.html" class="btn btn-danger shadow" style="border-radius: 30px; font-weight: bold;">
-          ⬅️
-        </a>
+      <div class="arrow-back">
+        <a href="index.html" class="btn-red">←</a>
+        <button onclick="minimizeWindow()" class="btn-yellow">–</button>
+        <button onclick="maximizeWindow()" class="btn-green"></button>
       </div>
       <h1 class="certificate-title">My Certificates</h1>
 
@@ -187,6 +223,15 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
   <script>
+    function minimizeWindow() {
+      document.body.style.transform = "scale(0.5)";
+      document.body.style.transformOrigin = "top left";
+    }
+
+    function maximizeWindow() {
+      document.body.style.transform = "scale(1)";
+      document.body.style.transformOrigin = "top left";
+    }
     $('#imageModal').on('show.bs.modal', function (event) {
       const trigger = $(event.relatedTarget);
       const image = trigger.data('image');

@@ -1,81 +1,255 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Project Showcase</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <style>
-      body {
-        background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-      }
-      .project-container {
-        padding: 50px 15px;
-      }
-      .project-item {
-        background: #fff;
-        border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        margin-bottom: 30px;
-        padding: 20px;
-      }
-      .project-img {
-        max-width: 100%;
-        border-radius: 10px;
-      }
-      .project-title {
-        font-weight: bold;
-        font-size: 1.4rem;
-      }
-      .project-desc {
-        color: #555;
-      }
-    </style>
-  </head>
-  <body>
 
-    <div class="container project-container">
-        <a href="index.html" class="btn btn-danger ml-3 mt-3 shadow" style="border-radius: 30px; font-weight: bold;">
-            ⬅️ 
-          </a>
-      <h1 class="text-center mb-5">📌 ผลงานโปรเจกต์ของฉัน</h1>
+<head>
+  <title>Project Showcase</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-      <!-- Project Item -->
-      <div class="row project-item">
-        <div class="col-md-4">
-          <img src="img/project1.jpg" alt="Project 1" class="project-img">
-          <p class="project-title mt-3">โปรเจกต์ระบบเกมควิซ</p>
-        </div>
-        <div class="col-md-8 d-flex align-items-center">
-          <p class="project-desc">
-            โปรเจกต์เว็บแอปพลิเคชันเกมการศึกษาเกี่ยวกับวิชาเคมี โดยนักเรียนสามารถตอบคำถามเพื่อสะสมแต้ม 
-            และปลดล็อคด่านต่อไปได้ สร้างด้วย HTML, CSS, JavaScript, SQLite และ Node.js
-          </p>
-        </div>
-      </div>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    /* Arrow Back */
+    .arrow-back {
+      display: flex;
+      gap: 8px;
+      margin: 10px;
+    }
 
-      <!-- Project Item -->
-      <div class="row project-item">
-        <div class="col-md-4">
-          <img src="img/project2.jpg" alt="Project 2" class="project-img">
-          <p class="project-title mt-3">แอปผู้ช่วยเรียนรู้ด้วย AI</p>
-        </div>
-        <div class="col-md-8 d-flex align-items-center">
-          <p class="project-desc">
-            แอปผู้ช่วยสอนอัจฉริยะที่สามารถประเมินผลการเรียนรู้และแนะนำเนื้อหาที่เหมาะสมให้กับนักเรียนแต่ละคน 
-            มีระบบแชทบอทตอบคำถามแบบเรียลไทม์ และมีแดชบอร์ดสำหรับครูผู้สอน
-          </p>
-        </div>
-      </div>
+    .arrow-back a,
+    .arrow-back button {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      padding: 0;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      /* เพิ่มเอฟเฟกต์การเปลี่ยนแปลง */
+    }
 
-      <!-- เพิ่มโปรเจกต์อื่น ๆ ได้ที่นี่ -->
+    /* สีของแต่ละปุ่ม */
+    .btn-red {
+      background-color: #FF5F57;
+    }
+
+    .btn-yellow {
+      background-color: #FFBD2E;
+    }
+
+    .btn-green {
+      background-color: #28C840;
+    }
+
+    .arrow-back a:hover,
+    .arrow-back button:hover {
+      transform: scale(1.2);
+      /* ขยายปุ่มเมื่อ hover */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      /* ขยายเงา */
+    }
+
+    /* Body */
+    body {
+      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Project Container */
+    .project-container {
+      padding: 50px 15px;
+    }
+
+    /* Project Item */
+    .project-item {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+      padding: 20px;
+      transition: transform 0.3s ease;
+      /* เพิ่มการเคลื่อนไหว */
+    }
+
+    .project-item:hover {
+      transform: translateY(-10px);
+      /* ยกขึ้นเมื่อ hover */
+    }
+
+    .project-img {
+      width: 60%;
+      height: 60%;
+      object-fit: contain;
+      align-items: center;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+      /* เพิ่มการขยายขนาดรูปภาพ */
+    }
+
+    .project-img:hover {
+      transform: scale(1.05);
+      /* ขยายรูปเมื่อ hover */
+    }
+
+    /* Project Title */
+    .project-title {
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+
+    /* Project Description */
+    .project-desc {
+      color: #555;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    /* สไตล์สำหรับการจัดตำแหน่งกลาง */
+    .text-center {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container project-container">
+    <div class="arrow-back mb-4">
+      <a href="index.html" class="btn-red">←</a>
+      <button onclick="minimizeWindow()" class="btn-yellow">–</button>
+      <button onclick="maximizeWindow()" class="btn-green">+</button>
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  </body>
+    <h1 class="text-center mb-5">📌 ผลงานโปรเจกต์ของฉัน</h1>
+
+    <!-- Project Item 1 -->
+    <div class="row project-item mb-5 p-3 shadow rounded bg-light">
+      <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
+        <img src="./images/app-quiz/m13.png" alt="Web Quiz Project" class="project-img img-fluid rounded">
+        <p class="project-title text-center mt-3 fw-bold">โปรเจกต์ระบบเกมควิซ</p>
+      </div>
+
+      <div class="col-md-8 d-flex flex-column justify-content-center">
+        <h2 class="fw-bold">Web Quiz</h2>
+        <h3 class="text-muted">ระบบเกมควิซเพื่อการเรียนรู้</h3>
+        <p class="project-desc mt-3">
+          This project aims to develop a quiz system based on Bloom's learning theory for use during classroom
+          instruction. Teachers can manage subjects, create, delete, and edit quizzes, including multiple-choice
+          questions (2–4 options) and fill-in-the-blank questions with images. Students can access and complete quizzes
+          to facilitate real-time learning assessment.
+        </p>
+      </div>
+    </div>
+
+    <!-- Project Item 2 -->
+    <div class="row project-item mb-5 p-3 shadow rounded bg-light">
+      <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
+
+        <p class="project-title text-center mt-3 fw-bold">ระบบจัดการข้อมูลวัสดุวิศวกรรม</p>
+      </div>
+   
+      <div class="col-md-8 d-flex flex-column justify-content-center">
+        <h2 class="fw-bold">Bangkok Expressway and Metro Public Company Limited</h2>
+        <h3 class="text-muted">MPR System</h3>
+        <p class="project-desc mt-3">
+          Developed using K2 software and Stored Procedures, this system records engineering material procurement
+          details
+          for the maintenance and repair of electric trains.
+        </p>
+      </div>
+    </div>
+
+    <!-- Project Item 3 -->
+    <div class="row project-item mb-5 p-3 shadow rounded bg-light">
+      <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
+    
+        <p class="project-title text-center mt-3 fw-bold">ระบบบริหารคลังสินค้า</p>
+      </div>
+
+ 
+      <div class="col-md-8 d-flex flex-column justify-content-center">
+        <h2 class="fw-bold">Bangkok Expressway and Metro Public Company Limited</h2>
+        <h3 class="text-muted">Inventory System</h3>
+        <p class="project-desc mt-3">
+          Developed using ASP.NET Web Apps and Stored Procedures, this system improves inventory control and supports
+          seamless
+          product distribution across departments.
+        </p>
+      </div>
+    </div>
+ 
+
+
+    <!-- Project Item 4 -->
+    <div class="row project-item mb-5 p-3 shadow rounded bg-light">
+
+      <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
+        <img src="./images/project/img-project05.png" alt="Web Quiz Project" class="project-img img-fluid rounded">
+        <p class="project-title text-center mt-3 fw-bold">ระบบขายผลิตภัณฑ์ยาออนไลน์</p>
+      </div>
+
+
+    
+      <div class="col-md-8 d-flex flex-column justify-content-center">
+        <h2 class="fw-bold">Health Up Company Limited</h2>
+        <h3 class="text-muted">Hug Online</h3>
+        <p class="project-desc mt-3">
+          Upgraded using Flutter for the front-end, .NET for the back-end, and SQL Server for data storage, this system
+          facilitates
+          pharmaceutical product sales through an efficient online platform.
+        </p>
+      </div>
+    </div>
+
+    <!-- Project Item 5 -->
+    <div class="row project-item mb-5 p-3 shadow rounded bg-light">
+
+
+      <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
+        <img src="./images/project/img-project04.png" alt="Web Quiz Project" class="project-img img-fluid rounded">
+        <p class="project-title text-center mt-3 fw-bold">ระบบพัฒนา UI สำหรับร้านค้าออนไลน์</p>
+      </div>
+ 
+      <div class="col-md-8 d-flex flex-column justify-content-center">
+        <h2 class="fw-bold">Health Up Company Limited</h2>
+        <h3 class="text-muted">UI DN Online</h3>
+        <p class="project-desc mt-3">
+          The frontend was developed using HTML, SCSS, and TypeScript, with Angular as the framework to create a modern,
+          responsive online shopping interface.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+  <script>
+    function minimizeWindow() {
+      document.body.style.transform = "scale(0.5)";
+      document.body.style.transformOrigin = "top left";
+    }
+
+    function maximizeWindow() {
+      document.body.style.transform = "scale(1)";
+      document.body.style.transformOrigin = "top left";
+    }
+  </script>
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
 </html>
