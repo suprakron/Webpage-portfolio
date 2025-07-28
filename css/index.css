@@ -26,86 +26,88 @@ body {
     margin-bottom: 15px;
 
 }
+
 .detail-content-education {
-    grid-row: 1 / span 2;  
-    grid-column: 1 / 2;   
+    grid-row: 1 / span 2;
+    grid-column: 1 / 2;
     background: white;
     padding: 30px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-  }
- 
+}
+
 .detail-content-skill {
-    grid-row: 1 / 2;      
-    grid-column: 2 / 3;   
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
     background: white;
     padding: 30px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-  }
-  .detail-content-education {
+}
+
+.detail-content-education {
     background: #ffffff;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     width: 100%;
     box-sizing: border-box;
-  }
-  
-  .section-title {
+}
+
+.section-title {
     font-size: 28px;
     color: #222;
     margin-bottom: 30px;
     text-align: center;
     font-weight: 600;
     margin-top: 30px;
-  }
-  
-  .education-timeline {
+}
+
+.education-timeline {
     position: relative;
     padding-left: 40px;
-  }
- 
-  .education-entry {
+}
+
+.education-entry {
     position: relative;
     margin-bottom: 100px;
-  }
-  
-  .badge-studying {
+}
+
+.badge-studying {
     background-color: #3498db;
     color: white;
     font-size: 12px;
     padding: 3px 8px;
     border-radius: 12px;
     margin-left: 10px;
-  }
-  
- 
-  
-  .edu-content {
+}
+
+
+
+.edu-content {
     background: #f4f8fb;
     padding: 18px 20px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
-  }
-  
-  .edu-content h3 {
+}
+
+.edu-content h3 {
     margin-top: 0;
     font-size: 20px;
     color: #2c3e50;
     margin-bottom: 10px;
-  }
-  
-  .edu-content p {
+}
+
+.edu-content p {
     font-size: 15px;
     color: #444;
     margin: 4px 0;
-  }
-  
-  
+}
+
+
 .skill-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -141,16 +143,147 @@ body {
     background-color: #e0e0e0;
 }
 
+.skill-item.html i {
+    color: #e34c26;
+}
+
+.skill-item.css i {
+    color: #2965f1;
+}
+
+.skill-item.js i {
+    color: #f7df1e;
+}
+
+.skill-item.python i {
+    color: #3572A5;
+}
+
+.skill-item.django i {
+    color: #092e20;
+}
+
+.skill-item.node i {
+    color: #68a063;
+}
+
+.skill-item.sql i {
+    color: #f28500;
+}
+
+.skill-item.git i {
+    color: #f34f29;
+}
+
+.skill-item.ts i {
+    color: #007acc;
+}
+
+.skill-item.angular i {
+    color: #dd1b16;
+}
+
+.skill-item.flutter i {
+    color: #02569B;
+}
+
+.skill-item.figma i {
+    color: #a259ff;
+}
+
+.skill-item.matlab i {
+    color: #0076a8;
+}
+
+.skill-item.ai i {
+    color: #8e44ad;
+}
+
+.skill-item.responsive i {
+    color: #16a085;
+}
+
+.skill-item.responsive:hover {
+    background: linear-gradient(to right, #d0f0ec, #e0f7fa);
+    color: #333;
+}
+.work-experience {
+  margin-top: 50px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+}
+
+.work-experience h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #2c3e50;
+  border-left: 6px solid #3498db;
+  padding-left: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.job {
+  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+  box-shadow: 0 6px 15px rgba(52, 152, 219, 0.15);
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.job:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(52, 152, 219, 0.3);
+  background: linear-gradient(135deg, #d1e7ff, #a3cef1);
+}
+
+.job h3 {
+  color: #2980b9;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.job p strong {
+  color: #34495e;
+}
+
+@media (max-width: 480px) {
+  .work-experience {
+    padding: 0 10px;
+  }
+
+  .work-experience h2 {
+    font-size: 1.5rem;
+  }
+
+  .job {
+    padding: 15px 18px;
+  }
+
+  .job h3 {
+    font-size: 1.2rem;
+  }
+}
+
+
+
 .detail-content-contact {
-    grid-row: 2 / 3;     
-    grid-column: 2 / 3;   
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
     background: white;
     padding: 30px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-  }
- 
+}
+
 .contact-list {
     display: flex;
     flex-direction: column;
@@ -177,8 +310,8 @@ body {
     transition: background 0.3s ease, transform 0.3s ease;
     backdrop-filter: blur(6px);
     justify-content: flex-start;
-    flex-wrap: nowrap; 
-    overflow: hidden;  
+    flex-wrap: nowrap;
+    overflow: hidden;
 }
 
 .contact-item i {
@@ -194,118 +327,118 @@ body {
     color: #555;
     white-space: normal;
     word-break: break-word;
-    padding-left: 4px;   
-    padding-right: 4px;  
+    padding-left: 4px;
+    padding-right: 4px;
     box-sizing: border-box;
 }
 
 /* ========== Desktop ขนาดกลาง (1024px) ========== */
 @media screen and (max-width: 1024px) {
     .detail-profile-content {
-      grid-template-columns: 1fr;  
-      grid-template-rows: auto auto auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
     }
-  
+
     .detail-content-education {
-      grid-column: 1 / -1;
-      grid-row: 1;
+        grid-column: 1 / -1;
+        grid-row: 1;
     }
-  
+
     .detail-content-skill {
-      grid-column: 1 / -1;
-      grid-row: 2;
+        grid-column: 1 / -1;
+        grid-row: 2;
     }
-  
+
     .detail-content-contact {
-      grid-column: 1 / -1;
-      grid-row: 3;
+        grid-column: 1 / -1;
+        grid-row: 3;
     }
-  
+
     .skill-list {
-      grid-template-columns: 1fr 1fr; 
+        grid-template-columns: 1fr 1fr;
     }
-  }
-  
-  /* ========== Tablet (768px) ========== */
-  @media screen and (max-width: 768px) {
+}
+
+/* ========== Tablet (768px) ========== */
+@media screen and (max-width: 768px) {
     .detail-profile-content {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto auto auto;
-      padding: 10px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        padding: 10px;
     }
-  
+
     .detail-content-education,
     .detail-content-skill,
     .detail-content-contact {
-      padding: 20px;
+        padding: 20px;
     }
-  
+
     .skill-list {
-      grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
     }
-  
+
     .contact-list {
-      padding: 16px;
+        padding: 16px;
     }
-  
+
     .edu-dot {
-      width: 24px;
-      height: 24px;
-      left: -32px;
-      top: 70px;
+        width: 24px;
+        height: 24px;
+        left: -32px;
+        top: 70px;
     }
-  
+
     .education-entry {
-      margin-bottom: 80px;
+        margin-bottom: 80px;
     }
-  
+
     .section-title {
-      font-size: 24px;
+        font-size: 24px;
     }
-  }
-  
-  /* ========== Mobile (480px) ========== */
-  @media screen and (max-width: 480px) {
+}
+
+/* ========== Mobile (480px) ========== */
+@media screen and (max-width: 480px) {
     .detail-profile-content {
-      padding: 10px;
+        padding: 10px;
     }
-  
+
     .skill-item,
     .contact-item {
-      font-size: 14px;
-      padding: 10px 12px;
+        font-size: 14px;
+        padding: 10px 12px;
     }
-  
+
     .skill-item i,
     .contact-item i {
-      font-size: 18px;
+        font-size: 18px;
     }
-  
+
     .edu-dot {
-      width: 20px;
-      height: 20px;
-      left: -28px;
-      top: 60px;
+        width: 20px;
+        height: 20px;
+        left: -28px;
+        top: 60px;
     }
-  
+
     .edu-content h3 {
-      font-size: 18px;
+        font-size: 18px;
     }
-  
+
     .edu-content p {
-      font-size: 14px;
+        font-size: 14px;
     }
-  
+
     .section-title {
-      font-size: 20px;
-      margin-top: 20px;
-      margin-bottom: 20px;
+        font-size: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
-  }
-  
- 
+}
+
+
 /********************* END CSS detail-profile-content Content*************************/
- 
+
 
 
 .download-btn {
@@ -428,8 +561,8 @@ body {
     padding: 20px;
     background: #f4f4f4;
     border-radius: 15px;
-  
-    height:auto;
+
+    height: auto;
 }
 
 .detail-detail-portfolio-one {
@@ -441,67 +574,69 @@ body {
     display: flex;
     flex-direction: column;
     max-height: 500px;
-  }
-  
-  .detail-detail-portfolio-one > h2 {
+}
+
+.detail-detail-portfolio-one>h2 {
     margin: 0 0 20px;
     font-size: 1.8rem;
     color: #333;
-  }
-  
-  .project-list {
+}
+
+.project-list {
     display: flex;
     flex-direction: column;
-    align-items: stretch;       
+    align-items: stretch;
     gap: 20px;
     padding: 24px;
     max-height: calc(500px - 30px * 2 - 20px - 10px);
-    overflow-y: auto; 
-  }
-  
-  .project-item {
-    width: 100%;               
-    box-sizing: border-box;    
+    overflow-y: auto;
+}
+
+.project-item {
+    width: 100%;
+    box-sizing: border-box;
     background: #fff;
     border-left: 6px solid #007BFF;
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .project-item:hover {
+}
+
+.project-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
-  }
-  
-  
-  .company-info,
-  .project-info {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+
+.company-info,
+.project-info {
     display: flex;
     align-items: center;
     gap: 10px;
     margin: 8px 0;
-  }
-  
-  .icon {
+}
+
+.icon {
     font-size: 1.2rem;
     color: #007BFF;
-  }
-  
-  .company-name {
+}
+
+.company-name {
     font-size: 1.1rem;
     font-weight: 600;
     color: #2c3e50;
-  }
-  .project-name {
+}
+
+.project-name {
     font-size: 1rem;
     color: #444;
-  }
-  
-  /* 6. ปุ่ม Next Page ปักที่ท้าย container */
-  .next-button {
-    margin-top: auto;      /* ยึดติดล่าง flex container */
+}
+
+/* 6. ปุ่ม Next Page ปักที่ท้าย container */
+.next-button {
+    margin-top: auto;
+    /* ยึดติดล่าง flex container */
     align-self: center;
     display: inline-flex;
     align-items: center;
@@ -512,22 +647,25 @@ body {
     border-radius: 8px;
     text-decoration: none;
     transition: background-color 0.3s ease;
-  }
-  .next-button:hover {
+}
+
+.next-button:hover {
     background-color: #0056b3;
-  }
-  
-  /* 7. Responsive: บนหน้าจอเล็ก ให้เอียงเป็น column เดียว */
-  @media (max-width: 768px) {
+}
+
+/* 7. Responsive: บนหน้าจอเล็ก ให้เอียงเป็น column เดียว */
+@media (max-width: 768px) {
     .detail-detail-portfolio-one {
-      max-height: none;   /* ยกเลิกล็อกความสูง ถ้าต้องการให้ยาวได้ตามเนื้อหา */
-      padding: 20px;
+        max-height: none;
+        /* ยกเลิกล็อกความสูง ถ้าต้องการให้ยาวได้ตามเนื้อหา */
+        padding: 20px;
     }
+
     .project-list {
-      padding: 0 16px;
+        padding: 0 16px;
     }
-  }
-  
+}
+
 /* .detail-detail-portfolio-one {
     position: relative;
     background: white;
@@ -551,57 +689,56 @@ body {
   .project-item {
     background: #ffffff;
     /* border-left: 6px solid #007BFF; */
-    /* border-radius: 12px;
+/* border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     padding: 25px;
     transition: all 0.3s ease;
   }
    */
-  .project-item:hover {
+.project-item:hover {
     background-color: #f9f9f9;
     transform: scale(1.02);
-  }
-  
-  .project-entries {
+}
+
+.project-entries {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
     gap: 16px;
-  }
-  
-  .project-entries li {
+}
+
+.project-entries li {
     border-bottom: 1px dashed #ddd;
     padding-bottom: 10px;
-  }
-  
-  .company-info,
-  .project-info {
+}
+
+.company-info,
+.project-info {
     display: flex;
     align-items: center;
     gap: 10px;
     margin: 4px 0;
-  }
-  
-  .icon {
+}
+
+.icon {
     font-size: 1.2rem;
     color: #007BFF;
-  }
-  
-  .company-name {
+}
+
+.company-name {
     font-size: 1.2rem;
     font-weight: 600;
     color: #2c3e50;
-  }
-  
-  .project-name {
+}
+
+.project-name {
     font-size: 1.05rem;
     color: #555;
-  }
-   */
+}
 
-.detail-detail-portfolio-one .nav-btn {
+*/ .detail-detail-portfolio-one .nav-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -1103,9 +1240,11 @@ button:hover {
     min-width: 280px;
     max-width: 500px;
 }
+
 .left-column .carousel .carousel-inner .carousel-item img {
     object-fit: contain;
 }
+
 .profile-pic {
     width: 100%;
     height: 400px;
