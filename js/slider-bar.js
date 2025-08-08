@@ -1,63 +1,40 @@
-const slideContainer = document.getElementById('slide-container');
-const totalSlides = slideContainer.children.length;
-let currentIndex = 0;
+document.addEventListener("DOMContentLoaded", function () {
+  const slideContainer = document.getElementById('slide-container');
 
-function showSlide(index) {
-  slideContainer.style.transform = `translateX(-${index * 400}px)`;
-}
+  if (!slideContainer) {
+    console.warn("slide-container not found");
+    return;
+  }
 
-function nextSlide() {
-  currentIndex = (currentIndex + 1) % totalSlides;
+  const slides = slideContainer.children;
+  const totalSlides = slides.length;
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    const slideWidth = slides[0].offsetWidth;
+    slideContainer.style.transform = `translateX(-${index * slideWidth}px)`;
+  }
+
+  function goToNextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    showSlide(currentIndex);
+  }
+
+  function goToPrevSlide() {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    showSlide(currentIndex);
+  }
+
+  // เริ่มแสดง slide แรก
   showSlide(currentIndex);
-}
 
-function prevSlide() {
-  currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-  showSlide(currentIndex);
-}
+  // Auto-slide ทุก 3 วินาที
+  setInterval(goToNextSlide, 3000);
 
-// Auto-slide every 3 seconds
-setInterval(nextSlide, 3000);
+  // ปุ่มควบคุม (ถ้ามีใน HTML)
+  const nextBtn = document.getElementById("next-btn");
+  const prevBtn = document.getElementById("prev-btn");
 
- 
-
-const projectList = document.getElementById('project-list');
-const totalItems = projectList.children.length;
-
-// ฟังก์ชันเลื่อนไปข้างหน้า
-function nextSlide() {
-    if (currentIndex < totalItems - 1) {
-        currentIndex++;
-    } else {
-        currentIndex = 0; // กลับไปที่รายการแรกเมื่อถึงสุดท้าย
-    }
-    updateSliderPosition();
-}
-
-// ฟังก์ชันเลื่อนไปถอยหลัง
-function prevSlide() {
-    if (currentIndex > 0) {
-        currentIndex--;
-    } else {
-        currentIndex = totalItems - 1; // กลับไปที่รายการสุดท้ายเมื่อถึงแรก
-    }
-    updateSliderPosition();
-}
-
-// ฟังก์ชันปรับตำแหน่งของ slider
-function updateSliderPosition() {
-    const slideWidth = projectList.children[0].offsetWidth;
-    projectList.style.transform = `translateX(-${currentIndex * (slideWidth + 20)}px)`;
-}
-
-
-
-function prevSlide() {
-    const slider = document.querySelector('.slider');
-    slider.scrollBy({ left: -320, behavior: 'smooth' });
-}
-
-function nextSlide() {
-    const slider = document.querySelector('.slider');
-    slider.scrollBy({ left: 320, behavior: 'smooth' });
-}
+  if (nextBtn) nextBtn.addEventListener("click", goToNextSlide);
+  if (prevBtn) prevBtn.addEventListener("click", goToPrevSlide);
+});
