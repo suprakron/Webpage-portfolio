@@ -131,7 +131,7 @@ body {
     border-radius: 15px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     width: 100%;
-    height: 60%;
+    height: 99%;
     box-sizing: border-box;
 }
 
@@ -201,20 +201,22 @@ body {
   font-size: 24px;
   color: #2c3e50;
   border-left: 6px solid #16a085;
-  padding-left: 14px;
+  padding-left: 20px;
   margin-bottom: 16px;
   font-weight: bold;
 }
 
 .sub-title {
     font-size: 20px;
-    margin: 30px 0 15px;
-    color: #16a085;
+    margin: 20px 0 15px;  
     position: relative;
-    padding-left: 16px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    display: inline-block;  
+    padding-left: 14px;  
 }
 
 .sub-title::before {
@@ -225,9 +227,12 @@ body {
     transform: translateY(-50%);
     height: 18px;
     width: 6px;
-    background: linear-gradient(to bottom, #16a085, #1abc9c);
+    background: #d88314;
     border-radius: 3px;
 }
+
+
+
 
 .skill-group {
     margin-bottom: 40px;
@@ -237,8 +242,8 @@ body {
     font-size: 24px;
     margin-bottom: 16px;
     color: #2c3e50;
-    border-left: 4px solid #16a085;
-    padding-left: 12px;
+    border-left: 20px solid #d88314;
+    padding-left: 20px;
 }
 
 .sub-group h5 {
@@ -350,6 +355,69 @@ body {
     border-radius: 15px;
     margin-bottom: 30px;
 }
+.con-contact {
+    margin: 50px auto 30px;
+    width: 100%;
+  
+    padding: 25px;
+    font-family: 'Poppins', sans-serif;
+    color: #222;
+    background: linear-gradient(145deg, #f9f9f9, #eaeaea);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.con-contact h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.slider-container {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.02);
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    background: #f8f8f8;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #444;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-item i {
+    font-size: 1.3rem;
+    color: #4a90e2;
+    transition: color 0.3s ease;
+}
+
+.contact-item:hover {
+    background: #4a90e2;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+}
+
+.contact-item:hover i {
+    color: #fff;
+}
+
 
 .work-experience h2 {
     font-size: 2rem;
