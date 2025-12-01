@@ -113,7 +113,6 @@
       font-size: 1rem;
     }
 
-    /* สไตล์สำหรับการจัดตำแหน่งกลาง */
     .text-center {
       text-align: center;
     }
@@ -132,7 +131,8 @@
     <h1 class="text-center mb-5">📌 ผลงานโปรเจกต์ของฉัน</h1>
 
     <!-- Project Item 1 -->
-    <div class="row project-item mb-5 p-3 shadow rounded bg-light">
+    <div class="row project-item mb-5 p-3 shadow rounded bg-light" data-toggle="modal" data-target="#imageModal"
+      data-image="./images/app-quiz/m13.png" data-caption="">
       <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
         <img src="./images/app-quiz/m13.png" alt="Web Quiz Project" class="project-img img-fluid rounded">
         <p class="project-title text-center mt-3 fw-bold">โปรเจกต์ระบบเกมควิซ</p>
@@ -149,7 +149,8 @@
         </p>
       </div>
     </div>
-    <div class="row project-item mb-5 p-3 shadow rounded bg-light">
+    <div class="row project-item mb-5 p-3 shadow rounded bg-light" data-toggle="modal" data-target="#imageModal"
+      data-image="./images/project_ui/ui_reminder.png" data-caption="">
       <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
         <img src="./images/project_ui/ui_reminder.png" alt="Web Quiz Project" class="project-img img-fluid rounded">
         <p class="project-title text-center mt-3 fw-bold">โปรเจกต์ระบบเกมควิซ</p>
@@ -164,7 +165,8 @@
       </div>
     </div>
     <!-- Project Item 2 -->
-    <div class="row project-item mb-5 p-3 shadow rounded bg-light">
+    <div class="row project-item mb-5 p-3 shadow rounded bg-light" data-toggle="modal" data-target="#imageModal"
+      data-image="./images/project_ui/ui_k2.png" data-caption="">
       <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
         <img src="./images/project_ui/ui_k2.png" alt="Web Quiz Project" class="project-img img-fluid rounded">
         <p class="project-title text-center mt-3 fw-bold">ระบบจัดการข้อมูลวัสดุวิศวกรรม</p>
@@ -184,10 +186,8 @@
     <!-- Project Item 3 -->
     <div class="row project-item mb-5 p-3 shadow rounded bg-light">
       <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
-
         <p class="project-title text-center mt-3 fw-bold">ระบบบริหารคลังสินค้า</p>
       </div>
-
 
       <div class="col-md-8 d-flex flex-column justify-content-center">
         <h2 class="fw-bold">Bangkok Expressway and Metro Public Company Limited</h2>
@@ -200,17 +200,14 @@
       </div>
     </div>
 
-
-
     <!-- Project Item 4 -->
-    <div class="row project-item mb-5 p-3 shadow rounded bg-light">
-
+    <div class="row project-item mb-5 p-3 shadow rounded bg-light" data-toggle="modal" data-target="#imageModal"
+      data-image='["./images/project/img-project05.png","./images/project/ui-hug01.png","./images/project/ui-hug02.png"]'
+      data-caption="">
       <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
         <img src="./images/project/img-project05.png" alt="Web Quiz Project" class="project-img img-fluid rounded">
         <p class="project-title text-center mt-3 fw-bold">ระบบขายผลิตภัณฑ์ยาออนไลน์</p>
       </div>
-
-
 
       <div class="col-md-8 d-flex flex-column justify-content-center">
         <h2 class="fw-bold">Health Up Company Limited</h2>
@@ -224,11 +221,10 @@
     </div>
 
     <!-- Project Item 5 -->
-    <div class="row project-item mb-5 p-3 shadow rounded bg-light">
-
-
-      <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
-        <img src="./images/project/img-project04.png" alt="Web Quiz Project" class="project-img img-fluid rounded">
+    <div class="row project-item mb-5 p-3 shadow rounded bg-light" data-toggle="modal"
+        data-target="#imageModal" data-image='["./images/project/ui-dn.png","./images/project/ui-dnmobile.png","./images/project/ui-dn02.png"]'data-caption="">
+      <div class="col-md-4 d-flex flex-column align-items-center justify-content-center" >
+        <img src="./images/project/ui-dn.png" alt="Web Quiz Project" class="project-img img-fluid rounded">
         <p class="project-title text-center mt-3 fw-bold">UI สำหรับระบบร้านค้าขายยาออนไลน์</p>
       </div>
 
@@ -241,10 +237,11 @@
         </p>
       </div>
     </div>
+
+
     <!-- Project Item 5 -->
-    <div class="row project-item mb-5 p-3 shadow rounded bg-light">
-
-
+    <div class="row project-item mb-5 p-3 shadow rounded bg-light" data-toggle="modal" data-target="#imageModal"
+      data-image="./images/project/img-project06.png" data-caption="">
       <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
         <img src="./images/project/img-project06.png" alt="Web Quiz Project" class="project-img img-fluid rounded">
         <p class="project-title text-center mt-3 fw-bold">UI สำหรับระบบขายยาหน้าสาขา</p>
@@ -259,11 +256,42 @@
         </p>
       </div>
     </div>
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="imageModalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <!-- Carousel -->
+            <div id="projectCarousel" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner" id="carouselInner"></div>
+
+              <a class="carousel-control-prev" href="#projectCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </a>
+              <a class="carousel-control-next" href="#projectCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 
 
 
-
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
   <script>
     function minimizeWindow() {
@@ -275,11 +303,32 @@
       document.body.style.transform = "scale(1)";
       document.body.style.transformOrigin = "top left";
     }
+ 
+    $('.project-item').on('click', function () {
+
+      let images = $(this).attr('data-image');
+
+
+      try {
+        images = JSON.parse(images);
+      } catch {
+        images = [images];
+      }
+
+      let carouselInner = '';
+      images.forEach((img, index) => {
+        carouselInner += `
+        <div class="carousel-item ${index === 0 ? 'active' : ''}">
+          <img src="${img}" class="d-block w-100">
+        </div>`;
+      });
+
+      $('#carouselInner').html(carouselInner);
+    });
+
+
   </script>
-  <!-- Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>

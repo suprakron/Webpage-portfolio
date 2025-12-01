@@ -205,7 +205,7 @@
 
         </div>
         <div class="certificate-item" data-toggle="modal" data-target="#imageModal"
-          data-image="./images/certificate/matlab/certificate_ai.jpeg" data-caption="">
+          data-image="./images/certificate/certificate_ai.jpeg" data-caption="">
           <img src="./images/certificate/certificate_ai.jpeg" alt="Certificate 4" class="certificate-image">
 
         </div>
@@ -257,15 +257,14 @@
       document.body.style.transform = "scale(1)";
       document.body.style.transformOrigin = "top left";
     }
-    $('#imageModal').on('show.bs.modal', function (event) {
-      const trigger = $(event.relatedTarget);
-      const image = trigger.data('image');
-      const caption = trigger.data('caption');
+  $('#imageModal').on('show.bs.modal', function (event) {
+    const trigger = $(event.relatedTarget);
+    const image = trigger.data('image');
+    const caption = trigger.data('caption');
 
-      const modal = $(this);
-      modal.find('#modalImage').attr('src', image);
-      modal.find('#imageModalLabel').text(caption);
-    });
+    $(this).find('#modalImage').attr('src', image);
+    $(this).find('#imageModalLabel').text(caption);
+  });
   </script>
 </body>
 
