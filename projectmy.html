@@ -1,334 +1,397 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="th">
 
 <head>
-  <title>Project Showcase</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Showcase | Suprakron</title>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/pages.css">
+    <style>
+        /* ===== PROJECT CARDS ===== */
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <style>
-    /* Arrow Back */
-    .arrow-back {
-      display: flex;
-      gap: 8px;
-      margin: 5px;
-    }
+        .project-card {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 0;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(59, 130, 246, 0.18);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
 
-    .arrow-back a,
-    .arrow-back button {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      color: white;
-      font-size: 16px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      padding: 0;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      /* เพิ่มเอฟเฟกต์การเปลี่ยนแปลง */
-    }
+        .project-card:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            transform: translateY(-6px);
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.15);
+        }
 
-    /* สีของแต่ละปุ่ม */
-    .btn-red {
-      background-color: #FF5F57;
-    }
+        .project-card-image {
+            background: #0a1628;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            border-right: 1px solid rgba(59, 130, 246, 0.18);
+            min-height: 220px;
+        }
 
-    .btn-yellow {
-      background-color: #FFBD2E;
-    }
+        .project-card-image img {
+            width: 100%;
+            max-height: 180px;
+            object-fit: contain;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
 
-    .btn-green {
-      background-color: #28C840;
-    }
+        .project-card:hover .project-card-image img {
+            transform: scale(1.04);
+        }
 
-    .arrow-back a:hover,
-    .arrow-back button:hover {
-      transform: scale(1.2);
-      /* ขยายปุ่มเมื่อ hover */
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      /* ขยายเงา */
-    }
+        .project-card-image .no-image {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1e40af, #0ea5e9);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
 
-    /* Body */
-    body {
-      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+        .project-card-body {
+            padding: 32px 36px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-    /* Project Container */
-    .project-container {
-      padding: 50px 15px;
-    }
+        .project-company {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.28);
+            color: #93c5fd;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 14px;
+            width: fit-content;
+        }
 
-    /* Project Item */
-    .project-item {
-      background: #fff;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      margin-bottom: 30px;
-      padding: 20px;
-      transition: transform 0.3s ease;
-      /* เพิ่มการเคลื่อนไหว */
-    }
+        .project-card-body h2 {
+            font-family: 'Russo One', sans-serif;
+            font-size: 1.4rem;
+            color: #f1f5f9;
+            margin-bottom: 6px;
+        }
 
-    .project-item:hover {
-      transform: translateY(-10px);
-      /* ยกขึ้นเมื่อ hover */
-    }
+        .project-card-body h3 {
+            font-size: 0.97rem;
+            color: #60a5fa;
+            font-weight: 500;
+            margin-bottom: 14px;
+        }
 
-    .project-img {
-      width: 60%;
-      height: 60%;
-      object-fit: contain;
-      align-items: center;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-      /* เพิ่มการขยายขนาดรูปภาพ */
-    }
+        .project-card-body p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            line-height: 1.75;
+            margin: 0;
+        }
 
-    .project-img:hover {
-      transform: scale(1.05);
-      /* ขยายรูปเมื่อ hover */
-    }
+        .project-tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 18px;
+        }
 
-    /* Project Title */
-    .project-title {
-      font-weight: bold;
-      font-size: 1.4rem;
-    }
+        .proj-tech-badge {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
 
-    /* Project Description */
-    .project-desc {
-      color: #555;
-      line-height: 1.6;
-      font-size: 1rem;
-    }
+        .view-hint {
+            margin-top: 16px;
+            font-size: 0.8rem;
+            color: #60a5fa;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
 
-    .text-center {
-      text-align: center;
-    }
-  </style>
+        /* No image placeholder */
+        .no-img-card .project-card-image {
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.2), rgba(14, 165, 233, 0.1));
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .project-card {
+                grid-template-columns: 1fr;
+            }
+            .project-card-image {
+                border-right: none;
+                border-bottom: 1px solid rgba(59, 130, 246, 0.18);
+                min-height: 180px;
+                padding: 20px;
+            }
+            .project-card-body {
+                padding: 24px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-card-body h2 { font-size: 1.1rem; }
+            .project-card-body h3 { font-size: 0.88rem; }
+        }
+    </style>
 </head>
 
 <body>
 
-  <div class="container project-container">
-    <div class="arrow-back">
-      <a href="index.html" class="btn-red">←</a>
-      <button onclick="minimizeWindow()" class="btn-yellow">–</button>
-      <button onclick="maximizeWindow()" class="btn-green"></button>
+<!-- Header -->
+<div class="page-header">
+    <a href="index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i> กลับหน้าหลัก
+    </a>
+    <span class="page-header-title">/ Project Showcase</span>
+</div>
+
+<!-- Content -->
+<div class="page-container">
+    <div class="text-center mb-4">
+        <span class="section-tag"><i class="fas fa-folder-open"></i> Portfolio</span>
     </div>
+    <h1 class="page-title">ผลงาน<span>โปรเจกต์</span>ของฉัน</h1>
+    <p class="page-subtitle">คลิกที่การ์ดเพื่อดูรูปภาพโปรเจกต์</p>
 
-    <h1 class="text-center mb-5">📌 ผลงานโปรเจกต์ของฉัน</h1>
+    <div class="projects-list">
 
-    <!-- Project Item 1 -->
-    <div class="row project-item mb-5 p-3 shadow rounded bg-light" data-toggle="modal" data-target="#imageModal"
-      data-image="./images/app-quiz/m13.png" data-caption="">
-      <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
-        <img src="./images/app-quiz/m13.png" alt="Web Quiz Project" class="project-img img-fluid rounded">
-        <p class="project-title text-center mt-3 fw-bold">โปรเจกต์ระบบเกมควิซ</p>
-      </div>
-
-      <div class="col-md-8 d-flex flex-column justify-content-center">
-        <h2 class="fw-bold">Web Quiz</h2>
-        <h3 class="text-muted">ระบบเกมควิซเพื่อการเรียนรู้</h3>
-        <p class="project-desc mt-3">
-          This project aims to develop a quiz system based on Bloom's learning theory for use during classroom
-          instruction. Teachers can manage subjects, create, delete, and edit quizzes, including multiple-choice
-          questions (2–4 options) and fill-in-the-blank questions with images. Students can access and complete quizzes
-          to facilitate real-time learning assessment.
-        </p>
-      </div>
-    </div>
-    <div class="row project-item mb-5 p-3 shadow rounded bg-light" data-toggle="modal" data-target="#imageModal"
-      data-image="./images/project_ui/ui_reminder.png" data-caption="">
-      <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
-        <img src="./images/project_ui/ui_reminder.png" alt="Web Quiz Project" class="project-img img-fluid rounded">
-        <p class="project-title text-center mt-3 fw-bold">โปรเจกต์ระบบเกมควิซ</p>
-      </div>
-
-      <div class="col-md-8 d-flex flex-column justify-content-center">
-        <h2 class="fw-bold">Pill reminder</h2>
-        <h3 class="text-muted">ระบบแจ้งเตือนการทานยา</h3>
-        <p class="project-desc mt-3">
-          It is a project that requires notification of taking medicine for the elderly and developed with flutter.
-        </p>
-      </div>
-    </div>
-    <!-- Project Item 2 -->
-    <div class="row project-item mb-5 p-3 shadow rounded bg-light" data-toggle="modal" data-target="#imageModal"
-      data-image="./images/project_ui/ui_k2.png" data-caption="">
-      <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
-        <img src="./images/project_ui/ui_k2.png" alt="Web Quiz Project" class="project-img img-fluid rounded">
-        <p class="project-title text-center mt-3 fw-bold">ระบบจัดการข้อมูลวัสดุวิศวกรรม</p>
-      </div>
-
-      <div class="col-md-8 d-flex flex-column justify-content-center">
-        <h2 class="fw-bold">Bangkok Expressway and Metro Public Company Limited</h2>
-        <h3 class="text-muted">MPR System</h3>
-        <p class="project-desc mt-3">
-          Developed using K2 software and Stored Procedures, this system records engineering material procurement
-          details
-          for the maintenance and repair of electric trains.
-        </p>
-      </div>
-    </div>
-
-    <!-- Project Item 3 -->
-    <div class="row project-item mb-5 p-3 shadow rounded bg-light">
-      <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
-        <p class="project-title text-center mt-3 fw-bold">ระบบบริหารคลังสินค้า</p>
-      </div>
-
-      <div class="col-md-8 d-flex flex-column justify-content-center">
-        <h2 class="fw-bold">Bangkok Expressway and Metro Public Company Limited</h2>
-        <h3 class="text-muted">Inventory System</h3>
-        <p class="project-desc mt-3">
-          Developed using ASP.NET Web Apps and Stored Procedures, this system improves inventory control and supports
-          seamless
-          product distribution across departments.
-        </p>
-      </div>
-    </div>
-
-    <!-- Project Item 4 -->
-    <div class="row project-item mb-5 p-3 shadow rounded bg-light" data-toggle="modal" data-target="#imageModal"
-      data-image='["./images/project/img-project05.png","./images/project/ui-hug01.png","./images/project/ui-hug02.png"]'
-      data-caption="">
-      <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
-        <img src="./images/project/img-project05.png" alt="Web Quiz Project" class="project-img img-fluid rounded">
-        <p class="project-title text-center mt-3 fw-bold">ระบบขายผลิตภัณฑ์ยาออนไลน์</p>
-      </div>
-
-      <div class="col-md-8 d-flex flex-column justify-content-center">
-        <h2 class="fw-bold">Health Up Company Limited</h2>
-        <h3 class="text-muted">Hug Online</h3>
-        <p class="project-desc mt-3">
-          Upgraded using Flutter for the front-end, .NET for the back-end, and SQL Server for data storage, this system
-          facilitates
-          pharmaceutical product sales through an efficient online platform.
-        </p>
-      </div>
-    </div>
-
-    <!-- Project Item 5 -->
-    <div class="row project-item mb-5 p-3 shadow rounded bg-light" data-toggle="modal"
-        data-target="#imageModal" data-image='["./images/project/ui-dn.png","./images/project/ui-dnmobile.png","./images/project/ui-dn02.png"]'data-caption="">
-      <div class="col-md-4 d-flex flex-column align-items-center justify-content-center" >
-        <img src="./images/project/ui-dn.png" alt="Web Quiz Project" class="project-img img-fluid rounded">
-        <p class="project-title text-center mt-3 fw-bold">UI สำหรับระบบร้านค้าขายยาออนไลน์</p>
-      </div>
-
-      <div class="col-md-8 d-flex flex-column justify-content-center">
-        <h2 class="fw-bold">Health Up Company Limited</h2>
-        <h3 class="text-muted">UI DN Online</h3>
-        <p class="project-desc mt-3">
-          The frontend was developed using HTML, SCSS, and TypeScript, with Angular as the framework to create a modern,
-          responsive online shopping interface.
-        </p>
-      </div>
-    </div>
-
-
-    <!-- Project Item 5 -->
-    <div class="row project-item mb-5 p-3 shadow rounded bg-light" data-toggle="modal" data-target="#imageModal"
-      data-image="./images/project/img-project06.png" data-caption="">
-      <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
-        <img src="./images/project/img-project06.png" alt="Web Quiz Project" class="project-img img-fluid rounded">
-        <p class="project-title text-center mt-3 fw-bold">UI สำหรับระบบขายยาหน้าสาขา</p>
-      </div>
-
-      <div class="col-md-8 d-flex flex-column justify-content-center">
-        <h2 class="fw-bold">Health Up Company Limited</h2>
-        <h3 class="text-muted">POS SYSTEM</h3>
-        <p class="project-desc mt-3">
-          The project involves designing a branch sales system using Figma for system design, followed by further
-          development using Angular.
-        </p>
-      </div>
-    </div>
-    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog">
-      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="imageModalLabel"></h5>
-            <button type="button" class="close" data-dismiss="modal">
-              <span>&times;</span>
-            </button>
-          </div>
-
-          <div class="modal-body">
-            <!-- Carousel -->
-            <div id="projectCarousel" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner" id="carouselInner"></div>
-
-              <a class="carousel-control-prev" href="#projectCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-              </a>
-              <a class="carousel-control-next" href="#projectCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-              </a>
+        <!-- Project 1: Web Quiz -->
+        <div class="project-card fade-up"
+            data-bs-toggle="modal" data-bs-target="#imageModal"
+            data-images='["./images/app-quiz/m13.png"]'>
+            <div class="project-card-image">
+                <img src="./images/app-quiz/m13.png" alt="Web Quiz Project">
             </div>
-          </div>
+            <div class="project-card-body">
+                <span class="project-company"><i class="fas fa-graduation-cap"></i> Graduation Project</span>
+                <h2>Web Quiz</h2>
+                <h3>ระบบเกมควิซเพื่อการเรียนรู้</h3>
+                <p>This project aims to develop a quiz system based on Bloom's learning theory for use during classroom instruction. Teachers can manage subjects, create, delete, and edit quizzes, including multiple-choice questions and fill-in-the-blank questions with images. Students can access and complete quizzes to facilitate real-time learning assessment.</p>
+                <div class="project-tag-row">
+                    <span class="proj-tech-badge">Web App</span>
+                    <span class="proj-tech-badge">Education</span>
+                    <span class="proj-tech-badge">Bloom's Theory</span>
+                </div>
+                <div class="view-hint"><i class="fas fa-image"></i> คลิกเพื่อดูรูปภาพ</div>
+            </div>
         </div>
-      </div>
+
+        <!-- Project 2: Pill Reminder -->
+        <div class="project-card fade-up"
+            data-bs-toggle="modal" data-bs-target="#imageModal"
+            data-images='["./images/project_ui/ui_reminder.png"]'>
+            <div class="project-card-image">
+                <img src="./images/project_ui/ui_reminder.png" alt="Pill Reminder">
+            </div>
+            <div class="project-card-body">
+                <span class="project-company"><i class="fas fa-mobile-alt"></i> Mobile App</span>
+                <h2>Pill Reminder</h2>
+                <h3>ระบบแจ้งเตือนการทานยา</h3>
+                <p>A mobile application designed to notify elderly users about their medication schedule. Developed with Flutter to provide a simple and accessible interface for medication reminders.</p>
+                <div class="project-tag-row">
+                    <span class="proj-tech-badge">Flutter</span>
+                    <span class="proj-tech-badge">Mobile</span>
+                    <span class="proj-tech-badge">Healthcare</span>
+                </div>
+                <div class="view-hint"><i class="fas fa-image"></i> คลิกเพื่อดูรูปภาพ</div>
+            </div>
+        </div>
+
+        <!-- Project 3: MPR System -->
+        <div class="project-card fade-up"
+            data-bs-toggle="modal" data-bs-target="#imageModal"
+            data-images='["./images/project_ui/ui_k2.png"]'>
+            <div class="project-card-image">
+                <img src="./images/project_ui/ui_k2.png" alt="MPR System">
+            </div>
+            <div class="project-card-body">
+                <span class="project-company"><i class="fas fa-train"></i> Bangkok Expressway and Metro PCL</span>
+                <h2>MPR System</h2>
+                <h3>ระบบจัดการข้อมูลวัสดุวิศวกรรม</h3>
+                <p>Developed using K2 software and Stored Procedures, this system records engineering material procurement details for the maintenance and repair of electric trains.</p>
+                <div class="project-tag-row">
+                    <span class="proj-tech-badge">K2</span>
+                    <span class="proj-tech-badge">Stored Procedures</span>
+                    <span class="proj-tech-badge">Enterprise</span>
+                </div>
+                <div class="view-hint"><i class="fas fa-image"></i> คลิกเพื่อดูรูปภาพ</div>
+            </div>
+        </div>
+
+        <!-- Project 4: Inventory System (no image) -->
+        <div class="project-card no-img-card fade-up" style="cursor:default;">
+            <div class="project-card-image">
+                <div class="no-image"><i class="fas fa-boxes"></i></div>
+            </div>
+            <div class="project-card-body">
+                <span class="project-company"><i class="fas fa-train"></i> Bangkok Expressway and Metro PCL</span>
+                <h2>Inventory System</h2>
+                <h3>ระบบบริหารคลังสินค้า</h3>
+                <p>Developed using ASP.NET Web Apps and Stored Procedures, this system improves inventory control and supports seamless product distribution across departments.</p>
+                <div class="project-tag-row">
+                    <span class="proj-tech-badge">ASP.NET</span>
+                    <span class="proj-tech-badge">SQL Server</span>
+                    <span class="proj-tech-badge">Inventory</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 5: Hug Online -->
+        <div class="project-card fade-up"
+            data-bs-toggle="modal" data-bs-target="#imageModal"
+            data-images='["./images/project/img-project05.png","./images/project/ui-hug01.png","./images/project/ui-hug02.png"]'>
+            <div class="project-card-image">
+                <img src="./images/project/img-project05.png" alt="Hug Online">
+            </div>
+            <div class="project-card-body">
+                <span class="project-company"><i class="fas fa-heartbeat"></i> Health Up Co., Ltd.</span>
+                <h2>Hug Online</h2>
+                <h3>ระบบขายผลิตภัณฑ์ยาออนไลน์</h3>
+                <p>Upgraded using Flutter for the front-end, .NET for the back-end, and SQL Server for data storage. This system facilitates pharmaceutical product sales through an efficient online platform.</p>
+                <div class="project-tag-row">
+                    <span class="proj-tech-badge">Flutter</span>
+                    <span class="proj-tech-badge">.NET</span>
+                    <span class="proj-tech-badge">SQL Server</span>
+                    <span class="proj-tech-badge">E-Commerce</span>
+                </div>
+                <div class="view-hint"><i class="fas fa-images"></i> คลิกเพื่อดู 3 รูป</div>
+            </div>
+        </div>
+
+        <!-- Project 6: DN Online UI -->
+        <div class="project-card fade-up"
+            data-bs-toggle="modal" data-bs-target="#imageModal"
+            data-images='["./images/project/ui-dn.png","./images/project/ui-dnmobile.png","./images/project/ui-dn02.png"]'>
+            <div class="project-card-image">
+                <img src="./images/project/ui-dn.png" alt="DN Online UI">
+            </div>
+            <div class="project-card-body">
+                <span class="project-company"><i class="fas fa-heartbeat"></i> Health Up Co., Ltd.</span>
+                <h2>UI DN Online</h2>
+                <h3>UI สำหรับระบบร้านค้าขายยาออนไลน์</h3>
+                <p>The frontend was developed using HTML, SCSS, and TypeScript, with Angular as the framework to create a modern, responsive online shopping interface.</p>
+                <div class="project-tag-row">
+                    <span class="proj-tech-badge">Angular</span>
+                    <span class="proj-tech-badge">TypeScript</span>
+                    <span class="proj-tech-badge">SCSS</span>
+                    <span class="proj-tech-badge">UI Design</span>
+                </div>
+                <div class="view-hint"><i class="fas fa-images"></i> คลิกเพื่อดู 3 รูป</div>
+            </div>
+        </div>
+
+        <!-- Project 7: POS System -->
+        <div class="project-card fade-up"
+            data-bs-toggle="modal" data-bs-target="#imageModal"
+            data-images='["./images/project/img-project06.png"]'>
+            <div class="project-card-image">
+                <img src="./images/project/img-project06.png" alt="POS System">
+            </div>
+            <div class="project-card-body">
+                <span class="project-company"><i class="fas fa-heartbeat"></i> Health Up Co., Ltd.</span>
+                <h2>POS System</h2>
+                <h3>UI สำหรับระบบขายยาหน้าสาขา</h3>
+                <p>The project involves designing a branch sales system using Figma for system design, followed by further development using Angular.</p>
+                <div class="project-tag-row">
+                    <span class="proj-tech-badge">Figma</span>
+                    <span class="proj-tech-badge">Angular</span>
+                    <span class="proj-tech-badge">POS</span>
+                </div>
+                <div class="view-hint"><i class="fas fa-image"></i> คลิกเพื่อดูรูปภาพ</div>
+            </div>
+        </div>
+
     </div>
+</div>
 
+<!-- Image Modal (Bootstrap 5) -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Project Images</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0">
+                <div id="projectCarousel" class="carousel slide" data-bs-ride="false">
+                    <div class="carousel-inner" id="carouselInner"></div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-  </div>
+<footer class="page-footer">
+    <p>© 2025 Suprakron Maprachum · All Rights Reserved</p>
+</footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Open modal with images from data-images attribute
+    document.querySelectorAll('.project-card[data-images]').forEach(card => {
+        card.addEventListener('click', () => {
+            let images;
+            try { images = JSON.parse(card.dataset.images); }
+            catch { images = [card.dataset.images]; }
 
+            const inner = document.getElementById('carouselInner');
+            inner.innerHTML = images.map((src, i) => `
+                <div class="carousel-item ${i === 0 ? 'active' : ''}">
+                    <img src="${src}" class="d-block" style="width:100%;max-height:75vh;object-fit:contain;border-radius:8px;background:#080e1e;padding:16px">
+                </div>
+            `).join('');
 
-  <!-- Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-  <script>
-    function minimizeWindow() {
-      document.body.style.transform = "scale(0.5)";
-      document.body.style.transformOrigin = "top left";
-    }
-
-    function maximizeWindow() {
-      document.body.style.transform = "scale(1)";
-      document.body.style.transformOrigin = "top left";
-    }
- 
-    $('.project-item').on('click', function () {
-
-      let images = $(this).attr('data-image');
-
-
-      try {
-        images = JSON.parse(images);
-      } catch {
-        images = [images];
-      }
-
-      let carouselInner = '';
-      images.forEach((img, index) => {
-        carouselInner += `
-        <div class="carousel-item ${index === 0 ? 'active' : ''}">
-          <img src="${img}" class="d-block w-100">
-        </div>`;
-      });
-
-      $('#carouselInner').html(carouselInner);
+            // Reset carousel
+            const carousel = bootstrap.Carousel.getOrCreateInstance(document.getElementById('projectCarousel'));
+            carousel.to(0);
+        });
     });
 
-
-  </script>
-
+    // Scroll fade-in
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-up').forEach((el, i) => {
+        el.style.transitionDelay = `${i * 60}ms`;
+        obs.observe(el);
+    });
+</script>
 </body>
-
 </html>
