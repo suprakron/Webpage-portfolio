@@ -22,19 +22,48 @@
         <div class="nav-brand">
             <span class="brand-icon">⚡</span>
             <span>Suprakron</span>
-            <!-- <span class="ai-mini-badge">AI Dev</span> -->
         </div>
         <button class="hamburger" id="hamburger" aria-label="Toggle menu">
             <span></span><span></span><span></span>
         </button>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#about">About</a></li>
-            <li><a href="#ai-section">AI Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <!-- <li><a href="#contact">Contact</a></li> -->
+            <li><a href="#about" data-i18n="nav.about">About</a></li>
+            <li><a href="#ai-section" data-i18n="nav.ai">AI Skills</a></li>
+            <li><a href="#education" data-i18n="nav.education">Education</a></li>
+            <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+            <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
+
+        <!-- Nav Controls -->
+        <div class="nav-controls">
+            <div class="nav-divider"></div>
+
+            <!-- Theme Toggle -->
+            <label class="nav-theme-toggle" title="Toggle theme">
+                <input type="checkbox" id="themeToggle">
+                <span class="ntt-track">
+                    <span class="ntt-icon ntt-moon"><i class="fas fa-moon"></i></span>
+                    <span class="ntt-icon ntt-sun"><i class="fas fa-sun"></i></span>
+                    <span class="ntt-thumb"></span>
+                </span>
+            </label>
+
+            <!-- Language Dropdown -->
+            <div class="nav-lang" id="langDropdown">
+                <button class="nav-lang-btn" id="langSelected">
+                    <span id="langFlag">🇹🇭</span>
+                    <span id="langLabel">TH</span>
+                    <i class="fas fa-chevron-down nav-lang-caret"></i>
+                </button>
+                <ul class="nav-lang-menu" id="langMenu">
+                    <li class="lang-option active" data-lang="th"><span>🇹🇭</span> ไทย</li>
+                    <li class="lang-option" data-lang="en"><span>🇬🇧</span> English</li>
+                    <li class="lang-option" data-lang="ja"><span>🇯🇵</span> 日本語</li>
+                    <li class="lang-option" data-lang="zh"><span>🇨🇳</span> 中文</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </nav>
 
@@ -43,33 +72,30 @@
     <div class="hero-content">
         <div class="ai-badge">
             <span class="ai-dot"></span>
-            <i class="fas fa-brain"></i> AI-Powered Developer
+            <i class="fas fa-brain"></i> <span data-i18n="hero.badge">AI-Powered Developer</span>
         </div>
         <h1 class="hero-title">
-            Hi, I'm <span class="gradient-text">Suprakron</span>
+            <span data-i18n="hero.greeting">Hi, I'm</span> <span class="gradient-text">Suprakron</span>
         </h1>
-        <p class="hero-subtitle">Full-Stack Developer · AI Enthusiast · M.Ed. Student in AI</p>
-        <p class="hero-desc">สร้างสรรค์ซอฟต์แวร์และระบบที่ผสานพลัง AI เข้ากับการพัฒนาสมัยใหม่ เพื่อสร้างประสบการณ์ที่ดีที่สุด</p>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">Full-Stack Developer · AI Enthusiast · M.Ed. Student in AI</p>
+        <p class="hero-desc" data-i18n="hero.desc">สร้างสรรค์ซอฟต์แวร์และระบบที่ผสานพลัง AI เข้ากับการพัฒนาสมัยใหม่ เพื่อสร้างประสบการณ์ที่ดีที่สุด</p>
         <div class="hero-buttons">
-            <!-- <a href="#contact" class="btn-primary">
-                <i class="fas fa-envelope"></i> ติดต่อฉัน
-            </a> -->
             <a href="./cv/Resume_personal(New).pdf" download class="btn-secondary">
-                <i class="fas fa-download"></i> Download CV
+                <i class="fas fa-download"></i> <span data-i18n="hero.download">Download CV</span>
             </a>
         </div>
         <div class="hero-stats">
             <div class="stat-item">
                 <span class="stat-number">5+</span>
-                <span class="stat-label">Projects</span>
+                <span class="stat-label" data-i18n="hero.stat1">Projects</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number">2+</span>
-                <span class="stat-label">Companies</span>
+                <span class="stat-number">3+</span>
+                <span class="stat-label" data-i18n="hero.stat2">Companies</span>
             </div>
             <div class="stat-item">
                 <span class="stat-number">AI</span>
-                <span class="stat-label">Specialized</span>
+                <span class="stat-label" data-i18n="hero.stat3">Specialized</span>
             </div>
         </div>
     </div>
@@ -118,55 +144,39 @@
 <section class="section ai-section" id="ai-section">
     <div class="section-container">
         <div class="section-header">
-            <span class="section-tag"><i class="fas fa-robot"></i> AI Integration</span>
+            <span class="section-tag"><i class="fas fa-robot"></i> <span data-i18n="ai.tag">AI Integration</span></span>
             <h2>AI-Powered <span class="gradient-text">Development</span></h2>
-            <p>นำ Artificial Intelligence มาประยุกต์ใช้ในทุกขั้นตอนของการพัฒนา ตั้งแต่การออกแบบ ไปจนถึงการ deploy จริง</p>
+            <p data-i18n="ai.desc">นำ Artificial Intelligence มาประยุกต์ใช้ในทุกขั้นตอนของการพัฒนา ตั้งแต่การออกแบบ ไปจนถึงการ deploy จริง</p>
         </div>
         <div class="ai-cards">
             <div class="ai-card">
-                <div class="ai-card-icon">
-                    <i class="fas fa-code"></i>
-                </div>
+                <div class="ai-card-icon"><i class="fas fa-code"></i></div>
                 <h3>AI-Assisted Coding</h3>
-                <p>ใช้ Claude Code & GitHub Copilot ช่วยพัฒนาและ review code ได้เร็วขึ้น พร้อม quality ที่สูงขึ้น</p>
+                <p data-i18n="ai.card1">ใช้ Claude Code & GitHub Copilot ช่วยพัฒนาและ review code ได้เร็วขึ้น พร้อม quality ที่สูงขึ้น</p>
                 <div class="ai-tools">
                     <span class="tool-badge">Claude Code</span>
                     <span class="tool-badge">GitHub Copilot</span>
                 </div>
             </div>
             <div class="ai-card featured">
-                <div class="ai-card-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
+                <div class="ai-card-icon"><i class="fas fa-graduation-cap"></i></div>
                 <h3>AI Education Research</h3>
-                <p>กำลังศึกษาปริญญาโทด้าน <strong>ปัญญาประดิษฐ์ศึกษา</strong> ที่ สจล. มุ่งสร้าง AI-driven learning systems</p>
+                <p data-i18n="ai.card2">กำลังศึกษาปริญญาโทด้าน <strong>ปัญญาประดิษฐ์ศึกษา</strong> ที่ สจล. มุ่งสร้าง AI-driven learning systems</p>
                 <div class="ai-tools">
                     <span class="tool-badge active">M.Ed. AI</span>
                     <span class="tool-badge active">KMITL</span>
                 </div>
             </div>
             <div class="ai-card">
-                <div class="ai-card-icon">
-                    <i class="fas fa-chart-line"></i>
-                </div>
+                <div class="ai-card-icon"><i class="fas fa-chart-line"></i></div>
                 <h3>ML & Data Analysis</h3>
-                <p>ประยุกต์ใช้ MATLAB และ AI frameworks ในการวิเคราะห์ข้อมูลและสร้าง predictive models</p>
+                <p data-i18n="ai.card3">ประยุกต์ใช้ MATLAB และ AI frameworks ในการวิเคราะห์ข้อมูลและสร้าง predictive models</p>
                 <div class="ai-tools">
                     <span class="tool-badge">MATLAB</span>
                     <span class="tool-badge">Python AI</span>
                 </div>
             </div>
         </div>
-
-        <!-- <div class="ai-banner">
-            <div class="ai-banner-icon">
-                <i class="fas fa-robot"></i>
-            </div>
-            <div class="ai-banner-text">
-                <strong>🤖 Portfolio Built with Claude Code AI Agent</strong>
-                <p>เว็บพอร์ตโฟลิโอนี้พัฒนาโดยใช้ <strong>Claude Code</strong> — AI Coding Agent ของ Anthropic — ช่วยออกแบบ UI และเขียน code แสดงถึงความสามารถในการนำ AI มาใช้ในการพัฒนาซอฟต์แวร์จริง</p>
-            </div>
-        </div> -->
     </div>
 </section>
 
@@ -174,67 +184,51 @@
 <section class="section" id="education">
     <div class="section-container">
         <div class="section-header">
-            <span class="section-tag"><i class="fas fa-graduation-cap"></i> Education</span>
-            <h2>การ<span class="gradient-text">ศึกษา</span></h2>
-            <p>เส้นทางการศึกษาจากมัธยมจนถึงปริญญาโทด้าน AI</p>
+            <span class="section-tag"><i class="fas fa-graduation-cap"></i> <span data-i18n="edu.tag">Education</span></span>
+            <h2 data-i18n="edu.title">การ<span class="gradient-text">ศึกษา</span></h2>
+            <p data-i18n="edu.desc">เส้นทางการศึกษาจากมัธยมจนถึงปริญญาโทด้าน AI</p>
         </div>
-
         <div class="edu-journey">
 
-            <!-- ม.ปลาย -->
             <div class="edu-card">
-                <div class="edu-card-icon">
-                    <i class="fas fa-school"></i>
-                </div>
-                <div class="edu-level-badge">มัธยมปลาย</div>
-                <h3>วิทย์ — คณิต</h3>
+                <div class="edu-card-icon"><i class="fas fa-school"></i></div>
+                <div class="edu-level-badge" data-i18n="edu.hs.level">มัธยมปลาย</div>
+                <h3 data-i18n="edu.hs.major">วิทย์ — คณิต</h3>
                 <div class="edu-divider"></div>
                 <div class="edu-detail">
-                    <p class="edu-school">โรงเรียนเทศบาลปากน้ำ<br>ศิริวิทยานุสรณ์</p>
-                    <p class="edu-note">(ในระบบสาธิต ม.รามคำแหง)</p>
+                    <p class="edu-school" data-i18n="edu.hs.school">โรงเรียนเทศบาลปากน้ำศิริวิทยานุสรณ์</p>
+                    <p class="edu-note" data-i18n="edu.hs.note">(ในระบบสาธิต ม.รามคำแหง)</p>
                 </div>
             </div>
 
-            <!-- Arrow -->
-            <div class="edu-arrow">
-                <i class="fas fa-chevron-right"></i>
-            </div>
+            <div class="edu-arrow"><i class="fas fa-chevron-right"></i></div>
 
-            <!-- ป.ตรี -->
             <div class="edu-card">
-                <div class="edu-card-icon">
-                    <i class="fas fa-university"></i>
-                </div>
-                <div class="edu-level-badge">ปริญญาตรี</div>
-                <h3>วิศวกรรมคอมพิวเตอร์</h3>
+                <div class="edu-card-icon"><i class="fas fa-university"></i></div>
+                <div class="edu-level-badge" data-i18n="edu.bs.level">ปริญญาตรี</div>
+                <h3 data-i18n="edu.bs.major">วิศวกรรมคอมพิวเตอร์</h3>
                 <div class="edu-divider"></div>
                 <div class="edu-detail">
-                    <p class="edu-faculty">ครุศาสตร์อุตสาหกรรมฯ</p>
-                    <p class="edu-major">ครุศาสตร์วิศวกรรม</p>
-                    <p class="edu-school">สถาบันเทคโนโลยีพระจอมเกล้าลาดกระบัง</p>
+                    <p class="edu-faculty" data-i18n="edu.bs.faculty">ครุศาสตร์อุตสาหกรรมฯ</p>
+                    <p class="edu-major" data-i18n="edu.bs.field">ครุศาสตร์วิศวกรรม</p>
+                    <p class="edu-school" data-i18n="edu.kmitl">สถาบันเทคโนโลยีพระจอมเกล้าลาดกระบัง</p>
                 </div>
             </div>
 
-            <!-- Arrow -->
-            <div class="edu-arrow">
-                <i class="fas fa-chevron-right"></i>
-            </div>
+            <div class="edu-arrow"><i class="fas fa-chevron-right"></i></div>
 
-            <!-- ป.โท — Active -->
             <div class="edu-card edu-card-active">
                 <div class="edu-now-badge">
-                    <span class="edu-now-dot"></span> กำลังศึกษาอยู่
+                    <span class="edu-now-dot"></span> <span data-i18n="edu.ms.now">กำลังศึกษาอยู่</span>
                 </div>
-                <div class="edu-card-icon">
-                    <i class="fas fa-brain"></i>
-                </div>
-                <div class="edu-level-badge active">ปริญญาโท</div>
-                <h3>ปัญญาประดิษฐ์ศึกษา</h3>
+                <div class="edu-card-icon"><i class="fas fa-brain"></i></div>
+                <div class="edu-level-badge active" data-i18n="edu.ms.level">ปริญญาโท</div>
+                <h3 data-i18n="edu.ms.major">ปัญญาประดิษฐ์ศึกษา</h3>
                 <div class="edu-divider"></div>
                 <div class="edu-detail">
-                    <p class="edu-faculty">ครุศาสตร์อุตสาหกรรมฯ</p>
-                    <p class="edu-major">การศึกษาวิทยาศาสตร์และเทคโนโลยี</p>
-                    <p class="edu-school">สถาบันเทคโนโลยีพระจอมเกล้าลาดกระบัง</p>
+                    <p class="edu-faculty" data-i18n="edu.ms.faculty">ครุศาสตร์อุตสาหกรรมฯ</p>
+                    <p class="edu-major" data-i18n="edu.ms.field">การศึกษาวิทยาศาสตร์และเทคโนโลยี</p>
+                    <p class="edu-school" data-i18n="edu.kmitl">สถาบันเทคโนโลยีพระจอมเกล้าลาดกระบัง</p>
                 </div>
             </div>
 
@@ -246,20 +240,19 @@
 <section class="section skills-section" id="skills">
     <div class="section-container">
         <div class="section-header">
-            <span class="section-tag"><i class="fas fa-tools"></i> Skills</span>
-            <h2>ทักษะ<span class="gradient-text">ความสามารถ</span></h2>
+            <span class="section-tag"><i class="fas fa-tools"></i> <span data-i18n="skills.tag">Skills</span></span>
+            <h2 data-i18n="skills.title">ทักษะ<span class="gradient-text">ความสามารถ</span></h2>
         </div>
         <div class="skill-rows">
 
-            <!-- Web Development group -->
             <div class="skill-group-block">
                 <div class="skill-group-label">
                     <i class="fas fa-globe"></i>
-                    <span>Web Development</span>
+                    <span data-i18n="skills.web">Web Development</span>
                 </div>
                 <div class="skill-rows-inner">
                     <div class="skill-row">
-                        <div class="skill-row-cat"><i class="fas fa-layer-group"></i> Frontend</div>
+                        <div class="skill-row-cat"><i class="fas fa-layer-group"></i> <span data-i18n="skills.frontend">Frontend</span></div>
                         <div class="skill-pills">
                             <span class="skill-pill"><i class="fa-brands fa-html5" style="color:#e34c26"></i> HTML5</span>
                             <span class="skill-pill"><i class="fa-brands fa-css3-alt" style="color:#2965f1"></i> CSS3</span>
@@ -272,26 +265,26 @@
                     </div>
                     <div class="skill-row-divider"></div>
                     <div class="skill-row">
-                        <div class="skill-row-cat"><i class="fas fa-server"></i> Backend</div>
+                        <div class="skill-row-cat"><i class="fas fa-server"></i> <span data-i18n="skills.backend">Backend</span></div>
                         <div class="skill-pills">
                             <span class="skill-pill"><i class="fa-brands fa-python" style="color:#3572A5"></i> Python</span>
                             <span class="skill-pill"><i class="fa-brands fa-python" style="color:#092e20"></i> Django</span>
                             <span class="skill-pill"><i class="fa-brands fa-node-js" style="color:#68a063"></i> Node.js</span>
                             <span class="skill-pill"><i class="fa-brands fa-microsoft" style="color:#0078d4"></i> .NET</span>
+                            <span class="skill-pill"><i class="fa-solid fa-plug" style="color:#60a5fa"></i> REST API</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Mobile -->
             <div class="skill-group-block">
                 <div class="skill-group-label">
                     <i class="fas fa-mobile-alt"></i>
-                    <span>Mobile Application</span>
+                    <span data-i18n="skills.mobile">Mobile Application</span>
                 </div>
                 <div class="skill-rows-inner">
                     <div class="skill-row">
-                        <div class="skill-row-cat"><i class="fa-brands fa-android"></i> Cross-Platform</div>
+                        <div class="skill-row-cat"><i class="fa-brands fa-android"></i> <span data-i18n="skills.crossplatform">Cross-Platform</span></div>
                         <div class="skill-pills">
                             <span class="skill-pill"><i class="fa-brands fa-android" style="color:#02569B"></i> Flutter</span>
                         </div>
@@ -299,15 +292,14 @@
                 </div>
             </div>
 
-            <!-- Database & Tools -->
             <div class="skill-group-block">
                 <div class="skill-group-label">
                     <i class="fas fa-wrench"></i>
-                    <span>Database & Tools</span>
+                    <span data-i18n="skills.dbtools">Database & Tools</span>
                 </div>
                 <div class="skill-rows-inner">
                     <div class="skill-row">
-                        <div class="skill-row-cat"><i class="fas fa-database"></i> Database</div>
+                        <div class="skill-row-cat"><i class="fas fa-database"></i> <span data-i18n="skills.database">Database</span></div>
                         <div class="skill-pills">
                             <span class="skill-pill"><i class="fa-solid fa-database" style="color:#f28500"></i> SQL</span>
                             <span class="skill-pill"><i class="fa-solid fa-leaf" style="color:#47A248"></i> MongoDB</span>
@@ -315,7 +307,7 @@
                     </div>
                     <div class="skill-row-divider"></div>
                     <div class="skill-row">
-                        <div class="skill-row-cat"><i class="fas fa-code-branch"></i> Version Control</div>
+                        <div class="skill-row-cat"><i class="fas fa-code-branch"></i> <span data-i18n="skills.vcs">Version Control</span></div>
                         <div class="skill-pills">
                             <span class="skill-pill"><i class="fa-brands fa-git-alt" style="color:#f34f29"></i> Git</span>
                             <span class="skill-pill"><i class="fa-brands fa-bitbucket" style="color:#2684FF"></i> Bitbucket</span>
@@ -324,24 +316,22 @@
                 </div>
             </div>
 
-            <!-- AI & ML — featured -->
-            <div class="skill-group-block skill-group-ai fade-in">
+            <div class="skill-group-block skill-group-ai">
                 <div class="skill-group-label ai-label">
                     <i class="fas fa-brain"></i>
-                    <span>AI & Machine Learning</span>
+                    <span data-i18n="skills.ai">AI & Machine Learning</span>
                     <span class="hot-badge">HOT</span>
                 </div>
                 <div class="skill-rows-inner">
                     <div class="skill-row">
-                        <div class="skill-row-cat"><i class="fas fa-flask"></i> Research</div>
+                        <div class="skill-row-cat"><i class="fas fa-flask"></i> <span data-i18n="skills.research">Research</span></div>
                         <div class="skill-pills">
                             <span class="skill-pill ai-pill"><i class="fa-solid fa-square-root-variable" style="color:#0076a8"></i> MATLAB</span>
-                            <!-- <span class="skill-pill ai-pill"><i class="fa-solid fa-brain" style="color:#8e44ad"></i> Artificial Intelligence</span> -->
                         </div>
                     </div>
                     <div class="skill-row-divider"></div>
                     <div class="skill-row">
-                        <div class="skill-row-cat"><i class="fas fa-robot"></i> AI Tools</div>
+                        <div class="skill-row-cat"><i class="fas fa-robot"></i> <span data-i18n="skills.aitools">AI Tools</span></div>
                         <div class="skill-pills">
                             <span class="skill-pill ai-pill"><i class="fa-solid fa-robot" style="color:#60a5fa"></i> Claude AI</span>
                             <span class="skill-pill ai-pill"><i class="fa-solid fa-wand-magic-sparkles" style="color:#f59e0b"></i> Prompt Engineering</span>
@@ -358,13 +348,11 @@
 <section class="section" id="experience">
     <div class="section-container">
         <div class="section-header">
-            <span class="section-tag"><i class="fas fa-briefcase"></i> Experience</span>
-            <h2>ประสบการณ์<span class="gradient-text">การทำงาน</span></h2>
+            <span class="section-tag"><i class="fas fa-briefcase"></i> <span data-i18n="exp.tag">Experience</span></span>
+            <h2 data-i18n="exp.title">ประสบการณ์<span class="gradient-text">การทำงาน</span></h2>
         </div>
-
         <div class="career-timeline">
 
-            <!-- BEM -->
             <div class="career-item">
                 <div class="career-left">
                     <div class="career-icon-wrap" style="--c1:#1e40af;--c2:#0ea5e9">
@@ -379,10 +367,10 @@
                             <h3 class="career-company">Bangkok Expressway and Metro PCL</h3>
                         </div>
                         <span class="career-role-badge" style="--rc:rgba(14,165,233,0.15);--rb:rgba(14,165,233,0.4);--rt:#7dd3fc">
-                            <i class="fas fa-code"></i> Programmer
+                            <i class="fas fa-code"></i> <span data-i18n="exp.role.programmer">Programmer</span>
                         </span>
                     </div>
-                    <p class="career-desc">พัฒนาระบบสำหรับการบำรุงรักษารถไฟฟ้าและบริหารคลังสินค้า ใช้ K2, ASP.NET และ Stored Procedures</p>
+                    <p class="career-desc" data-i18n="exp.bem.desc">พัฒนาระบบสำหรับการบำรุงรักษารถไฟฟ้าและบริหารคลังสินค้า ใช้ K2, ASP.NET และ Stored Procedures</p>
                     <div class="career-projects">
                         <span class="career-proj"><i class="fas fa-circle-dot"></i> MPR System</span>
                         <span class="career-proj"><i class="fas fa-circle-dot"></i> Inventory Management</span>
@@ -393,7 +381,6 @@
                 </div>
             </div>
 
-            <!-- Health Up -->
             <div class="career-item">
                 <div class="career-left">
                     <div class="career-icon-wrap" style="--c1:#16a34a;--c2:#22c55e">
@@ -408,10 +395,10 @@
                             <h3 class="career-company">Health Up Co., Ltd.</h3>
                         </div>
                         <span class="career-role-badge" style="--rc:rgba(34,197,94,0.12);--rb:rgba(34,197,94,0.35);--rt:#86efac">
-                            <i class="fas fa-code"></i> Programmer
+                            <i class="fas fa-code"></i> <span data-i18n="exp.role.programmer">Programmer</span>
                         </span>
                     </div>
-                    <p class="career-desc">พัฒนาแพลตฟอร์มขายยาออนไลน์และออกแบบ UI สำหรับระบบร้านค้า ใช้ Flutter, Angular และ .NET</p>
+                    <p class="career-desc" data-i18n="exp.healthup.desc">พัฒนาแพลตฟอร์มขายยาออนไลน์และออกแบบ UI สำหรับระบบร้านค้า ใช้ Flutter, Angular และ .NET</p>
                     <div class="career-projects">
                         <span class="career-proj"><i class="fas fa-circle-dot"></i> Hug Online Platform</span>
                         <span class="career-proj"><i class="fas fa-circle-dot"></i> UI Design — DN Online</span>
@@ -423,7 +410,6 @@
                 </div>
             </div>
 
-            <!-- Haupcar — Current -->
             <div class="career-item career-current">
                 <div class="career-left">
                     <div class="career-icon-wrap current-icon" style="--c1:#7c3aed;--c2:#a855f7">
@@ -432,7 +418,7 @@
                 </div>
                 <div class="career-card current-card">
                     <div class="career-now-badge">
-                        <span class="career-now-dot"></span> ปัจจุบัน
+                        <span class="career-now-dot"></span> <span data-i18n="exp.current">ปัจจุบัน</span>
                     </div>
                     <div class="career-card-top">
                         <div>
@@ -443,7 +429,7 @@
                             <i class="fas fa-layer-group"></i> Full Stack Developer
                         </span>
                     </div>
-                    <p class="career-desc">พัฒนาระบบ Full Stack สำหรับแพลตฟอร์มเช่ารถ ดูแลทั้ง Frontend และ Backend ครบวงจร</p>
+                    <p class="career-desc" data-i18n="exp.haupcar.desc">พัฒนาระบบ Full Stack สำหรับแพลตฟอร์มเช่ารถ ดูแลทั้ง Frontend และ Backend ครบวงจร</p>
                     <div class="career-tech">
                         <span>Next.js</span><span>Node.js</span><span>MongoDB</span><span>Full Stack</span>
                     </div>
@@ -458,14 +444,14 @@
 <section class="section portfolio-section" id="portfolio">
     <div class="section-container">
         <div class="section-header">
-            <span class="section-tag"><i class="fas fa-folder-open"></i> Portfolio</span>
-            <h2>ผลงาน<span class="gradient-text">โปรเจกต์</span></h2>
+            <span class="section-tag"><i class="fas fa-folder-open"></i> <span data-i18n="port.tag">Portfolio</span></span>
+            <h2 data-i18n="port.title">ผลงาน<span class="gradient-text">โปรเจกต์</span></h2>
         </div>
         <div class="portfolio-grid">
             <div class="portfolio-card">
                 <div class="portfolio-card-header">
                     <div class="port-icon"><i class="fas fa-code-branch"></i></div>
-                    <h3>My Projects</h3>
+                    <h3 data-i18n="port.projects">My Projects</h3>
                 </div>
                 <ul class="portfolio-list">
                     <li><span class="proj-icon">🎓</span><span>Graduation Project — Web Quiz</span></li>
@@ -475,13 +461,13 @@
                     <li><span class="proj-icon">🎨</span><span>Health Up — UI Design DN Online</span></li>
                 </ul>
                 <a href="./projectmy.html" class="view-more-btn">
-                    ดูทั้งหมด <i class="fas fa-arrow-right"></i>
+                    <span data-i18n="port.viewall">ดูทั้งหมด</span> <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
             <div class="portfolio-card">
                 <div class="portfolio-card-header">
                     <div class="port-icon"><i class="fas fa-certificate"></i></div>
-                    <h3>Certificates</h3>
+                    <h3 data-i18n="port.certs">Certificates</h3>
                 </div>
                 <div class="cert-preview">
                     <img src="./images/certificate/c1.jpg" alt="Certificate 1">
@@ -489,13 +475,13 @@
                     <img src="./images/certificate/c3.jpg" alt="Certificate 3">
                 </div>
                 <a href="./certificate.html" class="view-more-btn">
-                    ดูทั้งหมด <i class="fas fa-arrow-right"></i>
+                    <span data-i18n="port.viewall">ดูทั้งหมด</span> <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
             <div class="portfolio-card">
                 <div class="portfolio-card-header">
                     <div class="port-icon"><i class="fas fa-images"></i></div>
-                    <h3>Personal Gallery</h3>
+                    <h3 data-i18n="port.gallery">Personal Gallery</h3>
                 </div>
                 <div class="cert-preview">
                     <img src="./images/congratulations/c1.JPG" alt="Gallery 1">
@@ -503,7 +489,7 @@
                     <img src="./images/congratulations/c8.JPG" alt="Gallery 3">
                 </div>
                 <a href="./personal.html" class="view-more-btn">
-                    ดูทั้งหมด <i class="fas fa-arrow-right"></i>
+                    <span data-i18n="port.viewall">ดูทั้งหมด</span> <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
         </div>
@@ -514,35 +500,29 @@
 <section class="section contact-section" id="contact">
     <div class="section-container">
         <div class="section-header">
-            <span class="section-tag"><i class="fas fa-envelope"></i> Contact</span>
-            <h2>ติดต่อ<span class="gradient-text">ฉัน</span></h2>
-            <p>สนใจร่วมงาน? ติดต่อมาได้เลย — พร้อมรับโอกาสใหม่เสมอ</p>
+            <span class="section-tag"><i class="fas fa-envelope"></i> <span data-i18n="contact.tag">Contact</span></span>
+            <h2 data-i18n="contact.title">ติดต่อ<span class="gradient-text">ฉัน</span></h2>
+            <p data-i18n="contact.subtitle">สนใจร่วมงาน? ติดต่อมาได้เลย — พร้อมรับโอกาสใหม่เสมอ</p>
         </div>
         <div class="contact-cards">
             <a href="tel:+660954314798" class="contact-card">
-                <div class="contact-card-icon phone-icon">
-                    <i class="fas fa-phone"></i>
-                </div>
+                <div class="contact-card-icon phone-icon"><i class="fas fa-phone"></i></div>
                 <div class="contact-card-info">
-                    <h4>Phone</h4>
+                    <h4 data-i18n="contact.phone">Phone</h4>
                     <p>095-431-4798</p>
                 </div>
                 <i class="fas fa-external-link-alt contact-arrow"></i>
             </a>
-            <a href="mailto:suprakron270542@gmail.com" class="contact-card">
-                <div class="contact-card-icon email-icon">
-                    <i class="fas fa-envelope"></i>
-                </div>
+            <a href="mailto:suprakron15@gmail.com" class="contact-card">
+                <div class="contact-card-icon email-icon"><i class="fas fa-envelope"></i></div>
                 <div class="contact-card-info">
-                    <h4>Email</h4>
+                    <h4 data-i18n="contact.email">Email</h4>
                     <p>suprakron15@gmail.com</p>
                 </div>
                 <i class="fas fa-external-link-alt contact-arrow"></i>
             </a>
             <a href="https://www.facebook.com/suprakron.maprachum.3/?locale=th_TH" target="_blank" class="contact-card">
-                <div class="contact-card-icon facebook-icon">
-                    <i class="fab fa-facebook-f"></i>
-                </div>
+                <div class="contact-card-icon facebook-icon"><i class="fab fa-facebook-f"></i></div>
                 <div class="contact-card-info">
                     <h4>Facebook</h4>
                     <p>Suprakron Maprachum</p>
@@ -550,9 +530,7 @@
                 <i class="fas fa-external-link-alt contact-arrow"></i>
             </a>
             <a href="https://github.com/suprakron" target="_blank" class="contact-card">
-                <div class="contact-card-icon github-icon">
-                    <i class="fab fa-github"></i>
-                </div>
+                <div class="contact-card-icon github-icon"><i class="fab fa-github"></i></div>
                 <div class="contact-card-info">
                     <h4>GitHub</h4>
                     <p>@suprakron</p>
@@ -573,17 +551,18 @@
             <span><i class="fas fa-code"></i> Claude Code</span>
             <span><i class="fas fa-heart" style="color:#ef4444"></i> Handcrafted</span>
         </div>
-        <p class="footer-copy">© 2025 Suprakron Maprachum · All Rights Reserved</p>
+        <p class="footer-copy" data-i18n="footer.copy">© 2025 Suprakron Maprachum · All Rights Reserved</p>
     </div>
 </footer>
 
 <!-- Floating Contact Button -->
 <a href="#contact" class="floating-cta">
     <i class="fas fa-envelope"></i>
-    <span>ติดต่อ</span>
+    <span data-i18n="contact.cta">ติดต่อ</span>
 </a>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./js/i18n.js"></script>
 <script src="./js/portfolio.js"></script>
 </body>
 </html>
