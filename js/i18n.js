@@ -34,7 +34,7 @@ const translations = {
         'port.tag': 'ผลงาน', 'port.title': 'ผลงาน<span class="gradient-text">โปรเจกต์</span>',
         'port.projects': 'โปรเจกต์ของฉัน', 'port.certs': 'ใบประกาศนียบัตร', 'port.gallery': 'แกลเลอรี่ส่วนตัว', 'port.viewall': 'ดูทั้งหมด',
         'contact.tag': 'ติดต่อ', 'contact.title': 'ติดต่อ<span class="gradient-text">ฉัน</span>',
-        'contact.subtitle': 'สนใจร่วมงาน? ติดต่อมาได้เลย — พร้อมรับโอกาสใหม่เสมอ',
+        'contact.subtitle': 'ติดต่อมาได้เลย',
         'contact.phone': 'โทรศัพท์', 'contact.email': 'อีเมล', 'contact.cta': 'ติดต่อ',
         'footer.copy': '© 2025 Suprakron Maprachum · สงวนลิขสิทธิ์',
     },
