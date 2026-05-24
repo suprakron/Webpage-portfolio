@@ -249,6 +249,8 @@
         el.style.transitionDelay = `${(i % 4) * 60}ms`;
         obs.observe(el);
     });
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('dragstart', e => { if (e.target.tagName === 'IMG') e.preventDefault(); });
 </script>
 </body>
 </html>
