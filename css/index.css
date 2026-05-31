@@ -1786,7 +1786,7 @@ body.light-mode .floating-cta {
 
     .nav-controls {
         position: fixed;
-        bottom: 24px;
+        bottom: 16px;
         left: 50%;
         transform: translateX(-50%);
         background: rgba(8,14,30,0.92);
@@ -1829,21 +1829,23 @@ body.light-mode .floating-cta {
     }
 
     .nav-links a {
-        font-size: 1.1rem;
-        padding: 14px 28px;
+        font-size: 1.05rem;
+        padding: 12px 28px;
     }
 
+    /* Hero — text first, image below */
     .hero {
-        flex-direction: column-reverse;
-        padding: 90px 20px 60px;
+        flex-direction: column;
+        min-height: auto;
+        padding: 80px 20px 40px;
         text-align: center;
-        gap: 36px;
+        gap: 24px;
     }
 
     .hero-content { max-width: 100%; }
-    .hero-visual   { max-width: 100%; width: 100%; }
+    .hero-visual   { max-width: 260px; width: 100%; margin: 0 auto; }
     .hero-buttons  { justify-content: center; }
-    .hero-stats    { justify-content: center; }
+    .hero-stats    { justify-content: center; gap: 28px; }
 
     .ai-banner {
         flex-direction: column;
@@ -1852,23 +1854,30 @@ body.light-mode .floating-cta {
         gap: 16px;
     }
 
-    .profile-pic { height: 340px; }
+    .profile-pic { height: 220px; }
+
+    /* Sections */
+    .section { padding: 60px 20px; }
+    .section-header { margin-bottom: 40px; }
 
     .timeline { padding-left: 38px; }
     .timeline::before { left: 15px; }
     .timeline-dot { left: -33px; }
 
-    /* Floating CTA on mobile: icon only */
+    /* Floating CTA on mobile: icon only, move up to avoid nav-controls */
     .floating-cta span { display: none; }
-    .floating-cta { padding: 16px; border-radius: 50%; bottom: 24px; right: 24px; }
+    .floating-cta { padding: 14px; border-radius: 50%; bottom: 72px; right: 20px; }
 }
 
 /* Small Mobile */
 @media (max-width: 480px) {
-    .section { padding: 60px 16px; }
-    .hero { padding: 85px 16px 50px; }
-    .hero-stats { gap: 24px; }
-    .stat-number { font-size: 1.6rem; }
+    .section { padding: 36px 16px; }
+    .section-header { margin-bottom: 24px; }
+    .hero { padding: 72px 16px 32px; gap: 18px; }
+    .hero-visual { max-width: 220px; }
+    .hero-stats { gap: 20px; }
+    .stat-number { font-size: 1.5rem; }
+    .stat-label { font-size: 0.68rem; }
 
     .skills-grid,
     .exp-cards,
@@ -1876,11 +1885,22 @@ body.light-mode .floating-cta {
 
     .ai-cards { grid-template-columns: 1fr; }
 
-    .profile-pic { height: 280px; }
+    .profile-pic { height: 190px; }
 
-    .section-header h2 { font-size: 1.75rem; }
+    .section-header h2 { font-size: 1.65rem; }
 
-    .floating-cta { bottom: 18px; right: 18px; }
+    .floating-cta { bottom: 68px; right: 16px; }
 
     .contact-card-info p { font-size: 0.82rem; }
+
+    /* Reduce hero text size slightly */
+    .hero-desc { font-size: 0.9rem; }
+    .ai-badge { font-size: 0.78rem; padding: 7px 14px; }
+
+    /* Career: prevent company name overflow */
+    .career-company { font-size: 0.92rem; word-break: break-word; }
+    .career-card { padding: 18px 14px; margin-left: 12px; }
+
+    /* Edu-cards: tighter on small screens */
+    .edu-card { padding: 20px 18px; }
 }
