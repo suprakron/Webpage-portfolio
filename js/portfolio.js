@@ -72,6 +72,7 @@ document.querySelectorAll(animatedSelectors.join(', ')).forEach((el, i) => {
 // ===== SMOOTH ACTIVE NAV =====
 const sections = document.querySelectorAll('section[id]');
 const navItems = document.querySelectorAll('.nav-links a');
+const tabItems = document.querySelectorAll('.tab-item');
 
 const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -79,6 +80,10 @@ const sectionObserver = new IntersectionObserver((entries) => {
             navItems.forEach(a => a.style.color = '');
             const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
             if (active) active.style.color = 'var(--blue-300)';
+
+            tabItems.forEach(t => t.classList.remove('active'));
+            const activeTab = document.querySelector(`.tab-item[data-section="${entry.target.id}"]`);
+            if (activeTab) activeTab.classList.add('active');
         }
     });
 }, { threshold: 0.4 });
