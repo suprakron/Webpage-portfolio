@@ -1,7 +1,7 @@
 const translations = {
     th: {
         'nav.about': 'เกี่ยวกับ', 'nav.ai': 'ทักษะ AI', 'nav.education': 'การศึกษา',
-        'nav.skills': 'ทักษะ', 'nav.experience': 'ประสบการณ์', 'nav.contact': 'ติดต่อ',
+        'nav.skills': 'ทักษะ', 'nav.experience': 'ประสบการณ์', 'nav.portfolio': 'ผลงาน', 'nav.contact': 'ติดต่อ',
         'hero.badge': 'AI-Powered Developer',
         'hero.greeting': 'สวัสดี ฉันคือ',
         'hero.subtitle': 'Full-Stack Developer · AI Enthusiast · นักศึกษาปริญญาโท AI',
@@ -40,7 +40,7 @@ const translations = {
     },
     en: {
         'nav.about': 'About', 'nav.ai': 'AI Skills', 'nav.education': 'Education',
-        'nav.skills': 'Skills', 'nav.experience': 'Experience', 'nav.contact': 'Contact',
+        'nav.skills': 'Skills', 'nav.experience': 'Experience', 'nav.portfolio': 'Portfolio', 'nav.contact': 'Contact',
         'hero.badge': 'AI-Powered Developer',
         'hero.greeting': "Hi, I'm",
         'hero.subtitle': 'Full-Stack Developer · AI Enthusiast · M.Ed. Student in AI',
@@ -79,7 +79,7 @@ const translations = {
     },
     ja: {
         'nav.about': '自己紹介', 'nav.ai': 'AIスキル', 'nav.education': '学歴',
-        'nav.skills': 'スキル', 'nav.experience': '経歴', 'nav.contact': '連絡',
+        'nav.skills': 'スキル', 'nav.experience': '経歴', 'nav.portfolio': 'ポートフォリオ', 'nav.contact': '連絡',
         'hero.badge': 'AI開発者',
         'hero.greeting': 'はじめまして、私は',
         'hero.subtitle': 'フルスタック開発者 · AI研究者 · AI教育修士課程',
@@ -118,7 +118,7 @@ const translations = {
     },
     zh: {
         'nav.about': '关于', 'nav.ai': 'AI技能', 'nav.education': '教育',
-        'nav.skills': '技能', 'nav.experience': '经历', 'nav.contact': '联系',
+        'nav.skills': '技能', 'nav.experience': '经历', 'nav.portfolio': '作品集', 'nav.contact': '联系',
         'hero.badge': 'AI驱动开发者',
         'hero.greeting': '你好，我是',
         'hero.subtitle': '全栈开发者 · AI爱好者 · AI教育硕士生',
