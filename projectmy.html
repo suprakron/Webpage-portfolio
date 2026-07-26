@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Showcase | Suprakron</title>
-    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="./css/pages.css">
@@ -139,8 +140,15 @@
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
         }
 
         /* No image placeholder */
@@ -153,20 +161,27 @@
             .project-card {
                 grid-template-columns: 1fr;
             }
+
             .project-card-image {
                 border-right: none;
                 border-bottom: 1px solid rgba(59, 130, 246, 0.18);
                 min-height: 180px;
                 padding: 20px;
             }
+
             .project-card-body {
                 padding: 24px 20px;
             }
         }
 
         @media (max-width: 480px) {
-            .project-card-body h2 { font-size: 1.1rem; }
-            .project-card-body h3 { font-size: 0.88rem; }
+            .project-card-body h2 {
+                font-size: 1.1rem;
+            }
+
+            .project-card-body h3 {
+                font-size: 0.88rem;
+            }
         }
 
         /* ===== IMAGE PROTECTION ===== */
@@ -176,13 +191,16 @@
             -webkit-user-select: none;
             pointer-events: none;
         }
+
         .project-card img {
             pointer-events: none;
         }
+
         .img-protect-wrap {
             position: relative;
             width: 100%;
         }
+
         .img-protect-overlay {
             position: absolute;
             inset: 0;
@@ -194,290 +212,486 @@
         #projectCarousel .carousel-control-next {
             z-index: 20;
         }
+
+        /* ===== COMPANY / CONTEXT SECTIONS ===== */
+        .company-section {
+            margin-bottom: 52px;
+        }
+
+        .company-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .company-section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 22px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(var(--company-rgb), 0.25);
+        }
+
+        .company-icon {
+            width: 46px;
+            height: 46px;
+            flex-shrink: 0;
+            border-radius: 12px;
+            background: rgba(var(--company-rgb), 0.14);
+            border: 1px solid rgba(var(--company-rgb), 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(var(--company-rgb));
+            font-size: 1.2rem;
+        }
+
+        .company-name {
+            font-family: 'Russo One', sans-serif;
+            font-size: 1.15rem;
+            color: #f1f5f9;
+            margin: 0;
+        }
+
+        .company-name-th {
+            color: #94a3b8;
+            font-size: 0.82rem;
+            font-weight: 400;
+        }
+
+        .company-role {
+            color: rgb(var(--company-rgb));
+            font-size: 0.82rem;
+            margin: 3px 0 0;
+            font-weight: 500;
+        }
+
+        .project-card {
+            border-color: rgba(var(--company-rgb), 0.18) !important;
+        }
+
+        .project-card:hover {
+            border-color: rgba(var(--company-rgb), 0.55) !important;
+            box-shadow: 0 0 40px rgba(var(--company-rgb), 0.15) !important;
+        }
+
+        .project-card .project-company {
+            background: rgba(var(--company-rgb), 0.1);
+            border-color: rgba(var(--company-rgb), 0.32);
+            color: rgb(var(--company-rgb));
+        }
+
+        .project-card .proj-tech-badge {
+            border-color: rgba(var(--company-rgb), 0.25);
+            color: rgb(var(--company-rgb));
+        }
+
+        .project-card .view-hint {
+            color: rgb(var(--company-rgb));
+        }
+
+        .project-card h3 {
+            color: rgb(var(--company-rgb)) !important;
+        }
+
+        .no-img-card .project-card-image {
+            background: linear-gradient(135deg, rgba(var(--company-rgb), 0.22), rgba(var(--company-rgb), 0.08));
+        }
+
+        .no-img-card .no-image {
+            background: linear-gradient(135deg, rgb(var(--company-rgb)), rgba(var(--company-rgb), 0.6));
+        }
     </style>
 </head>
 
 <body>
 
-<!-- Header -->
-<div class="page-header">
-    <a href="index.html" class="back-btn">
-        <i class="fas fa-arrow-left"></i> กลับหน้าหลัก
-    </a>
-    <span class="page-header-title">/ Project Showcase</span>
-</div>
-
-<!-- Content -->
-<div class="page-container">
-    <div class="text-center mb-4">
-        <span class="section-tag"><i class="fas fa-folder-open"></i> Portfolio</span>
+    <!-- Header -->
+    <div class="page-header">
+        <a href="index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> กลับหน้าหลัก
+        </a>
+        <span class="page-header-title">/ Project Showcase</span>
     </div>
-    <h1 class="page-title">ผลงาน<span>โปรเจกต์</span>ของฉัน</h1>
-    <p class="page-subtitle">คลิกที่การ์ดเพื่อดูรูปภาพโปรเจกต์</p>
 
-    <div class="projects-list">
+    <!-- Content -->
+    <div class="page-container">
+        <div class="text-center mb-4">
+            <span class="section-tag"><i class="fas fa-folder-open"></i> Portfolio</span>
+        </div>
+        <h1 class="page-title">ผลงาน<span>โปรเจกต์</span>ของฉัน</h1>
+        <p class="page-subtitle">คลิกที่การ์ดเพื่อดูรูปภาพโปรเจกต์</p>
 
-        <!-- Project: Motorcycle Rent-to-Own Platform (Current Work) -->
-        <div class="project-card fade-up"
-            data-bs-toggle="modal" data-bs-target="#imageModal"
-            data-images='["./images/projectlandingpage/01.png","./images/projectlandingpage/02.png","./images/projectlandingpage/03.png","./images/projectlandingpage/04.png","./images/projectlandingpage/05.png"]'>
-            <div class="project-card-image">
-                <img src="./images/projectlandingpage/01.png" alt="Motorcycle Rent-to-Own Platform" draggable="false">
-            </div>
-            <div class="project-card-body">
-                <span class="project-company" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.35); color: #6ee7b7;">
-                    <i class="fas fa-circle" style="font-size:0.55rem; animation: pulse 1.5s infinite;"></i> Current Work
-                </span>
-                <h2>Motorcycle Rent-to-Own Platform</h2>
-                <h3 style="color: #60a5fa;">แพลตฟอร์มเช่าซื้อมอเตอร์ไซค์</h3>
-                <p>The project I'm working on right now, full-stack. A platform where users browse motorcycles from dealers, pick a rent-to-own or lease plan, complete KYC/ID verification under PDPA, and track monthly payments through to full ownership.</p>
-                <div class="project-tag-row">
-                    <span class="proj-tech-badge">Full-Stack</span>
-                    <span class="proj-tech-badge">Fintech</span>
-                    <span class="proj-tech-badge">Rent-to-Own</span>
-                    <span class="proj-tech-badge">Payments</span>
+        <!-- ===== HAUPCAR (current job) ===== -->
+        <div class="company-section" style="--company-rgb: 168, 85, 247;">
+            <div class="company-section-header">
+                <div class="company-icon"><i class="fas fa-car"></i></div>
+                <div>
+                    <h2 class="company-name">Haupcar Company Limited <span class="company-name-th">(ฮ้อปคาร์)</span>
+                    </h2>
+                    <p class="company-role">Full-Stack Developer · Current</p>
                 </div>
-                <div class="view-hint"><i class="fas fa-images"></i> คลิกเพื่อดู 5 รูป</div>
+            </div>
+            <div class="projects-list">
+
+                <!-- Fleet Management Platform -->
+                <div class="project-card fade-up" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-images='["./images/project/p2-01.png","./images/project/p2-02.png","./images/project/p2-03.png"]'>
+                    <div class="project-card-image">
+                        <img src="./images/project/p2-01.png" alt="Fleet Management Platform" draggable="false">
+                    </div>
+                    <div class="project-card-body">
+                        <span class="project-company"><i class="fas fa-car"></i> Haupcar Company Limited</span>
+                        <h2>Fleet Management Platform</h2>
+                        <h3>แพลตฟอร์มจัดการคลังรถ</h3>
+                        <p>An internal fleet management system for the car subscription/rental business — covering
+                            reservations, driver assignment & shift scheduling, airport transfer bookings, user
+                            management, and real-time vehicle utilization tracking.</p>
+                        <div class="project-tag-row">
+                            <span class="proj-tech-badge">Full-Stack</span>
+                            <span class="proj-tech-badge">Fleet Management</span>
+                            <span class="proj-tech-badge">Dashboard</span>
+                        </div>
+                        <div class="view-hint"><i class="fas fa-images"></i> คลิกเพื่อดู 3 รูป</div>
+                    </div>
+                </div>
+
+                <!-- Motorcycle Rent-to-Own Platform -->
+                <div class="project-card fade-up" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-images='["./images/projectlandingpage/01.png","./images/projectlandingpage/02.png","./images/projectlandingpage/03.png","./images/projectlandingpage/04.png","./images/projectlandingpage/05.png"]'>
+                    <div class="project-card-image">
+                        <img src="./images/projectlandingpage/01.png" alt="Motorcycle Rent-to-Own Platform"
+                            draggable="false">
+                    </div>
+                    <div class="project-card-body">
+                        <span class="project-company"><i class="fas fa-car"></i> Haupcar Company Limited</span>
+                        <h2>Motorcycle Rent-to-Own Platform</h2>
+                        <h3>แพลตฟอร์มเช่าซื้อมอเตอร์ไซค์</h3>
+                        <p>A platform where users browse motorcycles from dealers, pick a rent-to-own or lease plan,
+                            complete KYC/ID verification under PDPA, and track monthly payments through to full
+                            ownership.</p>
+                        <div class="project-tag-row">
+                            <span class="proj-tech-badge">Full-Stack</span>
+                            <span class="proj-tech-badge">Fintech</span>
+                            <span class="proj-tech-badge">Rent-to-Own</span>
+                            <span class="proj-tech-badge">Payments</span>
+                        </div>
+                        <div class="view-hint"><i class="fas fa-images"></i> คลิกเพื่อดู 5 รูป</div>
+                    </div>
+                </div>
+
+                <!-- Car Subscription Management System -->
+                <div class="project-card fade-up" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-images='["./images/project_ui/project_sub.png","./images/project_ui/project_sub02.png"]'>
+                    <div class="project-card-image">
+                        <img src="./images/project_ui/project_sub.png" alt="Car Subscription Management System"
+                            draggable="false">
+                    </div>
+                    <div class="project-card-body">
+                        <span class="project-company"><i class="fas fa-car"></i> Haupcar Company Limited</span>
+                        <h2>Car Subscription Management System</h2>
+                        <h3>Vehicle Subscription & EV Charging Platform</h3>
+                        <p>A management platform for the car subscription service — covers inventory, reservations,
+                            revenue tracking, EV charging stations, and pricing plans. Handled both frontend and
+                            backend.</p>
+                        <div class="project-tag-row">
+                            <span class="proj-tech-badge">React</span>
+                            <span class="proj-tech-badge">TypeScript</span>
+                            <span class="proj-tech-badge">Dashboard</span>
+                            <span class="proj-tech-badge">EV Charging</span>
+                            <span class="proj-tech-badge">Enterprise</span>
+                        </div>
+                        <div class="view-hint"><i class="fas fa-images"></i> คลิกเพื่อดู 2 รูป</div>
+                    </div>
+                </div>
+
+                <!-- Chat Management Platform (no dedicated screenshot yet) -->
+                <div class="project-card no-img-card fade-up" style="cursor:default;">
+                    <div class="project-card-image">
+                         <img src="./images/project/p3-01.png" alt="Chat Management Platform"
+                            draggable="false">
+                    </div>
+                    <div class="project-card-body">
+                        <span class="project-company"><i class="fas fa-car"></i> Haupcar Company Limited</span>
+                        <h2>Chat Management Platform</h2>
+                        <h3>แพลตฟอร์มจัดการแชท</h3>
+                        <p>A real-time chat module built into the Haupcar system, letting admins, drivers, and
+                            customer support coordinate bookings and support requests directly inside the platform.
+                        </p>
+                        <div class="project-tag-row">
+                            <span class="proj-tech-badge">Full-Stack</span>
+                            <span class="proj-tech-badge">Real-Time</span>
+                            <span class="proj-tech-badge">Chat System</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-        <!-- Project 0: AI Exam Grading (Master's Thesis) -->
-        <div class="project-card fade-up"
-            data-bs-toggle="modal" data-bs-target="#imageModal"
-            data-images='["./images/project-ai/หน้าสแกน.png","./images/project-ai/หน้าเทมเพลต.png","./images/project-ai/หน้าทำแม่แบบ.png","./images/project-ai/หน้าจัดการเทมเพลต.png","./images/project-ai/หน้าจัดการเทมเพลตเมื่อเสร็จ.png","./images/project-ai/หน้าตรวจแบบอัพโหลด.png","./images/project-ai/หน้าตรวจแบบอัพโหลด2.png","./images/project-ai/หน้าตรวจแบบอัพโหลด3.png","./images/project-ai/หน้าสแกน2.png","./images/project-ai/หน้าสแกน3.png","./images/project-ai/หน้าคะแนนรวม.png","./images/project-ai/หน้าคะแนนรวม2.png","./images/project-ai/หน้าคะแนนส่วนบุคคล.png","./images/project-ai/หน้าคะแนนส่วนบุคคลไฟล์pdf.png","./images/project-ai/หน้ารวมไฟล์pdf.png","./images/project-ai/หน้ารวมไฟล์excel.png"]'>
-            <div class="project-card-image" style="background: linear-gradient(135deg, rgba(10, 22, 40, 0.95), rgba(15, 10, 30, 0.95));">
-                <img src="./images/project-ai/หน้าสแกน.png" alt="AI Exam Grading System" draggable="false">
-            </div>
-            <div class="project-card-body">
-                <span class="project-company" style="background: rgba(168, 85, 247, 0.12); border-color: rgba(168, 85, 247, 0.35); color: #c4b5fd;">
-                    <i class="fas fa-brain"></i> Master's Thesis · KMITL
-                </span>
-                <h2>AI Exam Grading System</h2>
-                <h3 style="color: #c084fc;">ระบบตรวจข้อสอบด้วยปัญญาประดิษฐ์</h3>
-                <p>My Master's thesis project. A system that grades multiple-choice exams automatically using Computer Vision and AI — scans answer sheets, checks them, and outputs score reports per student and overall. Can export to PDF and Excel. Built it to be actually usable in schools.</p>
-                <div class="project-tag-row">
-                    <span class="proj-tech-badge" style="border-color: rgba(168,85,247,0.25); color: #c4b5fd;">Python</span>
-                    <span class="proj-tech-badge" style="border-color: rgba(168,85,247,0.25); color: #c4b5fd;">Computer Vision</span>
-                    <span class="proj-tech-badge" style="border-color: rgba(168,85,247,0.25); color: #c4b5fd;">AI / ML</span>
-                    <span class="proj-tech-badge" style="border-color: rgba(168,85,247,0.25); color: #c4b5fd;">OpenCV</span>
-                    <span class="proj-tech-badge" style="border-color: rgba(168,85,247,0.25); color: #c4b5fd;">Education</span>
+        <!-- ===== ACADEMIC PROJECTS ===== -->
+        <div class="company-section" style="--company-rgb: 245, 158, 11;">
+            <div class="company-section-header">
+                <div class="company-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div>
+                    <h2 class="company-name">Academic Projects <span class="company-name-th">· KMITL</span></h2>
+                    <p class="company-role">Master's & Bachelor's Degree Work</p>
                 </div>
-                <div class="view-hint" style="color: #c084fc;"><i class="fas fa-images"></i> คลิกเพื่อดู 16 รูป</div>
+            </div>
+            <div class="projects-list">
+
+                <!-- AI Exam Grading (Master's Thesis) -->
+                <div class="project-card fade-up" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-images='["./images/project-ai/หน้าสแกน.png","./images/project-ai/หน้าเทมเพลต.png","./images/project-ai/หน้าทำแม่แบบ.png","./images/project-ai/หน้าจัดการเทมเพลต.png","./images/project-ai/หน้าจัดการเทมเพลตเมื่อเสร็จ.png","./images/project-ai/หน้าตรวจแบบอัพโหลด.png","./images/project-ai/หน้าตรวจแบบอัพโหลด2.png","./images/project-ai/หน้าตรวจแบบอัพโหลด3.png","./images/project-ai/หน้าสแกน2.png","./images/project-ai/หน้าสแกน3.png","./images/project-ai/หน้าคะแนนรวม.png","./images/project-ai/หน้าคะแนนรวม2.png","./images/project-ai/หน้าคะแนนส่วนบุคคล.png","./images/project-ai/หน้าคะแนนส่วนบุคคลไฟล์pdf.png","./images/project-ai/หน้ารวมไฟล์pdf.png","./images/project-ai/หน้ารวมไฟล์excel.png"]'>
+                    <div class="project-card-image"
+                        style="background: linear-gradient(135deg, rgba(10, 22, 40, 0.95), rgba(30, 20, 5, 0.95));">
+                        <img src="./images/project-ai/หน้าสแกน.png" alt="AI Exam Grading System" draggable="false">
+                    </div>
+                    <div class="project-card-body">
+                        <span class="project-company"><i class="fas fa-brain"></i> Master's Thesis · KMITL</span>
+                        <h2>AI Exam Grading System</h2>
+                        <h3>ระบบตรวจข้อสอบด้วยปัญญาประดิษฐ์</h3>
+                        <p>My Master's thesis project. A system that grades multiple-choice exams automatically using
+                            Computer Vision and AI — scans answer sheets, checks them, and outputs score reports per
+                            student and overall. Can export to PDF and Excel. Built it to be actually usable in
+                            schools.</p>
+                        <div class="project-tag-row">
+                            <span class="proj-tech-badge">Python</span>
+                            <span class="proj-tech-badge">Computer Vision</span>
+                            <span class="proj-tech-badge">AI / ML</span>
+                            <span class="proj-tech-badge">OpenCV</span>
+                            <span class="proj-tech-badge">Education</span>
+                        </div>
+                        <div class="view-hint"><i class="fas fa-images"></i> คลิกเพื่อดู 16 รูป</div>
+                    </div>
+                </div>
+
+                <!-- Web Quiz (Bachelor's Graduation Project) -->
+                <div class="project-card fade-up" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-images='["./images/app-quiz/m13.png"]'>
+                    <div class="project-card-image">
+                        <img src="./images/app-quiz/m13.png" alt="Web Quiz Project" draggable="false">
+                    </div>
+                    <div class="project-card-body">
+                        <span class="project-company"><i class="fas fa-graduation-cap"></i> Bachelor's Graduation
+                            Project · KMITL</span>
+                        <h2>Web Quiz</h2>
+                        <h3>ระบบเกมควิซเพื่อการเรียนรู้</h3>
+                        <p>My undergraduate graduation project — a quiz system built around Bloom's taxonomy. Teachers
+                            can set up subjects and manage question banks, students just open it and answer. Supports
+                            both multiple-choice and fill-in-the-blank with image support.</p>
+                        <div class="project-tag-row">
+                            <span class="proj-tech-badge">Web App</span>
+                            <span class="proj-tech-badge">Education</span>
+                            <span class="proj-tech-badge">Bloom's Theory</span>
+                        </div>
+                        <div class="view-hint"><i class="fas fa-image"></i> คลิกเพื่อดูรูปภาพ</div>
+                    </div>
+                </div>
+
+                <!-- Pill Reminder (Bachelor's coursework project) -->
+                <div class="project-card fade-up" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-images='["./images/project_ui/ui_reminder.png"]'>
+                    <div class="project-card-image">
+                        <img src="./images/project_ui/ui_reminder.png" alt="Pill Reminder" draggable="false">
+                    </div>
+                    <div class="project-card-body">
+                        <span class="project-company"><i class="fas fa-mobile-alt"></i> Bachelor's Coursework
+                            Project · KMITL</span>
+                        <h2>Pill Reminder</h2>
+                        <h3>ระบบแจ้งเตือนการทานยา</h3>
+                        <p>A Flutter app to help elderly users remember to take their meds. Kept the UI as simple as
+                            possible so it works without much tech experience needed.</p>
+                        <div class="project-tag-row">
+                            <span class="proj-tech-badge">Flutter</span>
+                            <span class="proj-tech-badge">Mobile</span>
+                            <span class="proj-tech-badge">Healthcare</span>
+                        </div>
+                        <div class="view-hint"><i class="fas fa-image"></i> คลิกเพื่อดูรูปภาพ</div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-        <!-- Project: HAUP Subscription System (Current Work) -->
-        <div class="project-card fade-up"
-            data-bs-toggle="modal" data-bs-target="#imageModal"
-            data-images='["./images/project_ui/project_sub.png","./images/project_ui/project_sub02.png"]'>
-            <div class="project-card-image">
-                <img src="./images/project_ui/project_sub.png" alt="HAUP Subscription System" draggable="false">
-            </div>
-            <div class="project-card-body">
-                <span class="project-company" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.35); color: #6ee7b7;">
-                    <i class="fas fa-check-circle"></i> Recent Project
-                </span>
-                <h2>Car Subscription Management System</h2>
-                <h3 style="color: #34d399;">Vehicle Subscription & EV Charging Platform</h3>
-                <p>The project I'm working on right now. A management platform for a car subscription service — covers inventory, reservations, revenue tracking, EV charging stations, and pricing plans. I handle both the frontend and backend.</p>
-                <div class="project-tag-row">
-                    <span class="proj-tech-badge" style="border-color: rgba(16,185,129,0.25); color: #6ee7b7;">React</span>
-                    <span class="proj-tech-badge" style="border-color: rgba(16,185,129,0.25); color: #6ee7b7;">TypeScript</span>
-                    <span class="proj-tech-badge" style="border-color: rgba(16,185,129,0.25); color: #6ee7b7;">Dashboard</span>
-                    <span class="proj-tech-badge" style="border-color: rgba(16,185,129,0.25); color: #6ee7b7;">EV Charging</span>
-                    <span class="proj-tech-badge" style="border-color: rgba(16,185,129,0.25); color: #6ee7b7;">Enterprise</span>
+        <!-- ===== BANGKOK EXPRESSWAY AND METRO PCL ===== -->
+        <div class="company-section" style="--company-rgb: 14, 165, 233;">
+            <div class="company-section-header">
+                <div class="company-icon"><i class="fas fa-train"></i></div>
+                <div>
+                    <h2 class="company-name">Bangkok Expressway and Metro Public Company Limited</h2>
+                    <p class="company-role">Software Developer</p>
                 </div>
-                <div class="view-hint" style="color: #34d399;"><i class="fas fa-images"></i> คลิกเพื่อดู 2 รูป</div>
+            </div>
+            <div class="projects-list">
+
+                <!-- MPR System -->
+                <div class="project-card fade-up" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-images='["./images/project_ui/ui_k2.png"]'>
+                    <div class="project-card-image">
+                        <img src="./images/project_ui/ui_k2.png" alt="MPR System" draggable="false">
+                    </div>
+                    <div class="project-card-body">
+                        <span class="project-company"><i class="fas fa-train"></i> Bangkok Expressway and Metro
+                            PCL</span>
+                        <h2>MPR System</h2>
+                        <h3>ระบบจัดการข้อมูลวัสดุวิศวกรรม</h3>
+                        <p>A system for the engineering team to log and track materials used for train maintenance.
+                            Built with K2 and Stored Procedures — my first proper enterprise project.</p>
+                        <div class="project-tag-row">
+                            <span class="proj-tech-badge">K2</span>
+                            <span class="proj-tech-badge">Stored Procedures</span>
+                            <span class="proj-tech-badge">Enterprise</span>
+                        </div>
+                        <div class="view-hint"><i class="fas fa-image"></i> คลิกเพื่อดูรูปภาพ</div>
+                    </div>
+                </div>
+
+                <!-- Inventory System (no image) -->
+                <div class="project-card no-img-card fade-up" style="cursor:default;">
+                    <div class="project-card-image">
+                        <div class="no-image"><i class="fas fa-boxes"></i></div>
+                    </div>
+                    <div class="project-card-body">
+                        <span class="project-company"><i class="fas fa-train"></i> Bangkok Expressway and Metro
+                            PCL</span>
+                        <h2>Inventory System</h2>
+                        <h3>ระบบบริหารคลังสินค้า</h3>
+                        <p>An internal inventory system built with ASP.NET and Stored Procedures. Helped the team keep
+                            track of stock and move materials between departments more easily.</p>
+                        <div class="project-tag-row">
+                            <span class="proj-tech-badge">ASP.NET</span>
+                            <span class="proj-tech-badge">SQL Server</span>
+                            <span class="proj-tech-badge">Inventory</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-        <!-- Project 1: Web Quiz -->
-        <div class="project-card fade-up"
-            data-bs-toggle="modal" data-bs-target="#imageModal"
-            data-images='["./images/app-quiz/m13.png"]'>
-            <div class="project-card-image">
-                <img src="./images/app-quiz/m13.png" alt="Web Quiz Project" draggable="false">
-            </div>
-            <div class="project-card-body">
-                <span class="project-company"><i class="fas fa-graduation-cap"></i> Graduation Project</span>
-                <h2>Web Quiz</h2>
-                <h3>ระบบเกมควิซเพื่อการเรียนรู้</h3>
-                <p>My undergraduate graduation project — a quiz system built around Bloom's taxonomy. Teachers can set up subjects and manage question banks, students just open it and answer. Supports both multiple-choice and fill-in-the-blank with image support.</p>
-                <div class="project-tag-row">
-                    <span class="proj-tech-badge">Web App</span>
-                    <span class="proj-tech-badge">Education</span>
-                    <span class="proj-tech-badge">Bloom's Theory</span>
-                </div>
-                <div class="view-hint"><i class="fas fa-image"></i> คลิกเพื่อดูรูปภาพ</div>
-            </div>
-        </div>
-
-        <!-- Project 2: Pill Reminder -->
-        <div class="project-card fade-up"
-            data-bs-toggle="modal" data-bs-target="#imageModal"
-            data-images='["./images/project_ui/ui_reminder.png"]'>
-            <div class="project-card-image">
-                <img src="./images/project_ui/ui_reminder.png" alt="Pill Reminder" draggable="false">
-            </div>
-            <div class="project-card-body">
-                <span class="project-company"><i class="fas fa-mobile-alt"></i> Mobile App</span>
-                <h2>Pill Reminder</h2>
-                <h3>ระบบแจ้งเตือนการทานยา</h3>
-                <p>A Flutter app to help elderly users remember to take their meds. Kept the UI as simple as possible so it works without much tech experience needed.</p>
-                <div class="project-tag-row">
-                    <span class="proj-tech-badge">Flutter</span>
-                    <span class="proj-tech-badge">Mobile</span>
-                    <span class="proj-tech-badge">Healthcare</span>
-                </div>
-                <div class="view-hint"><i class="fas fa-image"></i> คลิกเพื่อดูรูปภาพ</div>
-            </div>
-        </div>
-
-        <!-- Project 3: MPR System -->
-        <div class="project-card fade-up"
-            data-bs-toggle="modal" data-bs-target="#imageModal"
-            data-images='["./images/project_ui/ui_k2.png"]'>
-            <div class="project-card-image">
-                <img src="./images/project_ui/ui_k2.png" alt="MPR System" draggable="false">
-            </div>
-            <div class="project-card-body">
-                <span class="project-company"><i class="fas fa-train"></i> Bangkok Expressway and Metro PCL</span>
-                <h2>MPR System</h2>
-                <h3>ระบบจัดการข้อมูลวัสดุวิศวกรรม</h3>
-                <p>A system for the engineering team to log and track materials used for train maintenance. Built with K2 and Stored Procedures — my first proper enterprise project.</p>
-                <div class="project-tag-row">
-                    <span class="proj-tech-badge">K2</span>
-                    <span class="proj-tech-badge">Stored Procedures</span>
-                    <span class="proj-tech-badge">Enterprise</span>
-                </div>
-                <div class="view-hint"><i class="fas fa-image"></i> คลิกเพื่อดูรูปภาพ</div>
-            </div>
-        </div>
-
-        <!-- Project 4: Inventory System (no image) -->
-        <div class="project-card no-img-card fade-up" style="cursor:default;">
-            <div class="project-card-image">
-                <div class="no-image"><i class="fas fa-boxes"></i></div>
-            </div>
-            <div class="project-card-body">
-                <span class="project-company"><i class="fas fa-train"></i> Bangkok Expressway and Metro PCL</span>
-                <h2>Inventory System</h2>
-                <h3>ระบบบริหารคลังสินค้า</h3>
-                <p>An internal inventory system built with ASP.NET and Stored Procedures. Helped the team keep track of stock and move materials between departments more easily.</p>
-                <div class="project-tag-row">
-                    <span class="proj-tech-badge">ASP.NET</span>
-                    <span class="proj-tech-badge">SQL Server</span>
-                    <span class="proj-tech-badge">Inventory</span>
+        <!-- ===== HEALTH UP CO., LTD. ===== -->
+        <div class="company-section" style="--company-rgb: 34, 197, 94;">
+            <div class="company-section-header">
+                <div class="company-icon"><i class="fas fa-heartbeat"></i></div>
+                <div>
+                    <h2 class="company-name">Health Up Company Limited</h2>
+                    <p class="company-role">Full-Stack Developer</p>
                 </div>
             </div>
-        </div>
+            <div class="projects-list">
 
-        <!-- Project 5: Hug Online -->
-        <div class="project-card fade-up"
-            data-bs-toggle="modal" data-bs-target="#imageModal"
-            data-images='["./images/project/img-project05.png","./images/project/ui-hug01.png","./images/project/ui-hug02.png"]'>
-            <div class="project-card-image">
-                <img src="./images/project/img-project05.png" alt="Hug Online" draggable="false">
-            </div>
-            <div class="project-card-body">
-                <span class="project-company"><i class="fas fa-heartbeat"></i> Health Up Co., Ltd.</span>
-                <h2>Hug Online</h2>
-                <h3>ระบบขายผลิตภัณฑ์ยาออนไลน์</h3>
-                <p>Worked on the mobile and backend side of Health Up's online pharmacy — Flutter for the app, .NET for the API. It's a platform for ordering pharmaceutical products online.</p>
-                <div class="project-tag-row">
-                    <span class="proj-tech-badge">Flutter</span>
-                    <span class="proj-tech-badge">.NET</span>
-                    <span class="proj-tech-badge">SQL Server</span>
-                    <span class="proj-tech-badge">E-Commerce</span>
+                <!-- Hug Online -->
+                <div class="project-card fade-up" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-images='["./images/project/img-project05.png","./images/project/ui-hug01.png","./images/project/ui-hug02.png"]'>
+                    <div class="project-card-image">
+                        <img src="./images/project/img-project05.png" alt="Hug Online" draggable="false">
+                    </div>
+                    <div class="project-card-body">
+                        <span class="project-company"><i class="fas fa-heartbeat"></i> Health Up Company
+                            Limited</span>
+                        <h2>Hug Online</h2>
+                        <h3>ระบบขายผลิตภัณฑ์ยาออนไลน์</h3>
+                        <p>Worked on the mobile and backend side of Health Up's online pharmacy — Flutter for the
+                            app, .NET for the API. It's a platform for ordering pharmaceutical products online.</p>
+                        <div class="project-tag-row">
+                            <span class="proj-tech-badge">Flutter</span>
+                            <span class="proj-tech-badge">.NET</span>
+                            <span class="proj-tech-badge">SQL Server</span>
+                            <span class="proj-tech-badge">E-Commerce</span>
+                        </div>
+                        <div class="view-hint"><i class="fas fa-images"></i> คลิกเพื่อดู 3 รูป</div>
+                    </div>
                 </div>
-                <div class="view-hint"><i class="fas fa-images"></i> คลิกเพื่อดู 3 รูป</div>
-            </div>
-        </div>
 
-        <!-- Project 6: DN Online UI -->
-        <div class="project-card fade-up"
-            data-bs-toggle="modal" data-bs-target="#imageModal"
-            data-images='["./images/project/ui-dn.png","./images/project/ui-dnmobile.png","./images/project/ui-dn02.png"]'>
-            <div class="project-card-image">
-                <img src="./images/project/ui-dn.png" alt="DN Online UI" draggable="false">
-            </div>
-            <div class="project-card-body">
-                <span class="project-company"><i class="fas fa-heartbeat"></i> Health Up Co., Ltd.</span>
-                <h2>UI DN Online</h2>
-                <h3>UI สำหรับระบบร้านค้าขายยาออนไลน์</h3>
-                <p>Rebuilt the frontend for Health Up's online pharmacy web app using Angular and TypeScript. Focused mostly on making it look clean and work well across different screen sizes.</p>
-                <div class="project-tag-row">
-                    <span class="proj-tech-badge">Angular</span>
-                    <span class="proj-tech-badge">TypeScript</span>
-                    <span class="proj-tech-badge">SCSS</span>
-                    <span class="proj-tech-badge">UI Design</span>
+                <!-- DN Online UI -->
+                <div class="project-card fade-up" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-images='["./images/project/ui-dn.png","./images/project/ui-dnmobile.png","./images/project/ui-dn02.png"]'>
+                    <div class="project-card-image">
+                        <img src="./images/project/ui-dn.png" alt="DN Online UI" draggable="false">
+                    </div>
+                    <div class="project-card-body">
+                        <span class="project-company"><i class="fas fa-heartbeat"></i> Health Up Company
+                            Limited</span>
+                        <h2>UI DN Online</h2>
+                        <h3>UI สำหรับระบบร้านค้าขายยาออนไลน์</h3>
+                        <p>Rebuilt the frontend for Health Up's online pharmacy web app using Angular and TypeScript.
+                            Focused mostly on making it look clean and work well across different screen sizes.</p>
+                        <div class="project-tag-row">
+                            <span class="proj-tech-badge">Angular</span>
+                            <span class="proj-tech-badge">TypeScript</span>
+                            <span class="proj-tech-badge">SCSS</span>
+                            <span class="proj-tech-badge">UI Design</span>
+                        </div>
+                        <div class="view-hint"><i class="fas fa-images"></i> คลิกเพื่อดู 3 รูป</div>
+                    </div>
                 </div>
-                <div class="view-hint"><i class="fas fa-images"></i> คลิกเพื่อดู 3 รูป</div>
-            </div>
-        </div>
 
-        <!-- Project 7: POS System -->
-        <div class="project-card fade-up"
-            data-bs-toggle="modal" data-bs-target="#imageModal"
-            data-images='["./images/project/img-project06.png"]'>
-            <div class="project-card-image">
-                <img src="./images/project/img-project06.png" alt="POS System" draggable="false">
-            </div>
-            <div class="project-card-body">
-                <span class="project-company"><i class="fas fa-heartbeat"></i> Health Up Co., Ltd.</span>
-                <h2>POS System</h2>
-                <h3>UI สำหรับระบบขายยาหน้าสาขา</h3>
-                <p>Designed the UI in Figma first, then implemented it in Angular. A point-of-sale system used at Health Up's pharmacy branches.</p>
-                <div class="project-tag-row">
-                    <span class="proj-tech-badge">Figma</span>
-                    <span class="proj-tech-badge">Angular</span>
-                    <span class="proj-tech-badge">POS</span>
+                <!-- POS System -->
+                <div class="project-card fade-up" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-images='["./images/project/img-project06.png"]'>
+                    <div class="project-card-image">
+                        <img src="./images/project/img-project06.png" alt="POS System" draggable="false">
+                    </div>
+                    <div class="project-card-body">
+                        <span class="project-company"><i class="fas fa-heartbeat"></i> Health Up Company
+                            Limited</span>
+                        <h2>POS System</h2>
+                        <h3>UI สำหรับระบบขายยาหน้าสาขา</h3>
+                        <p>Designed the UI in Figma first, then implemented it in Angular. A point-of-sale system used
+                            at Health Up's pharmacy branches.</p>
+                        <div class="project-tag-row">
+                            <span class="proj-tech-badge">Figma</span>
+                            <span class="proj-tech-badge">Angular</span>
+                            <span class="proj-tech-badge">POS</span>
+                        </div>
+                        <div class="view-hint"><i class="fas fa-image"></i> คลิกเพื่อดูรูปภาพ</div>
+                    </div>
                 </div>
-                <div class="view-hint"><i class="fas fa-image"></i> คลิกเพื่อดูรูปภาพ</div>
+
             </div>
         </div>
-
     </div>
-</div>
 
-<!-- Image Modal (Bootstrap 5) -->
-<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalTitle">Project Images</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body p-0">
-                <div id="projectCarousel" class="carousel slide" data-bs-ride="false">
-                    <div class="carousel-inner" id="carouselInner"></div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    </button>
+    <!-- Image Modal (Bootstrap 5) -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Project Images</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div id="projectCarousel" class="carousel slide" data-bs-ride="false">
+                        <div class="carousel-inner" id="carouselInner"></div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<footer class="page-footer">
-    <p>© 2025 Suprakron Maprachum · All Rights Reserved</p>
-</footer>
+    <footer class="page-footer">
+        <p>© 2025 Suprakron Maprachum · All Rights Reserved</p>
+    </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    // Open modal with images from data-images attribute
-    document.querySelectorAll('.project-card[data-images]').forEach(card => {
-        card.addEventListener('click', () => {
-            let images;
-            try { images = JSON.parse(card.dataset.images); }
-            catch { images = [card.dataset.images]; }
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Open modal with images from data-images attribute
+        document.querySelectorAll('.project-card[data-images]').forEach(card => {
+            card.addEventListener('click', () => {
+                let images;
+                try { images = JSON.parse(card.dataset.images); }
+                catch { images = [card.dataset.images]; }
 
-            const inner = document.getElementById('carouselInner');
-            inner.innerHTML = images.map((src, i) => `
+                const inner = document.getElementById('carouselInner');
+                inner.innerHTML = images.map((src, i) => `
                 <div class="carousel-item ${i === 0 ? 'active' : ''}">
                     <div class="img-protect-wrap">
                         <div class="img-protect-overlay"></div>
@@ -486,37 +700,38 @@
                 </div>
             `).join('');
 
-            // Reset carousel
-            const carousel = bootstrap.Carousel.getOrCreateInstance(document.getElementById('projectCarousel'));
-            carousel.to(0);
+                // Reset carousel
+                const carousel = bootstrap.Carousel.getOrCreateInstance(document.getElementById('projectCarousel'));
+                carousel.to(0);
+            });
         });
-    });
 
-    // Block right-click on entire page
-    document.addEventListener('contextmenu', e => e.preventDefault());
-    document.addEventListener('dragstart', e => {
-        if (e.target.tagName === 'IMG') e.preventDefault();
-    });
+        // Block right-click on entire page
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('dragstart', e => {
+            if (e.target.tagName === 'IMG') e.preventDefault();
+        });
 
-    // Wrap all card thumbnail images with a transparent overlay
-    document.querySelectorAll('.project-card-image img').forEach(img => {
-        const wrap = document.createElement('div');
-        wrap.style.cssText = 'position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;';
-        img.parentNode.insertBefore(wrap, img);
-        wrap.appendChild(img);
-        const overlay = document.createElement('div');
-        overlay.style.cssText = 'position:absolute;inset:0;z-index:10;cursor:pointer;';
-        wrap.appendChild(overlay);
-    });
+        // Wrap all card thumbnail images with a transparent overlay
+        document.querySelectorAll('.project-card-image img').forEach(img => {
+            const wrap = document.createElement('div');
+            wrap.style.cssText = 'position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;';
+            img.parentNode.insertBefore(wrap, img);
+            wrap.appendChild(img);
+            const overlay = document.createElement('div');
+            overlay.style.cssText = 'position:absolute;inset:0;z-index:10;cursor:pointer;';
+            wrap.appendChild(overlay);
+        });
 
-    // Scroll fade-in
-    const obs = new IntersectionObserver(entries => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.fade-up').forEach((el, i) => {
-        el.style.transitionDelay = `${i * 60}ms`;
-        obs.observe(el);
-    });
-</script>
+        // Scroll fade-in
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.fade-up').forEach((el, i) => {
+            el.style.transitionDelay = `${i * 60}ms`;
+            obs.observe(el);
+        });
+    </script>
 </body>
+
 </html>
