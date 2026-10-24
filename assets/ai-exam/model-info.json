@@ -1,0 +1,57 @@
+{
+  "architecture": "YOLOv8n-cls",
+  "epochs": 8,
+  "train_images": 6400,
+  "validation_images": 1600,
+  "test_images": 1600,
+  "accuracy": 0.996875,
+  "correct": 1595,
+  "incorrect": 5,
+  "confidence_threshold": 0.9,
+  "filled_recall": 0.994059405940594,
+  "dataset_source": "https://doi.org/10.5281/zenodo.18816315",
+  "dataset_authors": [
+    "Tinh Pham",
+    "Minh Ta"
+  ],
+  "dataset_license": "CC BY 4.0",
+  "model_license": "AGPL-3.0",
+  "samples": [
+    {
+      "file": "./assets/ai-exam/samples/01-empty.png",
+      "label": "empty",
+      "title": "ช่องว่าง",
+      "source_member": "answer-1570-q00-b0"
+    },
+    {
+      "file": "./assets/ai-exam/samples/02-empty.png",
+      "label": "empty",
+      "title": "ช่องว่าง",
+      "source_member": "answer-1570-q00-b1"
+    },
+    {
+      "file": "./assets/ai-exam/samples/03-selecttrue.png",
+      "label": "selecttrue",
+      "title": "ช่องที่ฝนแล้ว",
+      "source_member": "answer-1570-q01-b0"
+    },
+    {
+      "file": "./assets/ai-exam/samples/04-selecttrue.png",
+      "label": "selecttrue",
+      "title": "ช่องที่ฝนแล้ว",
+      "source_member": "answer-1570-q01-b1"
+    },
+    {
+      "file": "./assets/ai-exam/samples/05-faint.png",
+      "label": "selecttrue",
+      "title": "รอยฝนที่ไม่มั่นใจ",
+      "source_member": "answer-6974-q06-b2"
+    },
+    {
+      "file": "./assets/ai-exam/samples/06-faint.png",
+      "label": "selecttrue",
+      "title": "รอยฝนที่ไม่มั่นใจ",
+      "source_member": "answer-6974-q13-b2"
+    }
+  ]
+}

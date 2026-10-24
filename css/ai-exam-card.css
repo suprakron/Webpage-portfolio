@@ -1,0 +1,269 @@
+#ai-exam-project {
+  grid-template-columns: minmax(290px, 0.8fr) minmax(0, 1.45fr);
+  border-color: #6c9ddf48;
+  background: linear-gradient(120deg, #14233c99, #11243a66);
+  overflow: hidden;
+}
+#ai-exam-project .ai-cover {
+  position: relative;
+  min-height: 410px;
+  padding: 26px;
+  background:
+    radial-gradient(ellipse at 50% 40%, #355b8b55, transparent 70%), #0e1a2d;
+  border-right-color: #6c9ddf25;
+  flex-direction: column;
+  gap: 26px;
+}
+#ai-exam-project .ai-cover img {
+  width: 100%;
+  max-height: 330px;
+  object-fit: contain;
+  border: 1px solid #759cd233;
+  border-radius: 9px;
+  box-shadow: 0 20px 45px #0005;
+  transform: perspective(1100px) rotateY(7deg) rotate(-2deg);
+}
+#ai-exam-project:hover .ai-cover img {
+  transform: perspective(1100px) rotateY(0) rotate(0);
+}
+.ai-cover-label {
+  font-size: 7px;
+  letter-spacing: 1.5px;
+  color: #91b7ea;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ai-cover-label i {
+  font-size: 13px;
+}
+#ai-exam-project .project-card-body {
+  padding: 30px 32px;
+}
+#ai-exam-project .ai-company {
+  background: #6c9ddf12;
+  border-color: #8bb7f044;
+  color: #aecfff;
+}
+#ai-exam-project .ai-subtitle {
+  color: #9dc3f7;
+  font-size: 15px;
+  margin-top: 8px;
+}
+#ai-exam-project .project-card-body > p:not(.ai-measurement-note) {
+  font-size: 12px;
+  line-height: 1.85;
+  color: #9bb1cf;
+  margin-bottom: 19px;
+}
+.ai-card-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  border-top: 1px solid #779bcb25;
+  border-bottom: 1px solid #779bcb25;
+  padding: 18px 0;
+  margin-bottom: 20px;
+}
+.ai-card-metrics strong {
+  font-size: 25px;
+  letter-spacing: -0.7px;
+  color: #bdd7ff;
+  font-weight: 500;
+  display: block;
+  line-height: 1.25;
+}
+.ai-card-metrics strong small {
+  font-size: 13px;
+  margin-left: 2px;
+}
+.ai-card-metrics div:last-child strong {
+  font-size: 20px;
+  line-height: 1.55;
+}
+.ai-card-metrics span {
+  display: block;
+  font-size: 6px;
+  letter-spacing: 1px;
+  color: #7398c9;
+  margin-top: 7px;
+}
+#ai-exam-project .proj-tech-badge {
+  color: #9fc5f5;
+  border-color: #8cb6eb30;
+  background: #749fd10a;
+  font-size: 9px;
+}
+.ai-project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin: 10px 0 15px;
+}
+.ai-project-actions > a {
+  font-size: 10px;
+  color: #a0c1ed;
+  text-decoration: none;
+}
+.ai-project-actions .ai-primary-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  background: #bdd5fa;
+  border: 1px solid #d1e4ff;
+  color: #2c4f7e;
+  padding: 10px 14px;
+  border-radius: 7px;
+  font-weight: 500;
+}
+.ai-project-actions .ai-primary-action:hover {
+  background: #d7e7ff;
+  color: #22446e;
+}
+#ai-exam-project .ai-measurement-note {
+  font-size: 8px;
+  color: #6687b3;
+  line-height: 1.8;
+  margin: 0 0 9px;
+}
+.ai-gallery-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  font-size: 10px;
+  color: #8bb4ec;
+  text-align: left;
+  align-self: flex-start;
+}
+.presentation .deck-metrics {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid #88b8f32b;
+}
+.presentation .deck-metrics strong {
+  font-size: 31px;
+  font-weight: 600;
+  color: #b7d7ff;
+  letter-spacing: -1px;
+}
+.presentation .deck-metrics > span {
+  font-size: 7px;
+  letter-spacing: 1px;
+  color: #6f98cf;
+  line-height: 1.9;
+  max-width: 160px;
+}
+.presentation .deck-project-actions {
+  gap: 14px;
+  margin-top: 18px;
+}
+.presentation .deck-project-actions .deck-action {
+  font-size: 10px;
+  padding: 10px 14px;
+}
+.presentation .deck-project-actions .deck-text-link {
+  font-size: 10px;
+}
+@media (max-width: 1050px) {
+  #ai-exam-project {
+    grid-template-columns: 290px minmax(0, 1fr);
+  }
+  #ai-exam-project .project-card-body {
+    padding: 25px;
+  }
+  .ai-card-metrics {
+    gap: 12px;
+  }
+  .ai-card-metrics strong {
+    font-size: 22px;
+  }
+  .ai-card-metrics div:last-child strong {
+    font-size: 17px;
+  }
+  .ai-project-actions {
+    gap: 12px;
+  }
+}
+@media (max-width: 760px) {
+  #ai-exam-project {
+    grid-template-columns: 1fr;
+  }
+  #ai-exam-project .ai-cover {
+    min-height: 230px;
+    padding: 25px;
+    border-right: 0;
+    border-bottom: 1px solid #6c9ddf25;
+    gap: 18px;
+  }
+  #ai-exam-project .ai-cover img {
+    max-width: 420px;
+    max-height: 260px;
+  }
+  #ai-exam-project .project-card-body {
+    padding: 25px 23px;
+  }
+  .ai-card-metrics span {
+    font-size: 5px;
+  }
+  .ai-card-metrics strong {
+    font-size: 24px;
+  }
+  .ai-project-actions {
+    gap: 14px;
+  }
+  .ai-project-actions > a {
+    font-size: 10px;
+  }
+  .presentation .deck-metrics {
+    margin-top: 17px;
+  }
+  .presentation .deck-project-actions {
+    gap: 12px;
+  }
+}
+
+#ai-exam-project{scroll-margin-top:110px}
+
+#ai-exam-project .ai-cover img {
+  max-height: 400px;
+  transform: perspective(1100px) rotateY(4deg) rotate(-1deg);
+  box-shadow: 0 24px 55px #0007, 0 0 40px #4b7fd02e;
+}
+.ai-cover-label {
+  font-size: 10px;
+  color: #86efac;
+}
+.ai-flow {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 0 0 18px;
+  counter-reset: step;
+}
+.ai-flow li {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  color: #b7d2f7;
+  background: #6c9ddf14;
+  border: 1px solid #8bb7f030;
+  border-radius: 999px;
+  padding: 6px 12px;
+}
+.ai-flow li:not(:last-child)::after {
+  content: "→";
+  margin-left: 6px;
+  color: #6f93c4;
+}
+.ai-flow i { color: #7fb0f5; }

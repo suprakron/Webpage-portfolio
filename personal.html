@@ -73,9 +73,12 @@
             .gallery-item img { height: 150px; }
         }
     </style>
+    <link rel="stylesheet" href="./css/studio.css">
 </head>
 
 <body>
+<a class="skip-link" href="#main-content">ข้ามไปยังเนื้อหา</a>
+<div class="reading-progress" aria-hidden="true"></div>
 
 <!-- Header -->
 <div class="page-header">
@@ -85,7 +88,7 @@
     <span class="page-header-title">/ Personal Gallery</span>
 </div>
 
-<div class="page-container">
+<div class="page-container" id="main-content" role="main">
     <div class="text-center mb-4">
         <span class="section-tag"><i class="fas fa-images"></i> Gallery</span>
     </div>
@@ -106,11 +109,7 @@
             <div class="gallery-item-overlay"><i class="fas fa-expand"></i></div>
         </div>
 
-        <div class="gallery-item fade-up" data-img="./images/congratulations/c4.JPG"
-            data-bs-toggle="modal" data-bs-target="#galleryModal">
-            <img src="./images/congratulations/c4.JPG" alt="Gallery">
-            <div class="gallery-item-overlay"><i class="fas fa-expand"></i></div>
-        </div>
+        
 
         <div class="gallery-item fade-up" data-img="./images/ordain/04.jpg"
             data-bs-toggle="modal" data-bs-target="#galleryModal">
@@ -124,11 +123,7 @@
             <div class="gallery-item-overlay"><i class="fas fa-expand"></i></div>
         </div>
 
-        <div class="gallery-item fade-up" data-img="./images/congratulations/con02.JPG"
-            data-bs-toggle="modal" data-bs-target="#galleryModal">
-            <img src="./images/congratulations/con02.JPG" alt="Gallery">
-            <div class="gallery-item-overlay"><i class="fas fa-expand"></i></div>
-        </div>
+        
 
         <div class="gallery-item fade-up" data-img="./images/congratulations/con06.JPG"
             data-bs-toggle="modal" data-bs-target="#galleryModal">
@@ -166,11 +161,7 @@
             <div class="gallery-item-overlay"><i class="fas fa-expand"></i></div>
         </div>
 
-        <div class="gallery-item fade-up" data-img="./images/profile/pf5.jpg"
-            data-bs-toggle="modal" data-bs-target="#galleryModal">
-            <img src="./images/profile/pf5.jpg" alt="Gallery">
-            <div class="gallery-item-overlay"><i class="fas fa-expand"></i></div>
-        </div>
+        
 
         <div class="gallery-item fade-up" data-img="./images/profile/p6.jpeg"
             data-bs-toggle="modal" data-bs-target="#galleryModal">
@@ -226,5 +217,6 @@
     document.addEventListener('contextmenu', e => e.preventDefault());
     document.addEventListener('dragstart', e => { if (e.target.tagName === 'IMG') e.preventDefault(); });
 </script>
+<script src="./js/studio.js"></script>
 </body>
 </html>

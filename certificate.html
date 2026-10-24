@@ -85,9 +85,12 @@
             .cert-card img { height: 115px; }
         }
     </style>
+    <link rel="stylesheet" href="./css/studio.css">
 </head>
 
 <body>
+<a class="skip-link" href="#main-content">ข้ามไปยังเนื้อหา</a>
+<div class="reading-progress" aria-hidden="true"></div>
 
 <!-- Header -->
 <div class="page-header">
@@ -97,7 +100,7 @@
     <span class="page-header-title">/ My Certificates</span>
 </div>
 
-<div class="page-container">
+<div class="page-container" id="main-content" role="main">
     <div class="text-center mb-4">
         <span class="section-tag"><i class="fas fa-certificate"></i> Achievements</span>
     </div>
@@ -132,13 +135,7 @@
             <div class="cert-card-footer"><i class="fas fa-expand-alt"></i> ดูรูปใหญ่</div>
         </div>
 
-        <div class="cert-card fade-up" data-img="./images/certificate/c3.jpg"
-            data-bs-toggle="modal" data-bs-target="#certModal">
-            <div class="cert-card-img-wrap">
-                <img src="./images/certificate/c3.jpg" alt="Certificate">
-            </div>
-            <div class="cert-card-footer"><i class="fas fa-expand-alt"></i> ดูรูปใหญ่</div>
-        </div>
+        
 
         <div class="cert-card fade-up" data-img="./images/certificate/c4.jpg"
             data-bs-toggle="modal" data-bs-target="#certModal">
@@ -252,5 +249,6 @@
     document.addEventListener('contextmenu', e => e.preventDefault());
     document.addEventListener('dragstart', e => { if (e.target.tagName === 'IMG') e.preventDefault(); });
 </script>
+<script src="./js/studio.js"></script>
 </body>
 </html>

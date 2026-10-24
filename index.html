@@ -18,9 +18,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/studio.css">
 </head>
 
 <body>
+<a class="skip-link" href="#main-content">ข้ามไปยังเนื้อหา</a>
+<div class="reading-progress" aria-hidden="true"></div>
 
 <!-- Animated Background Particles -->
 <div class="particles" id="particles"></div>
@@ -29,10 +32,10 @@
 <nav class="navbar" id="navbar">
     <div class="nav-container">
         <div class="nav-brand">
-            <span class="brand-icon">⚡</span>
+            <span class="brand-icon">S<span class="brand-period">.</span></span>
             <span>Suprakron</span>
         </div>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
             <span></span><span></span><span></span>
         </button>
         <ul class="nav-links" id="navLinks">
@@ -50,7 +53,7 @@
 
             <!-- Theme Toggle -->
             <label class="nav-theme-toggle" title="Toggle theme">
-                <input type="checkbox" id="themeToggle">
+                <input type="checkbox" id="themeToggle" aria-label="Switch light theme">
                 <span class="ntt-track">
                     <span class="ntt-icon ntt-moon"><i class="fas fa-moon"></i></span>
                     <span class="ntt-icon ntt-sun"><i class="fas fa-sun"></i></span>
@@ -77,8 +80,12 @@
 </nav>
 
 <!-- ===== HERO SECTION ===== -->
-<section class="hero" id="about">
+<main id="main-content">
+<section class="hero hero-cinematic" id="about">
+    <div class="hero-atmosphere" aria-hidden="true"><div class="hero-aurora aurora-one"></div><div class="hero-aurora aurora-two"></div><div class="hero-grid"></div><span class="hero-watermark">ENGINEER.</span></div>
     <div class="hero-content">
+        <p class="hero-overline">IDEAS INTO INTERFACES. CODE INTO IMPACT.</p>
+        <div class="editorial-label"><span class="label-line"></span> THE PORTFOLIO <span class="edition">DESIGN × TECHNOLOGY</span></div>
         <div class="ai-badge">
             <span class="ai-dot"></span>
             <i class="fas fa-brain"></i> <span data-i18n="hero.badge">AI-Powered Developer</span>
@@ -89,6 +96,7 @@
         <p class="hero-subtitle" data-i18n="hero.subtitle">Full-Stack Developer · AI Enthusiast · M.Ed. Student in AI</p>
         <p class="hero-desc" data-i18n="hero.desc">สร้างสรรค์ซอฟต์แวร์และระบบที่ผสานพลัง AI เข้ากับการพัฒนาสมัยใหม่ เพื่อสร้างประสบการณ์ที่ดีที่สุด</p>
         <div class="hero-buttons">
+            <a href="#portfolio" class="studio-primary">Explore my work <span aria-hidden="true">↗</span></a>
             <a href="./cv/Resume_personal.pdf" download class="btn-secondary">
                 <i class="fas fa-download"></i> <span data-i18n="hero.download">Download CV</span>
             </a>
@@ -109,14 +117,18 @@
         </div>
     </div>
     <div class="hero-visual">
+        <div class="scene-coordinate" aria-hidden="true">01 / THE DEVELOPER <span>WEB · MOBILE · AI</span></div>
+        <div class="hologram-base" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="glass-code" aria-hidden="true"><div class="code-window-bar"><i></i><i></i><i></i><span>developer.ts</span></div><code><span class="code-purple">const</span> developer = {<br>&nbsp; name: <span class="code-blue">'Suprakron'</span>,<br>&nbsp; focus: [<span class="code-blue">'Full-stack', 'AI'</span>],<br>&nbsp; mindset: <span class="code-blue">'Always building'</span><br>};</code></div>
+        <div class="orbital-scene" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><div class="orbit-core"></div></div>
+        <div class="floating-note note-top"><span class="note-symbol">&lt;/&gt;</span><div>Full-stack<span>From interface to infrastructure</span></div></div>
+        <div class="floating-note note-bottom"><span class="note-symbol">✧</span><div>AI × Engineering<span>Building what comes next</span></div></div>
         <div id="imageCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="3000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="./images/congratulations/con01.JPG" class="d-block w-100 profile-pic" alt="Profile 1">
                 </div>
-                <div class="carousel-item">
-                    <img src="./images/congratulations/con02.JPG" class="d-block w-100 profile-pic" alt="Profile 2">
-                </div>
+                
                 <div class="carousel-item">
                     <img src="./images/profile/p6.jpeg" class="d-block w-100 profile-pic" alt="Profile 3">
                 </div>
@@ -139,16 +151,18 @@
                     <img src="./images/profile/p4.jpg" class="d-block w-100 profile-pic" alt="Profile 9">
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev" aria-label="Previous profile photo">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next" aria-label="Next profile photo">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
             </button>
         </div>
     </div>
+    <a href="#portfolio" class="hero-discover"><span class="discover-icon" aria-hidden="true">↓</span><span>DISCOVER THE WORK</span><span class="discover-line" aria-hidden="true"></span></a>
 </section>
 
+<div class="expertise-strip"><span>WEB & MOBILE</span><span class="strip-star">✳</span><span>FULL-STACK DEVELOPMENT</span><span class="strip-star">✳</span><span>AI INTEGRATION</span><span class="strip-star">✳</span><span>REAL-WORLD SYSTEMS</span></div>
 <!-- ===== AI SECTION ===== -->
 <section class="section ai-section" id="ai-section">
     <div class="section-container">
@@ -458,7 +472,11 @@
             <span class="section-tag"><i class="fas fa-folder-open"></i> <span data-i18n="port.tag">Portfolio</span></span>
             <h2 data-i18n="port.title">ผลงาน<span class="gradient-text">โปรเจกต์</span></h2>
         </div>
-        <div class="portfolio-grid">
+        <div class="selected-work">
+<a class="work-feature" href="./projectmy.html"><div class="work-image"><img src="./images/project/p3-02.png" alt="Chat Management Platform interface" loading="lazy"><span class="work-open" aria-hidden="true">↗</span></div><div class="work-caption"><div><span class="work-category">01 / FULL-STACK · B2B SAAS</span><h3>Chat Management Platform</h3><p>แพลตฟอร์มจัดการแชทและการจอง พร้อมการพัฒนา Gemini AI</p></div></div></a>
+<a class="work-feature" href="./projectmy.html"><div class="work-image"><img src="./images/project/p2-01.png" alt="Fleet Management Platform dashboard" loading="lazy"><span class="work-open" aria-hidden="true">↗</span></div><div class="work-caption"><div><span class="work-category">02 / FULL-STACK · OPERATIONS</span><h3>Fleet Management Platform</h3><p>ระบบบริหารคลังรถ การจอง และการจัดตารางพนักงานขับรถ</p></div></div></a>
+</div>
+<div class="portfolio-grid">
             <div class="portfolio-card">
                 <div class="portfolio-card-header">
                     <div class="port-icon"><i class="fas fa-code-branch"></i></div>
@@ -483,7 +501,7 @@
                 <div class="cert-preview">
                     <img src="./images/certificate/c1.jpg" alt="Certificate 1">
                     <img src="./images/certificate/c2.jpg" alt="Certificate 2">
-                    <img src="./images/certificate/c3.jpg" alt="Certificate 3">
+                    
                 </div>
                 <a href="./certificate.html" class="view-more-btn">
                     <span data-i18n="port.viewall">ดูทั้งหมด</span> <i class="fas fa-arrow-right"></i>
@@ -516,7 +534,7 @@
             <p data-i18n="contact.subtitle">ติดต่อมาได้เลย</p>
         </div>
         <div class="contact-cards">
-            <a href="tel:+660954314798" class="contact-card">
+            <a href="tel:+66954314798" class="contact-card">
                 <div class="contact-card-icon phone-icon"><i class="fas fa-phone"></i></div>
                 <div class="contact-card-info">
                     <h4 data-i18n="contact.phone">Phone</h4>
@@ -532,7 +550,7 @@
                 </div>
                 <i class="fas fa-external-link-alt contact-arrow"></i>
             </a>
-            <a href="https://www.facebook.com/suprakron.maprachum.3/?locale=th_TH" target="_blank" class="contact-card">
+            <a href="https://www.facebook.com/suprakron.maprachum.3/?locale=th_TH" target="_blank" rel="noopener noreferrer" class="contact-card">
                 <div class="contact-card-icon facebook-icon"><i class="fab fa-facebook-f"></i></div>
                 <div class="contact-card-info">
                     <h4>Facebook</h4>
@@ -540,7 +558,7 @@
                 </div>
                 <i class="fas fa-external-link-alt contact-arrow"></i>
             </a>
-            <a href="https://github.com/suprakron" target="_blank" class="contact-card">
+            <a href="https://github.com/suprakron" target="_blank" rel="noopener noreferrer" class="contact-card">
                 <div class="contact-card-icon github-icon"><i class="fab fa-github"></i></div>
                 <div class="contact-card-info">
                     <h4>GitHub</h4>
@@ -552,6 +570,7 @@
     </div>
 </section>
 
+</main>
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
     <div class="footer-content">
@@ -595,8 +614,9 @@
 <script src="./js/i18n.js"></script>
 <script src="./js/portfolio.js"></script>
 <script>
-    document.addEventListener('contextmenu', e => e.preventDefault());
+
     document.addEventListener('dragstart', e => { if (e.target.tagName === 'IMG') e.preventDefault(); });
 </script>
+<script src="./js/studio.js"></script>
 </body>
 </html>
